@@ -1,0 +1,3 @@
+cd Chemists-Component
+conda env create -f cc_env_hitl.yml
+conda activate cc_env_hitl
