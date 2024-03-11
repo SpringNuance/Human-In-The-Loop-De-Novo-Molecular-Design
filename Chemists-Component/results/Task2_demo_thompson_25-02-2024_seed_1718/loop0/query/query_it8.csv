@@ -1,0 +1,11 @@
+id,SMILES
+8254,COc1ccc2c(c1)CC(C1(O)C(=O)N(C)c3ccccc31)C2=O
+1457,COc1cccc(CN(C)C(c2ccccc2)c2ccccc2)c1OC
+4421,COc1ccccc1N1CCN(C(=O)C2CCCCN2S(=O)(=O)c2ccc(C)cc2)CC1
+492,COc1cc(C2CC(=O)Nc3c2c(O)nc2ncnn32)ccc1O
+1433,COc1cc(CN2CCN(Cc3ccc(C)cc3)C(CCO)C2)cc(OC)c1O
+1792,COc1ccccc1N1CCN(c2nccc(C)n2)CC1
+4667,COc1ccc(C(=O)N2CCCc3ccccc32)cc1Br
+3793,Cc1c(OCCCN2CCN(c3cccc4ccccc34)CC2)ccc2c[nH]c(O)c12
+7214,COc1ccccc1N1CCN(Cc2cc3c(cc2[N+](=O)[O-])OCO3)CC1
+6151,COc1ccc2c(ccc3c(C(O)NCc4ccc(Cl)cc4)noc32)c1

@@ -1,0 +1,19 @@
+{
+    "logging": {
+        "job_id": "25-02-2024",
+        "job_name": "Task2_demo_thompson_loop0",
+        "logging_path": "/home/springnuance/reinvent-hitl/Chemists-Component/./results/Task2_demo_thompson_25-02-2024_seed_1718/./loop0/progress_t10.log",
+        "recipient": "local",
+        "sender": "http://127.0.0.1"
+    },
+    "model_type": "default",
+    "parameters": {
+        "batch_size": 128,
+        "model_path": "/home/springnuance/reinvent-hitl/Chemists-Component/./results/Task2_demo_thompson_25-02-2024_seed_1718/./loop0/results_t10/Agent.ckpt",
+        "num_smiles": 1024,
+        "output_smiles_path": "/home/springnuance/reinvent-hitl/Chemists-Component/./results/Task2_demo_thompson_25-02-2024_seed_1718/./loop0/results_t10/sampled.csv",
+        "with_likelihood": false
+    },
+    "run_type": "sampling",
+    "version": 3
+}
