@@ -1,0 +1,63 @@
+{
+    "logging": {
+        "job_id": "02-04-2024",
+        "job_name": "Task2_demo_thompson_loop0",
+        "logging_frequency": 0,
+        "logging_path": "/home/springnuance/reinvent-hitl/Chemists-Component-Binary-Preference/./results/Task2_demo_thompson_02-04-2024_seed_9774/./loop0/progress_t3.log",
+        "recipient": "local",
+        "result_folder": "/home/springnuance/reinvent-hitl/Chemists-Component-Binary-Preference/./results/Task2_demo_thompson_02-04-2024_seed_9774/./loop0/results_t3",
+        "sender": "http://127.0.0.1"
+    },
+    "model_type": "default",
+    "parameters": {
+        "diversity_filter": {
+            "bucket_size": 25,
+            "minscore": 0.2,
+            "minsimilarity": 0.4,
+            "name": "IdenticalMurckoScaffold"
+        },
+        "inception": {
+            "memory_size": 20,
+            "sample_size": 5,
+            "smiles": []
+        },
+        "reinforcement_learning": {
+            "agent": "../Reinvent/data/random.prior.new",
+            "batch_size": 128,
+            "learning_rate": 0.0001,
+            "margin_threshold": 50,
+            "n_steps": 300,
+            "prior": "../Reinvent/data/random.prior.new",
+            "reset": 0,
+            "reset_score_cutoff": 0.5,
+            "sigma": 128
+        },
+        "scoring_function": {
+            "name": "custom_sum",
+            "parallel": false,
+            "parameters": [
+                {
+                    "component_type": "predictive_property",
+                    "name": "Human-component",
+                    "specific_parameters": {
+                        "container_type": "gpflow_container",
+                        "descriptor_type": "ecfp",
+                        "gpflow": "regression",
+                        "model_path": "/home/springnuance/reinvent-hitl/Chemists-Component-Binary-Preference/./results/Task2_demo_thompson_02-04-2024_seed_9774/./loop0/models/model_3",
+                        "size": 1024,
+                        "transformation": {
+                            "high": 1,
+                            "low": 0,
+                            "transformation_type": "clipping"
+                        },
+                        "use_counts": true,
+                        "use_features": true
+                    },
+                    "weight": 1
+                }
+            ]
+        }
+    },
+    "run_type": "reinforcement_learning",
+    "version": 3
+}
