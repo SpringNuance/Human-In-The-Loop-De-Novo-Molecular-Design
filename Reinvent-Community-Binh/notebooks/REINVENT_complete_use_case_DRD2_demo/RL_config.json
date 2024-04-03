@@ -1,0 +1,109 @@
+{
+    "logging": {
+        "job_id": "demo",
+        "job_name": "Reinforcement learning demo",
+        "logging_frequency": 10,
+        "logging_path": "./REINVENT_complete_use_case_DRD2_demo/progress.log",
+        "recipient": "local",
+        "result_folder": "./REINVENT_complete_use_case_DRD2_demo/results",
+        "sender": "http://127.0.0.1"
+    },
+    "model_type": "default",
+    "parameters": {
+        "diversity_filter": {
+            "minscore": 0.4,
+            "minsimilarity": 0.4,
+            "name": "IdenticalMurckoScaffold",
+            "nbmax": 25
+        },
+        "inception": {
+            "memory_size": 100,
+            "sample_size": 10,
+            "smiles": []
+        },
+        "reinforcement_learning": {
+            "agent": "/home/springnuance/reinvent-hitl/Reinvent-Community-Binh/notebooks/models/random.prior.new",
+            "batch_size": 128,
+            "learning_rate": 0.0001,
+            "margin_threshold": 50,
+            "n_steps": 125,
+            "prior": "/home/springnuance/reinvent-hitl/Reinvent-Community-Binh/notebooks/models/random.prior.new",
+            "sigma": 128
+        },
+        "scoring_function": {
+            "name": "custom_product",
+            "parallel": false,
+            "parameters": [
+                {
+                    "component_type": "predictive_property",
+                    "name": "Regression model",
+                    "specific_parameters": {
+                        "descriptor_type": "ecfp_counts",
+                        "model_path": "/home/springnuance/reinvent-hitl/Reinvent-Community-Binh/notebooks/models/Aurora_model.pkl",
+                        "radius": 3,
+                        "scikit": "regression",
+                        "size": 2048,
+                        "transformation": {
+                            "high": 9,
+                            "k": 0.25,
+                            "low": 4,
+                            "transformation_type": "sigmoid"
+                        },
+                        "use_counts": true,
+                        "use_features": true
+                    },
+                    "weight": 2
+                },
+                {
+                    "component_type": "matching_substructure",
+                    "name": "Matching substructure",
+                    "specific_parameters": {
+                        "smiles": [
+                            "c1ccccc1CC"
+                        ]
+                    },
+                    "weight": 1
+                },
+                {
+                    "component_type": "custom_alerts",
+                    "name": "Custom alerts",
+                    "specific_parameters": {
+                        "smiles": [
+                            "[*;r8]",
+                            "[*;r9]",
+                            "[*;r10]",
+                            "[*;r11]",
+                            "[*;r12]",
+                            "[*;r13]",
+                            "[*;r14]",
+                            "[*;r15]",
+                            "[*;r16]",
+                            "[*;r17]",
+                            "[#8][#8]",
+                            "[#6;+]",
+                            "[#16][#16]",
+                            "[#7;!n][S;!$(S(=O)=O)]",
+                            "[#7;!n][#7;!n]",
+                            "C#C",
+                            "C(=[O,S])[O,S]",
+                            "[#7;!n][C;!$(C(=[O,N])[N,O])][#16;!s]",
+                            "[#7;!n][C;!$(C(=[O,N])[N,O])][#7;!n]",
+                            "[#7;!n][C;!$(C(=[O,N])[N,O])][#8;!o]",
+                            "[#8;!o][C;!$(C(=[O,N])[N,O])][#16;!s]",
+                            "[#8;!o][C;!$(C(=[O,N])[N,O])][#8;!o]",
+                            "[#16;!s][C;!$(C(=[O,N])[N,O])][#16;!s]"
+                        ]
+                    },
+                    "weight": 1
+                },
+                {
+                    "component_type": "qed_score",
+                    "name": "QED Score",
+                    "weight": 1
+                }
+            ]
+        }
+    },
+    "run_type": "reinforcement_learning",
+    "version": 3
+}
