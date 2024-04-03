@@ -1,0 +1,24 @@
+{
+    "logging": {
+        "job_id": "demo",
+        "job_name": "Create model demo",
+        "logging_path": "./REINVENT_create_model_demo/progress.log",
+        "recipient": "local",
+        "result_folder": "./REINVENT_create_model_demo/results",
+        "sender": "http://127.0.0.1"
+    },
+    "parameters": {
+        "cell_type": "lstm",
+        "dropout": 0.0,
+        "embedding_layer_size": 256,
+        "input_smiles_path": "/home/springnuance/reinvent-hitl/Reinvent-Community-Binh/notebooks/data/chembl.filtered.smi",
+        "layer_normalization": false,
+        "layer_size": 512,
+        "max_sequence_length": 256,
+        "num_layers": 3,
+        "output_model_path": "./REINVENT_create_model_demo/empty_model.ckpt",
+        "standardize": false
+    },
+    "run_type": "create_model",
+    "version": 3
+}
