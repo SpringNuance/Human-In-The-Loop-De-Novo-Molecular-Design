@@ -1,2 +1,0 @@
-from testing.link_invent.model_vocabulary_tests.test_model_vocabulary import TestModelVocabulary
-from testing.link_invent.model_vocabulary_tests.test_paired_model_vocabulary import TestPairedModelVocabulary

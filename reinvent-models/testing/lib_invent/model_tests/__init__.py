@@ -1,1 +1,0 @@
-from testing.lib_invent.model_tests.decorator_model_test import TestDecoratorModel
