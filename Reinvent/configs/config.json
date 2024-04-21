@@ -1,76 +1,41 @@
 {
-  "logging": {
-      "job_id": "demo_drd2_janosch_ecfpcount_corrected_K4_None",
-      "job_name": "fine-tune predictive component",
-      "logging_frequency": 0,
-      "logging_path": "demo_drd2_janosch_ecfpcount_corrected_K4_None_seed1/progress.log", #replace with your output folder path
-      "recipient": "local",
-      "result_folder": "demo_drd2_janosch_ecfpcount_corrected_K4_None_seed1/results", #replace with your output folder path
-      "sender": "http://127.0.0.1"
+  "USER_NAME": "your name",
+  "MAIN_TEST_PATH": "/path/to/a/test/folder",
+  "DEVELOPMENT_ENVIRONMENT": true,
+  "COMPONENT_SPECIFIC":
+  {
+    "AZDOCK": {
+      "AZDOCK_DOCKER_SCRIPT_PATH": "/<your_path>/docker.py",
+      "AZDOCK_ENV_PATH": "/<your_path>/miniconda3/envs/AZdock/bin/python",
+      "AZDOCK_DEBUG": true
+    },
+    "DOCKSTREAM": {
+      "DOCKSTREAM_DOCKER_SCRIPT_PATH": "/<your_path>/docker.py",
+      "DOCKSTREAM_ENV_PATH": "/<your_path>/miniconda3/envs/DockStream/bin/python",
+      "DOCKSTREAM_DEBUG": true
+    },
+    "AZGARD": {
+      "AZGARD_EXECUTOR_SCRIPT_PATH": "/<your_path>/executor.py",
+      "AZGARD_ENV_PATH": "/<your_path>/miniconda3/envs/AZgard/bin/python",
+      "AZGARD_DEBUG": true
+    },
+    "ICOLOS": {
+      "ICOLOS_EXECUTOR_PATH": "/<your_path>/miniconda3/envs/icolosprod/bin/icolos",
+      "ICOLOS_DEBUG": true
+    },
+    "AIZYNTH": {
+      "CONFIG": "/projects/mai/synthesisplanning/minimal_config.yml"
+    }
   },
-  "model_type": "default",
-  "parameters": {
-      "diversity_filter": {
-          "bucket_size": 25,
-          "minscore": 0.4,
-          "minsimilarity": 0.4,
-          "name": "IdenticalMurckoScaffold"
-      },
-      "inception": {
-          "memory_size": 20,
-          "sample_size": 5,
-          "smiles": []
-      },
-      "reinforcement_learning": {
-          "agent": "/home/klgx638/Projects/reinventcli/data/random.prior.new", #replace with your Reinvent path
-          "batch_size": 128,
-          "learning_rate": 0.0001,
-          "margin_threshold": 50,
-          "n_steps": 250,
-          "prior": "/home/klgx638/Projects/reinventcli/data/random.prior.new", #replace with your Reinvent path
-          "reset": 0,
-          "reset_score_cutoff": 0.5,
-          "sigma": 180
-      },
-      "scoring_function": {
-          "name": "custom_sum",
-          "parallel": true,
-          "parameters": [
-              {
-                  "component_type": "predictive_property",
-                  "name": "bioactivity",
-                  "specific_parameters": {
-                      "container_type": "scikit_container",
-                      "descriptor_type": "ecfp_counts",
-                      "model_path": "demo_janosch/drd2_oracle_as_ground_truth/initial_qsar_model_oracle_truth.pkl", #replace path
-                      "radius": 3,
-                      "scikit": "classification",
-                      "selected_feat_idx": "none",
-                      "size": 2048,
-                      "smiles": "",
-                      "transformation": {
-                          "transformation_type": "no_transformation"
-                      },
-                      "use_counts": false,
-                      "use_features": false
-                  },
-                  "weight": 1
-              },
-              {
-                  "component_type": "qed_score",
-                  "name": "QED",
-                  "specific_parameters": {
-                      "transformation": {
-                          "low": 0.35,
-                          "transformation": true,
-                          "transformation_type": "right_step"
-                      }
-                  },
-                  "weight": 0.5
-              }
-          ]
-      }
+  "ENVIRONMENTAL_VARIABLES": {
+    "PIP_URL": "<that`s confidential>",
+    "PIP_KEY": "<that`s confidential>"
   },
-  "run_type": "reinforcement_learning",
-  "version": 3
+  "ACTIVITY_REGRESSION": "",
+  "ACTIVITY_CLASSIFICATION": "",
+  "SMILES_SET_PATH": "",
+  "PRIOR_PATH": "",
+  "LIBINVENT_PRIOR_PATH": "",
+  "SMILES_SET_LINK_INVENT_PATH":"",
+  "LINK_INVENT_PRIOR_PATH": ""
 }

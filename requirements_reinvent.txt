@@ -1,0 +1,17 @@
+absl-py==0.9.0
+astor==0.8.1
+future==0.18.2
+gast==0.2.2
+grpcio==1.27.2
+keras-applications==1.0.8
+markdown==3.2.1
+opt-einsum==3.2.0
+protobuf==3.11.3
+reinvent-chemistry==0.0.50
+reinvent-models==0.0.15rc1
+reinvent-scoring==0.0.73
+tensorboard==1.15.0
+tensorflow==1.15.2
+tensorflow-estimator==1.15.1
+termcolor==1.1.0
+werkzeug==1.0.0

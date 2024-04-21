@@ -32,9 +32,10 @@ def read_json_file(path):
 
 if __name__ == "__main__":
     args = parser.parse_args()
-
+    print(args)
     base_config = read_json_file(args.base_config)
     run_config = read_json_file(args.run_config)
-
+    print("\nThe base config is: \n", base_config)
+    print("\nThe run config is: \n", run_config)
     manager = Manager(base_config, run_config)
     manager.run()

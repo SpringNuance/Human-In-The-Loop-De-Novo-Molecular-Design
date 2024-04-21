@@ -19,5 +19,6 @@ class Manager:
 
     def _load_environmental_variables(self):
         environmental_variables = self.base_configuration["ENVIRONMENTAL_VARIABLES"]
+        #environmental_variables = self.base_configuration
         for key, value in environmental_variables.items():
             os.environ[key] = value

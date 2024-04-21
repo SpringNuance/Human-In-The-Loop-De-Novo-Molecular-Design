@@ -3,6 +3,7 @@ import json
 import pandas as pd
 import pickle
 import numpy as np
+
 def write_sample_file(jobid, jobname, output_dir, loop, it):
   try:
       os.makedirs(output_dir)
