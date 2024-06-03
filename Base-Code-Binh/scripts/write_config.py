@@ -20,7 +20,7 @@ def write_REINVENT_config(reinvent_dir, reinvent_env, output_dir, conf_filename,
 
     human_component = {
         "component_type": "predictive_property",
-        "name": "Human-component",
+        "name": "Human-Component",
         "weight": 1,
         "specific_parameters": {
             "model_path": "models/bradley_terry_model.pth",

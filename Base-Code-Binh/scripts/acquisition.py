@@ -107,6 +107,16 @@ def margin_selection(data, n, smiles, fit, selected_feedback, is_counts = True, 
     query_idx = np.argsort(values)[:n]
     return local_idx_to_fulldata_idx(N, selected_feedback, query_idx)
 
+def thompson_sampling(data, n, smiles, fit, selected_feedback, is_counts = True, rng = None, t = None):
+    N = len(data)
+    mols = [Chem.MolFromSmiles(s) for s in smiles]
+    fps = fingerprints_from_mol(mols)
+    if not is_counts:
+        fps = fingerprints_from_mol(mols, type = 'binary')
+    values = fit._predict(fps)
+    query_idx = np.argsort(values)[::-1][:n]
+    return local_idx_to_fulldata_idx(N, selected_feedback, query_idx)
+
 # def diversity_sampling
 # 
 # def expected_model_change
@@ -144,6 +154,8 @@ def select_query(data, n, smiles, fit, selected_feedback, acquisition = 'random'
         acq = exploitation_regression
     elif acquisition == 'random':
         acq = random_selection
+    elif acquisition == "thompson":
+        acq = thompson_sampling
     elif acquisition == 'epig':
         acq = epig
     else:

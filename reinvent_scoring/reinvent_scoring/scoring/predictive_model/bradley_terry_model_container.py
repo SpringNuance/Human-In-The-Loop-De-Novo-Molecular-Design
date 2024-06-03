@@ -45,7 +45,7 @@ class BradleyTerryModelContainer(BaseModelContainer):
             # excluse current_fps from fps1
             preference_list = []
             for fps in fps2:
-                preference_list.append(self.predict_from_fingerprints(current_fps, fps)) # can be done in batces later
+                preference_list.append(self.predict_from_fingerprints(current_fps, fps)) # can be done in batches later
             activity = np.mean(preference_list)
             activity_mean.append(activity)
         return activity_mean

@@ -1,6 +1,6 @@
 {
     "logging": {
-        "job_id": "outputs_rounds_2_iters_10_queries_10_thompson_noise_0.0_seed_42",
+        "job_id": "outputs_rounds_2_iters_10_queries_10_thompson_noise_0.0",
         "job_name": "fine-tune predictive component HITL",
         "logging_frequency": 0,
         "logging_path": "outputs_rounds_2_iters_10_queries_10_thompson_noise_0.0_seed_42/progress.log",
@@ -38,12 +38,12 @@
             "parameters": [
                 {
                     "component_type": "predictive_property",
-                    "name": "Human-component",
+                    "name": "Human-Component",
                     "specific_parameters": {
-                        "bradley": "classification",
+                        "bradley_terry": "classification",
                         "container_type": "bradley_terry_container",
                         "descriptor_type": "ecfp",
-                        "model_path": "model/bradley_terry_model.pth",
+                        "model_path": "models/bradley_terry_model.pth",
                         "scikit": "classification",
                         "size": 2048,
                         "transformation": {
