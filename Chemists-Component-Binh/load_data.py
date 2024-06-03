@@ -145,29 +145,31 @@ def load_config(acquisition,seed,loop, jobid=None):
         jobid=jobid
     jobname = 'Task2_demo_{}'.format(acquisition)
 
-    N0=10 # size of initial training data L
-    n_restarts=2 # parameters of GP optimization
-    n_batch=10    # number of molecules shown at each iteration
-    n_iteration=10  # the number of iteration
-    fpdim=1024 #dimension of morgan fingerprint
-    step=1
-    cwd=os.getcwd()
+    N0 = 10 # size of initial training data L
+    n_restarts = 2 # parameters of GP optimization
+    n_batch = 10    # number of molecules shown at each iteration
+    n_iteration = 10  # the number of iteration
+    fpdim = 1024 # dimension of morgan fingerprint
+    step = 1
+    cwd = os.getcwd()
     
-    output_dir=os.path.join(cwd,"./results/{}_{}_seed_{}".format(jobname, jobid, seed))
+    output_dir = f"{cwd}/results/{jobname}_{jobid}_seed_{seed}"
     
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
-    output_dir=os.path.join(output_dir,"./loop{}".format(loop))
+    output_dir = f"{output_dir}/loop_{loop}"
+    
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
-    lastloop_dir=None
+    lastloop_dir = None
+    
     return jobid, jobname, N0, n_restarts, n_batch, n_iteration, fpdim, step, output_dir, lastloop_dir
 
 def load_data_config(usecase, lastloop_dir=None):
-    train_num=10000 # sample 10.000 molecules from training dataset to U
-    test_num=2000 # sample 2000 molecules from testing dataset to the test set
-    data_dir= './data/'
-    train_data_file , test_data_file, y_field=parse_usecase(usecase)
+    train_num = 10000 # sample 10.000 molecules from training dataset to U
+    test_num = 2000 # sample 2000 molecules from testing dataset to the test set
+    data_dir= 'data'
+    train_data_file , test_data_file, y_field = parse_usecase(usecase)
 
     test_data_path=os.path.join(data_dir,test_data_file) if test_data_file else None
 
@@ -199,14 +201,14 @@ def load_data(train_data_path, test_data_path,
         print('splitting')
         train_data, test_data =train_test_split(train_data, test_size=0.2,stratify=train_data[y_field])
    
-    L=train_data.sample(n=int(N0)).index
+    L = train_data.sample(n=int(N0)).index
     #print('training data have {} active'.format(train_data.loc[train_data[y_field]>=0.5].shape))
     #print('training data have {} inactive'.format(train_data.loc[train_data[y_field]<0.5].shape))
     #print('testing data have {} active'.format(test_data.loc[test_data[y_field]>=0.5].shape))
     #print('testing data have {} inactive'.format(test_data.loc[test_data[y_field]<0.5].shape))
-    train_ds=Dataset2D(train_data, y_field=y_field, id_field=id_field, ext=ext)
-    test_ds=Dataset2D(test_data, y_field=y_field, id_field=id_field, ext=ext)
-    start=time.time()
+    train_ds = Dataset2D(train_data, y_field=y_field, id_field=id_field, ext=ext)
+    test_ds = Dataset2D(test_data, y_field=y_field, id_field=id_field, ext=ext)
+    start = time.time()
     train_str = DataStructure(train_ds, dict(physchem=morganX), num_proc=8)
     test_str = DataStructure(test_ds, dict(physchem=morganX), num_proc=8)
     print("transformation spend {} s".format(time.time()-start))

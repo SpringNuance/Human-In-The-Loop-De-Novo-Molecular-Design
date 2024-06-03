@@ -57,17 +57,15 @@ def write_config_file(jobid, jobname, reinvent_dir, reinvent_env, output_dir, fp
     "name": "Human-component",
     "weight": 1,
     "specific_parameters": {
-      "model_path": modelfile,
-      "gpflow": "regression",
+      "model_path": "model/bradley_terry_model.pth",
+      "bradley": "classification",
       "descriptor_type": "ecfp",
-      "size": fpdim,
-      "container_type":"gpflow_container",
+      "size": 2048,
+      "container_type": "bradley_terry_container",
       "use_counts": True,
       "use_features": True,
       "transformation": {
-        "transformation_type":"clipping",
-        "low":0,
-        "high":1
+        "transformation_type": "no_transformation",
       }
     }
   }
