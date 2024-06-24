@@ -12,6 +12,8 @@ from reinvent_scoring.scoring.enums import TransformationTypeEnum, Transformatio
 import torch
 import torch.nn as nn
 
+import importlib.util
+
 class PredictivePropertyComponent(BaseScoreComponent):
     def __init__(self, parameters: ComponentParameters):
         super().__init__(parameters)
@@ -31,22 +33,28 @@ class PredictivePropertyComponent(BaseScoreComponent):
     def _load_model(self, parameters: ComponentParameters):
         activity_model = self._load_container(parameters)
         return activity_model
+    
+    ###############################
+    # METHOD CHANGED BY XUAN BINH #
+    ###############################
 
     def _load_container(self, parameters: ComponentParameters):
-        model_path = self.parameters.specific_parameters.get(self.component_specific_parameters.MODEL_PATH, "")
-        model_name = self.parameters.specific_parameters.get(self.component_specific_parameters.MODEL_DEFINITION, "")
-        #initialize
-        # out_dim = self.parameters.specific_parameters.get(self.component_specific_parameters.OUT_DIM, "")
-        # dropout = self.parameters.specific_parameters.get(self.component_specific_parameters.DROPOUT, "")
-        # input_dim = self.parameters.specific_parameters.get(self.component_specific_parameters.SIZE, "")
-        # layers = self.parameters.specific_parameters.get(self.component_specific_parameters.LAYERS, "")
+        model_pretrained_path = self.parameters.specific_parameters["model_pretrained_path"]
+        model_name = self.parameters.specific_parameters["model_name"]
+        model_definition_path = self.parameters.specific_parameters["model_definition_path"]
         
         print("\nreinvent_scoring/scoring/score_components/standard/predictive_property_component.py _load_container is called")
-        
+
         if model_name == "bradley_terry":
-            model = torch.load(model_path, map_location="cpu")
-            model.eval()
-            packaged_model = ModelContainer(model, parameters.specific_parameters)
+            # This code import the module file by using absolute path
+            spec = importlib.util.spec_from_file_location(model_name, model_definition_path)
+            model_module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(model_module)
+            # Constructing the Bradley Terry model
+            feedback_model = model_module.BradleyTerryModel()
+            # Loading the state dict
+            feedback_model.load_state_dict(torch.load(model_pretrained_path))
+            activity_model = ModelContainer(feedback_model, parameters.specific_parameters)
         elif model_name == "random_forest":
             pass
         elif model_name == "ListNet":
@@ -54,10 +62,9 @@ class PredictivePropertyComponent(BaseScoreComponent):
         else:
             raise ValueError(f"Model {model_name} not recognized")
         
+        print("\n(predictive_property_component.py) Model has been loaded successfully from path: ", model_pretrained_path)
         
-        print("Model has been loaded successfully from path: ", model_path)
-        
-        return packaged_model
+        return activity_model
 
     def _apply_transformation(self, predicted_activity, parameters: dict):
         transform_params = parameters.get(self.component_specific_parameters.TRANSFORMATION)

@@ -3,7 +3,7 @@
 import os
 import json
 
-def write_REINVENT_config_bradley_terry(reinvent_dir, reinvent_env, output_dir, conf_filename, jobid, jobname):
+def write_REINVENT_config_bradley_terry(reinvent_dir, jobid, jobname, output_dir, conf_filename):
 
     diversity_filter = {
         "name": "IdenticalMurckoScaffold",
@@ -23,7 +23,8 @@ def write_REINVENT_config_bradley_terry(reinvent_dir, reinvent_env, output_dir, 
         "name": "Human-Component",
         "weight": 1,
         "specific_parameters": {
-            "model_path": "/home/springnuance/reinvent-hitl/Base-Code-Binh/training_Bradley_Terry_model/bradley_terry_model.pth",
+            "model_pretrained_path": "/home/springnuance/reinvent-hitl/Base-Code-Binh/training_Bradley_Terry_model/bradley_terry_model.pth",
+            "model_definition_path": "/home/springnuance/reinvent-hitl/Base-Code-Binh/training_Bradley_Terry_model/bradley_terry.py",
             "model_name": "bradley_terry",
             "bradley_terry": "classification",
             "descriptor_type": "ecfp",
@@ -85,28 +86,3 @@ def write_REINVENT_config_bradley_terry(reinvent_dir, reinvent_env, output_dir, 
         json.dump(configuration, f, indent=4, sort_keys=True)
     
     return configuration_JSON_path
-
-
-def write_sample_file(jobid, jobname, agent_dir, N):
-  configuration={
-    "logging": {
-        "job_id": jobid,
-        "job_name":  "sample_agent_{}".format(jobname),
-        "logging_path": os.path.join(agent_dir, "sampling.log"),
-        "recipient": "local",
-        "sender": "http://127.0.0.1"
-    },
-    "parameters": {
-        "model_path": os.path.join(agent_dir, "Agent.ckpt"),
-        "output_smiles_path": os.path.join(agent_dir, "sampled_N_{}.csv".format(N)),
-        "num_smiles": N,
-        "batch_size": 128,                          
-        "with_likelihood": False
-    },
-    "run_type": "sampling",
-    "version": 2
-  }
-  conf_filename = os.path.join(agent_dir, "evaluate_agent_config.json")
-  with open(conf_filename, 'w') as f:
-      json.dump(configuration, f, indent=4, sort_keys=True)
-  return conf_filename
