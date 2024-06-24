@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "/home/springnuance/reinvent-hitl/Reinvent/input.py", line 41, in <module>
+    manager.run()
+  File "/home/springnuance/reinvent-hitl/Reinvent/running_modes/manager.py", line 17, in run
+    runner = RunningMode(self.run_configuration)
+  File "/home/springnuance/reinvent-hitl/Reinvent/running_modes/constructors/running_mode.py", line 18, in __new__
+    return ReinforcementLearningModeConstructor(configuration)
+  File "/home/springnuance/reinvent-hitl/Reinvent/running_modes/constructors/reinforcement_learning_mode_constructor.py", line 44, in __new__
+    scoring_function = ScoringFunctionFactory(config.scoring_function)
+  File "/home/springnuance/reinvent-hitl/reinvent-scoring/reinvent_scoring/scoring/scoring_function_factory.py", line 16, in __new__
+    return cls.create_scoring_function_instance(sf_parameters, scoring_function_registry)
+  File "/home/springnuance/reinvent-hitl/reinvent-scoring/reinvent_scoring/scoring/scoring_function_factory.py", line 25, in create_scoring_function_instance
+    return scoring_function(parameters, sf_parameters.parallel)
+  File "/home/springnuance/reinvent-hitl/reinvent-scoring/reinvent_scoring/scoring/function/custom_sum.py", line 13, in __init__
+    super().__init__(parameters, parallel)
+  File "/home/springnuance/reinvent-hitl/reinvent-scoring/reinvent_scoring/scoring/function/base_scoring_function.py", line 62, in __init__
+    self.scoring_components = factory.create_score_components()
+  File "/home/springnuance/reinvent-hitl/reinvent-scoring/reinvent_scoring/scoring/score_components/score_component_factory.py", line 95, in create_score_components
+    components = [create_component(component) for component in self._parameters]
+  File "/home/springnuance/reinvent-hitl/reinvent-scoring/reinvent_scoring/scoring/score_components/score_component_factory.py", line 95, in <listcomp>
+    components = [create_component(component) for component in self._parameters]
+  File "/home/springnuance/reinvent-hitl/reinvent-scoring/reinvent_scoring/scoring/score_components/score_component_factory.py", line 89, in create_component
+    component_instance = component(component_params)
+  File "/home/springnuance/reinvent-hitl/reinvent-scoring/reinvent_scoring/scoring/score_components/standard/predictive_property_component.py", line 18, in __init__
+    self.activity_model = self._load_model(parameters)
+  File "/home/springnuance/reinvent-hitl/reinvent-scoring/reinvent_scoring/scoring/score_components/standard/predictive_property_component.py", line 32, in _load_model
+    activity_model = self._load_container(parameters)
+  File "/home/springnuance/reinvent-hitl/reinvent-scoring/reinvent_scoring/scoring/score_components/standard/predictive_property_component.py", line 61, in _load_container
+    model.load_state_dict(torch.load(model_path, map_location="cpu"))
+  File "/home/springnuance/miniconda3/envs/ReinventCommunity/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1672, in load_state_dict
+    self.__class__.__name__, "\n\t".join(error_msgs)))
+RuntimeError: Error(s) in loading state_dict for Sequential:
+	Missing key(s) in state_dict: "0.weight", "0.bias", "2.weight", "2.bias", "4.weight", "4.bias". 
+	Unexpected key(s) in state_dict: "fc.0.weight", "fc.0.bias", "fc.2.weight", "fc.2.bias", "fc.4.weight", "fc.4.bias". 

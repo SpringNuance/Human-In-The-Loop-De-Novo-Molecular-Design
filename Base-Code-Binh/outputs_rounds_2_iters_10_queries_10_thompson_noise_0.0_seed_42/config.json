@@ -22,12 +22,12 @@
             "smiles": []
         },
         "reinforcement_learning": {
-            "agent": "../Reinvent/data/random.prior.new",
+            "agent": "/home/springnuance/reinvent-hitl/Reinvent/data/random.prior.new",
             "batch_size": 128,
             "learning_rate": 0.0001,
             "margin_threshold": 50,
             "n_steps": 100,
-            "prior": "../Reinvent/data/random.prior.new",
+            "prior": "/home/springnuance/reinvent-hitl/Reinvent/data/random.prior.new",
             "reset": 0,
             "reset_score_cutoff": 0.5,
             "sigma": 128
@@ -43,8 +43,7 @@
                         "bradley_terry": "classification",
                         "container_type": "bradley_terry_container",
                         "descriptor_type": "ecfp",
-                        "model_path": "models/bradley_terry_model.pth",
-                        "scikit": "classification",
+                        "model_path": "/home/springnuance/reinvent-hitl/Base-Code-Binh/training_Bradley_Terry_model/bradley_terry_model.pth",
                         "size": 2048,
                         "transformation": {
                             "transformation_type": "no_transformation"

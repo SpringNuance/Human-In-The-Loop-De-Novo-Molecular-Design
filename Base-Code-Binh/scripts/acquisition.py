@@ -107,15 +107,16 @@ def margin_selection(data, n, smiles, fit, selected_feedback, is_counts = True, 
     query_idx = np.argsort(values)[:n]
     return local_idx_to_fulldata_idx(N, selected_feedback, query_idx)
 
-def thompson_sampling(data, n, smiles, fit, selected_feedback, is_counts = True, rng = None, t = None):
-    N = len(data)
-    mols = [Chem.MolFromSmiles(s) for s in smiles]
-    fps = fingerprints_from_mol(mols)
-    if not is_counts:
-        fps = fingerprints_from_mol(mols, type = 'binary')
-    values = fit._predict(fps)
-    query_idx = np.argsort(values)[::-1][:n]
-    return local_idx_to_fulldata_idx(N, selected_feedback, query_idx)
+def thompson_sampling(U, X_U, n, model, acquisition, X_updated, y_updated, L=None, t=None):
+    X_pool = X_U[U,:]
+    # a sample from posterior
+    preds_p = model.predict_f_samples(X_pool) 
+    preds_p = np.squeeze(preds_p)
+    # greedily maximize with respect to the randomly sampled belief
+    idx = np.argsort(preds_p)[::-1] 
+    assert len(idx)>0
+    selected = idx[:n]
+    return U[selected]
 
 # def diversity_sampling
 # 
