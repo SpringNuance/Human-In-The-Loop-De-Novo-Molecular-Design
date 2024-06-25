@@ -37,26 +37,25 @@ class ActivityEvaluationModel():
     def __init__(self):
         #with open(path, "rb") as f:
         #    self.clf = pickle.load(f)
-        pass
+        self.oracle = Oracle(name = 'DRD2')
 
-    def oracle_score(self, smi):
-        oracle = Oracle(name = 'DRD2')
-        if smi:
-            score = oracle(smi)
+    def oracle_score(self, smiles):
+        if smiles:
+            score = self.oracle(smiles)
             return float(score)
         return 0.0
     
-    def human_score(self, smi, noise_param):
-        if smi:
+    def human_score(self, smiles, noise_param):
+        if smiles:
             #if self.oracle_score(smi) > 0.5:
             #    y = 1
             #else:
             #    y = 0
             if noise_param > 0:
                 noise = np.random.normal(0, noise_param, 1).item()
-                human_score = np.clip(self.oracle_score(smi) + noise, 0, 1)
+                human_score = np.clip(self.oracle_score(smiles) + noise, 0, 1)
             else:
-                human_score = self.oracle_score(smi)
+                human_score = self.oracle_score(smiles)
             #human_score = y * np.random.binomial(1, noise_param) + (1-y) * np.random.binomial(1, 1 - noise_param)
             return float(human_score)
         else:

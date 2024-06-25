@@ -228,7 +228,7 @@ def do_run(
                 # Get raw scores and transformed score (if any) from the high scoring molecules in U
                 raw_scoring_component_names = ["raw_"+name for name in scoring_component_names] 
                 x_raw = data[raw_scoring_component_names].to_numpy()
-                x =  data[scoring_component_names].to_numpy()
+                x = data[scoring_component_names].to_numpy()
 
                 # get (binary) simulated chemist's responses
                 if model_type == "regression":
