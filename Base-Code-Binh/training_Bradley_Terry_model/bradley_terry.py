@@ -7,9 +7,9 @@ class BradleyTerryModel(nn.Module):
         self.fc = nn.Sequential(
             nn.Linear(feature_dim, 512),  
             nn.ReLU(),
-            nn.Linear(512, 128),  
+            nn.Linear(512, 256),  
             nn.ReLU(),
-            nn.Linear(128, 1)   # Output a single strength score per entity (lambda)
+            nn.Linear(256, 1)   # Output a single strength score per entity (lambda)
         )
     
     def forward(self, features_A, features_B):

@@ -5,7 +5,9 @@ from dataclasses import dataclass
 class ComponentSpecificParametersEnum:
     SCIKIT = "scikit"
     STAN = "stan"
+    SCORE_REGRESSSION = "score_regression"
     BRADLEY_TERRY = "bradley_terry"
+    RANK_LISTNET = "rank_listnet"
     CLAB_INPUT_FILE = "clab_input_file"
     DESCRIPTOR_TYPE = "descriptor_type"
     TRANSFORMATION = "transformation"

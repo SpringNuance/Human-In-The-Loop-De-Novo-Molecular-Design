@@ -13,4 +13,6 @@ class ContainerType:
     STAN_CONTAINER = "stan_container"
     TORCH_CONTAINER = "torch_container"
     ENSEMBLE_CONTAINER = "ensemble_container"
+    SCORE_REGRESSION_CONTAINER = "score_regression_container"
     BRADLEY_TERRY_CONTAINER = "bradley_terry_container"
+    RANK_LISTNET_CONTAINER = "rank_listnet_container"
