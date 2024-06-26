@@ -43,9 +43,19 @@ class PredictivePropertyComponent(BaseScoreComponent):
         model_name = self.parameters.specific_parameters["model_name"]
         model_definition_path = self.parameters.specific_parameters["model_definition_path"]
         
-        print("\nreinvent_scoring/scoring/score_components/standard/predictive_property_component.py _load_container is called")
+        print("\n(predictive_property_component.py) _load_container is called")
 
-        if model_name == "bradley_terry":
+        if model_name == "score_regression":
+            # This code import the module file by using absolute path
+            spec = importlib.util.spec_from_file_location(model_name, model_definition_path)
+            model_module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(model_module)
+            # Constructing the Score Regression model
+            feedback_model = model_module.ScoreRegressionModel()
+            # Loading the state dict
+            feedback_model.load_state_dict(torch.load(model_pretrained_path))
+            activity_model = ModelContainer(feedback_model, parameters.specific_parameters)
+        elif model_name == "bradley_terry":
             # This code import the module file by using absolute path
             spec = importlib.util.spec_from_file_location(model_name, model_definition_path)
             model_module = importlib.util.module_from_spec(spec)
@@ -55,10 +65,16 @@ class PredictivePropertyComponent(BaseScoreComponent):
             # Loading the state dict
             feedback_model.load_state_dict(torch.load(model_pretrained_path))
             activity_model = ModelContainer(feedback_model, parameters.specific_parameters)
-        elif model_name == "random_forest":
-            pass
-        elif model_name == "ListNet":
-            pass
+        elif model_name == "rank_listnet":
+            # This code import the module file by using absolute path
+            spec = importlib.util.spec_from_file_location(model_name, model_definition_path)
+            model_module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(model_module)
+            # Constructing the Rank ListNet model
+            feedback_model = model_module.RankListNetModel()
+            # Loading the state dict
+            feedback_model.load_state_dict(torch.load(model_pretrained_path))
+            activity_model = ModelContainer(feedback_model, parameters.specific_parameters)
         else:
             raise ValueError(f"Model {model_name} not recognized")
         

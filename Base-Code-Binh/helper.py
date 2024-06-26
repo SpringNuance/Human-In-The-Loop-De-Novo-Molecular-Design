@@ -1,18 +1,22 @@
 import numpy as np
 import pandas as pd
 import torch
+from torch import nn, optim
 import os
 from tdc import Oracle
 from rdkit import Chem
 from rdkit.Chem import AllChem
 
+from training_Score_Regression_model.score_regression import ScoreRegressionModel
 from training_Bradley_Terry_model.bradley_terry import BradleyTerryModel
 from training_Rank_ListNet_model.rank_listnet import RankListNetModel
-from training_Score_Regression_model.score_regression import ScoreRegressionModel
 
+from scripts.write_config_score_regression import write_REINVENT_config_score_regression
 from scripts.write_config_bradley_terry import write_REINVENT_config_bradley_terry
 from scripts.write_config_rank_listnet import write_REINVENT_config_rank_listnet
-from scripts.write_config_score_regression import write_REINVENT_config_score_regression
+
+from itertools import combinations
+
 
 def write_REINVENT_config(feedback_type, reinvent_dir, jobid, jobname, 
                           REINVENT_round_output_dir, conf_filename):
@@ -23,7 +27,7 @@ def write_REINVENT_config(feedback_type, reinvent_dir, jobid, jobname,
     if feedback_type == "scoring":
         configuration_JSON_path =\
             write_REINVENT_config_score_regression(reinvent_dir, jobid, jobname,
-                                                REINVENT_round_output_dir, conf_filename, feedback_type)
+                                                REINVENT_round_output_dir, conf_filename)
     elif feedback_type == "comparing":
         configuration_JSON_path =\
             write_REINVENT_config_bradley_terry(reinvent_dir, jobid, jobname,
@@ -37,15 +41,19 @@ def write_REINVENT_config(feedback_type, reinvent_dir, jobid, jobname,
     return configuration_JSON_path
 
         
-def change_config_json(configuration, REINVENT_n_steps, current_model_path):
+def change_config_json(configuration, REINVENT_n_steps, batch_size, current_model_path):
     # write specified number of RL optimization steps in configuration
     # (example: if num_rounds = 5 (rounds) and Reinvent REINVENT_n_steps = 100, we will do 5*100 RL optimization steps)
 
     configuration["parameters"]["reinforcement_learning"]["n_steps"] = REINVENT_n_steps
+
+    configuration["parameters"]["reinforcement_learning"]["batch_size"] = batch_size
+    configuration["parameters"]["reinforcement_learning"]["sigma"] = batch_size
+
     # write the model path at current HITL round
     configuration_scoring_function = configuration["parameters"]["scoring_function"]["parameters"]
     
-    configuration_scoring_function[0]["specific_parameters"]["model_pretrained_path"] = current_model_path
+    configuration_scoring_function[0]["specific_parameters"]["model_pretrained_path"] = os.path.abspath(current_model_path)
 
     configuration["parameters"]["scoring_function"]["parameters"] = configuration_scoring_function
 
@@ -85,14 +93,16 @@ def load_drd2_dataset(feedback_type, data_path):
         dataframe = pd.read_csv(data_path)
         smiles_list = dataframe["smiles"].values
         features = np.array([compute_fingerprints(smiles) for smiles in smiles_list])
-        labels_proba = dataframe["label_proba"].to_numpy()
-        labels_binary = dataframe["label_binary"].to_numpy()
+        label_proba = dataframe["label_proba"].to_numpy()
+        label_binary = dataframe["label_binary"].to_numpy()
         outputs = {
+            "smiles": smiles_list,
             "features": features,
-            "labels_proba": labels_proba,
-            "labels_binary": labels_binary
+            "label_proba": label_proba,
+            "label_binary": label_binary
         }
         return outputs
+    
     elif feedback_type == "comparing":
         # Load the training data for Bradley Terry model
         dataframe = pd.read_csv(data_path)
@@ -100,15 +110,18 @@ def load_drd2_dataset(feedback_type, data_path):
         smiles_2_list = dataframe["smiles_2"].values
         features_1 = np.array([compute_fingerprints(smiles) for smiles in smiles_list])
         features_2 = np.array([compute_fingerprints(smiles) for smiles in smiles_list])
-        labels_proba = dataframe["label_proba"].values
-        labels_binary = dataframe["label_binary"].values
+        label_proba = dataframe["label_proba"].values
+        label_binary = dataframe["label_binary"].values
         outputs = {
+            "smiles_1": smiles_1_list,
+            "smiles_2": smiles_2_list,
             "features_1": features_1,
             "features_2": features_2,
-            "labels_proba": labels_proba,
-            "labels_binary": labels_binary
+            "label_proba": label_proba,
+            "label_binary": label_binary
         }
         return outputs
+    
     elif feedback_type == "ranking":
         # Load the training data for Rank ListNet model
         dataframe = pd.read_csv(data_path)
@@ -118,51 +131,31 @@ def load_drd2_dataset(feedback_type, data_path):
         features_1 = np.array([compute_fingerprints(smiles) for smiles in smiles_1_list])
         features_2 = np.array([compute_fingerprints(smiles) for smiles in smiles_2_list])
         features_3 = np.array([compute_fingerprints(smiles) for smiles in smiles_3_list])
-        labels_1_proba = dataframe["label_1_proba"].values
-        labels_2_proba = dataframe["label_2_proba"].values
-        labels_3_proba = dataframe["label_3_proba"].values
-        labels_1_rank = dataframe["label_1_rank"].values
-        labels_2_rank = dataframe["label_2_rank"].values
-        labels_3_rank = dataframe["label_3_rank"].values
+        label_1_proba = dataframe["label_1_proba"].values
+        label_2_proba = dataframe["label_2_proba"].values
+        label_3_proba = dataframe["label_3_proba"].values
+        label_1_rank = dataframe["label_1_rank"].values
+        label_2_rank = dataframe["label_2_rank"].values
+        label_3_rank = dataframe["label_3_rank"].values
         outputs = {
+            "smiles_1": smiles_1_list,
+            "smiles_2": smiles_2_list,
+            "smiles_3": smiles_3_list,
             "features_1": features_1,
             "features_2": features_2,
             "features_3": features_3,
-            "labels_1_proba": labels_1_proba,
-            "labels_2_proba": labels_2_proba,
-            "labels_3_proba": labels_3_proba,
-            "labels_1_rank": labels_1_rank,
-            "labels_2_rank": labels_2_rank,
-            "labels_3_rank": labels_3_rank
+            "label_1_proba": label_1_proba,
+            "label_2_proba": label_2_proba,
+            "label_3_proba": label_3_proba,
+            "label_1_rank": label_1_rank,
+            "label_2_rank": label_2_rank,
+            "label_3_rank": label_3_rank
         }
         return outputs
     else:
         raise ValueError("Invalid model type")
-    
 
-
-
-
-def extract_ECFP_dataset(init_train_set_path, num_train_samples):
-    """
-        Load background training data used to pre-train the predictive model    
-    """
-    
-    print("Loading D0")
-    train_set = pd.read_csv(init_train_set_path)
-    feature_cols = [f"bit{i}" for i in range(2048)]
-    target_col = ["activity"]
-    smiles_train = train_set["smiles"].values.reshape(-1)
-    x_train = train_set[feature_cols].values
-    y_train = train_set[target_col].values.reshape(-1)
-    sample_weight = np.array([1. for i in range(len(x_train))])
-    print("The feature matrix shape: ", x_train.shape)
-    print("The labels shape: ", y_train.shape)
-
-    train_sample = train_set[train_set["activity"] == 1].sample(num_train_samples).smiles.tolist()
-    return x_train, y_train, sample_weight, smiles_train, train_sample
-
-def read_scaffold_result(scaffold_memory_path, threshold=0.5):
+def read_scaffold_result(scaffold_memory_path, choose_top_smiles):
     scaffold_df = pd.read_csv(scaffold_memory_path)
 
     data_len = len(scaffold_df)
@@ -174,10 +167,8 @@ def read_scaffold_result(scaffold_memory_path, threshold=0.5):
     raw_human_component = scaffold_df["raw_Human-Component"].to_numpy()
     total_score = scaffold_df["total_score"].to_numpy()
 
-    # save the indexes of high scoring molecules for bioactivity
-    high_scoring_idx = np.where(total_score > threshold)[0]
-
-    print(f'{len(high_scoring_idx)}/{data_len} high-scoring (> {threshold}) molecules')
+    # The scaffold memory is already sorted by total_score
+    high_scoring_idx = np.arange(0, choose_top_smiles)
 
     # Only analyse highest scoring molecules
     smiles_high_score = smiles[high_scoring_idx]
@@ -187,13 +178,22 @@ def read_scaffold_result(scaffold_memory_path, threshold=0.5):
     total_score_high_score = total_score[high_scoring_idx]
     
     # print shape
-    print("Scaffold shape: ", scaffold_high_score.shape)
-    print("SMILES shape: ", smiles_high_score.shape)
-    print("Human component shape: ", human_component_high_score.shape)
-    print("Raw human component shape: ", raw_human_component_high_score.shape)
-    print("Total score shape: ", total_score_high_score.shape)
+    # print("Scaffold shape: ", scaffold_high_score.shape)
+    # print("SMILES shape: ", smiles_high_score.shape)
+    # print("Human component shape: ", human_component_high_score.shape)
+    # print("Raw human component shape: ", raw_human_component_high_score.shape)
+    # print("Total score shape: ", total_score_high_score.shape)
     
+    scaffold_df = pd.DataFrame({
+        "scaffold": scaffold_high_score,
+        "smiles": smiles_high_score,
+        "human_component": human_component_high_score,
+        "raw_human_component": raw_human_component_high_score,
+        "total_score": total_score_high_score
+    })
+
     output_high_score = {
+        "scaffold_df": scaffold_df,
         "scaffold": scaffold_high_score,
         "smiles": smiles_high_score,
         "human_component": human_component_high_score,
@@ -213,72 +213,228 @@ def human_score(drd2_oracle_model, smiles, sigma_noise):
     else:
         return 0.0
         
-def smiles_human_score(output_high_score, sigma_noise=0.1):
-    scaffold_output = output_high_score["scaffold"]
-    smiles_output = output_high_score["smiles"]
-    human_component_output = output_high_score["human_component"]
-    raw_human_component_output = output_high_score["raw_human_component"]
-    total_score_output = output_high_score["total_score"]
+def smiles_human_score(smiles, sigma_noise=0.1):
     drd2_oracle_model = Oracle(name = 'DRD2')
-    smiles_score_human = [human_score(drd2_oracle_model, smile, sigma_noise) for smile in smiles_output] 
+    smiles_score_human = [human_score(drd2_oracle_model, smile, sigma_noise) for smile in smiles] 
     return smiles_score_human
 
-def retrain_model(feedback_type, data_outputs, model):
+def create_drd2_dataset(feedback_type, new_queried_smiles, 
+                        new_queried_smiles_human_score,
+                        new_queried_fps):
+    
+    if feedback_type == "scoring":
+        smiles = new_queried_smiles
+        label_proba = new_queried_smiles_human_score
+        label_binary = np.array([1 if score > 0.5 else 0 for score in label_proba])
+        outputs = {
+            "smiles": smiles,
+            "features": new_queried_fps,
+            "label_proba": label_proba,
+            "label_binary": label_binary
+        }
+        return outputs
+    
+    elif feedback_type == "comparing":
+        
+        num_new_queried_smiles, fps_dim = new_queried_fps.shape
+        # Generate all combinations of 2 out of len(new_queried_smiles)
+        comb = list(combinations(num_new_queried_smiles, 2))
+        C = len(comb)  # This is the number of combinations, which is binom(num_new_queried_smiles, 3)
+
+        # Initialize two tensors of shape (num_new_queried_smiles, fps_dim)
+
+        smiles_1 = []
+        smiles_2 = []
+        
+        features_1 = np.zeros((C, fps_dim))
+        features_2 = np.zeros((C, fps_dim))
+
+        label_proba = np.zeros((C,))
+        label_binary = np.zeros((C,))
+
+        for i, (idx1, idx2) in enumerate(comb):
+            smiles_1.append(new_queried_smiles[idx1])
+            smiles_2.append(new_queried_smiles[idx2])
+            features_1[i, :] = new_queried_fps[idx1, :]
+            features_2[i, :] = new_queried_fps[idx2, :]
+            proba_better = torch.tensor(new_queried_smiles_human_score[i] - new_queried_smiles_human_score[j], dtype=torch.float32)
+            proba_smiles1_better_than_smiles2 = torch.sigmoid(proba_better)
+            label_proba[i] = proba_smiles1_better_than_smiles2
+            label_binary[i] = 1 if label_proba[i] > 0.5 else 0
+
+        outputs = {
+            "smiles_1": smiles_1,
+            "smiles_2": smiles_2,
+            "features_1": features_1,
+            "features_2": features_2,
+            "label_proba": label_proba,
+            "label_binary": label_binary
+        }
+        return outputs
+    elif feedback_type == "ranking":
+        num_new_queried_smiles, fps_dim = new_queried_fps.shape
+        # Generate all combinations of 2 out of len(new_queried_smiles)
+        comb = list(combinations(num_new_queried_smiles, 3))
+        C = len(comb)  # This is the number of combinations, which is binom(num_new_queried_smiles, 3)
+
+        # Initialize two tensors of shape (num_new_queried_smiles, fps_dim)
+
+        smiles_1 = []
+        smiles_2 = []
+        smiles_3 = []
+        
+        features_1 = np.zeros((C, fps_dim))
+        features_2 = np.zeros((C, fps_dim))
+        features_3 = np.zeros((C, fps_dim))
+
+        label_1_proba = []
+        label_2_proba = []
+        label_3_proba = []
+
+        label_1_rank = []
+        label_2_rank = []
+        label_3_rank = []
+
+        for i, (idx1, idx2, idx3) in enumerate(comb):
+            smiles_1.append(new_queried_smiles[idx1])
+            smiles_2.append(new_queried_smiles[idx2])
+            smiles_3.append(new_queried_smiles[idx3])
+            features_1[i, :] = new_queried_fps[idx1, :]
+            features_2[i, :] = new_queried_fps[idx2, :]
+            features_3[i, :] = new_queried_fps[idx3, :]
+
+            # convert to float
+            proba_list = [new_queried_smiles_human_score[idx1], 
+                          new_queried_smiles_human_score[idx2], 
+                          new_queried_smiles_human_score[idx3]]
+            
+            proba_softmax = nn.Softmax(dim=0)(torch.tensor(proba_list))
+
+            # Now we need to rank them
+            # Rank 1 has lowest value, Rank 3 has highest value
+            ranks = np.argsort(np.argsort(proba_softmax)) + 1
+
+            label_1_proba.append(proba_softmax[0])
+            label_1_rank.append(ranks[0])
+            label_2_proba.append(proba_softmax[1])
+            label_2_rank.append(ranks[1])
+            label_3_proba.append(proba_softmax[2])
+            label_3_rank.append(ranks[2])
+
+        outputs = {
+            "smiles_1": smiles_1,
+            "smiles_2": smiles_2,
+            "smiles_3": smiles_3,
+            "features_1": features_1,
+            "features_2": features_2,
+            "features_3": features_3,
+            "label_1_proba": label_1_proba,
+            "label_2_proba": label_2_proba,
+            "label_3_proba": label_3_proba,
+            "label_1_rank": label_1_rank,
+            "label_2_rank": label_2_rank,
+            "label_3_rank": label_3_rank
+        }
+        return outputs
+    else:
+        raise ValueError("Invalid model type")
+    
+def combine_drd2_dataset(feedback_type, base_training_dataset_outputs, 
+                        iteration_training_dataset_outputs):
+
+    if feedback_type == "scoring":
+        attributes = ["smiles", "features", "label_proba", "label_binary"]
+        
+        combined_outputs = {}
+        for attribute in attributes:
+            base_attribute = base_training_dataset_outputs[attribute]
+            iteration_attribute = iteration_training_dataset_outputs[attribute]
+            combined_outputs[attribute] = np.concatenate((base_attribute, iteration_attribute), axis=0)
+        return combined_outputs
+    
+    elif feedback_type == "comparing":
+        attributes = ["smiles_1", "smiles_2", "features_1", "features_2",
+                      "label_proba", "label_binary"]
+        
+        combined_outputs = {}
+        for attribute in attributes:
+            base_attribute = base_training_dataset_outputs[attribute]
+            iteration_attribute = iteration_training_dataset_outputs[attribute]
+            combined_outputs[attribute] = np.concatenate((base_attribute, iteration_attribute), axis=0)
+        return combined_outputs
+    
+    elif feedback_type == "ranking":
+        attributes = ["smiles_1", "smiles_2", "smiles_3", 
+                      "features_1", "features_2", "features_3",
+                      "label_1_proba", "label_2_proba", "label_3_proba",
+                      "label_1_rank", "label_2_rank", "label_3_rank"]
+        
+        combined_outputs = {}
+        for attribute in attributes:
+            base_attribute = base_training_dataset_outputs[attribute]
+            iteration_attribute = iteration_training_dataset_outputs[attribute]
+            combined_outputs[attribute] = np.concatenate((base_attribute, iteration_attribute), axis=0)
+        return combined_outputs
+    else:
+        raise ValueError("Invalid model type")
+    
+
+def save_drd2_dataset(feedback_type, base_training_dataset_outputs, saving_path):
+    if feedback_type == "scoring":
+        dataframe = pd.DataFrame({
+            "smiles": base_training_dataset_outputs["smiles"],
+            "label_proba": base_training_dataset_outputs["label_proba"],
+            "label_binary": base_training_dataset_outputs["label_binary"]
+        })
+        dataframe.to_csv(saving_path, index=False)
+    elif feedback_type == "comparing":
+        dataframe = pd.DataFrame({
+            "smiles_1": base_training_dataset_outputs["smiles_1"],
+            "smiles_2": base_training_dataset_outputs["smiles_2"],
+            "label_proba": base_training_dataset_outputs["label_proba"],
+            "label_binary": base_training_dataset_outputs["label_binary"]
+        })
+        dataframe.to_csv(saving_path, index=False)
+    elif feedback_type == "ranking":
+        dataframe = pd.DataFrame({
+            "smiles_1": base_training_dataset_outputs["smiles_1"],
+            "smiles_2": base_training_dataset_outputs["smiles_2"],
+            "smiles_3": base_training_dataset_outputs["smiles_3"],
+            "label_1_proba": base_training_dataset_outputs["label_1_proba"],
+            "label_2_proba": base_training_dataset_outputs["label_2_proba"],
+            "label_3_proba": base_training_dataset_outputs["label_3_proba"],
+            "label_1_rank": base_training_dataset_outputs["label_1_rank"],
+            "label_2_rank": base_training_dataset_outputs["label_2_rank"],
+            "label_3_rank": base_training_dataset_outputs["label_3_rank"]
+        })
+        dataframe.to_csv(saving_path, index=False)
+    else:
+        raise ValueError("Invalid model type")
+
+
+def retrain_feedback_model(feedback_type, feedback_model, training_outputs, epochs=1):
     """
         Retrain the model with the new data
     """
     if feedback_type == "scoring":
-        model.train(data_outputs["x_train"], data_outputs["y_train"], data_outputs["sample_weight"])
+        feedback_model.train()
+        features = training_outputs["features"]
+        label_proba = training_outputs["label_proba"]
+        optimizer = optim.Adam(feedback_model.parameters(), lr=0.001)  
+        criterion = nn.BCELoss()
+        for epoch in range(epochs):
+            optimizer.zero_grad()
+            output = feedback_model(features)
+            loss = criterion(output, label_proba)
+            loss.backward()
+            optimizer.step()
+        feedback_model.eval()
+        return feedback_model
     elif feedback_type == "comparing":
-        model.train(data_outputs["x_train"], data_outputs["y_train"], data_outputs["sample_weight"])
+        feedback_model.train(data_outputs["x_train"], data_outputs["y_train"], data_outputs["sample_weight"])
     elif feedback_type == "ranking":
-        model.train(data_outputs["x_train"], data_outputs["y_train"], data_outputs["sample_weight"])
+        feedback_model.train(data_outputs["x_train"], data_outputs["y_train"], data_outputs["sample_weight"])
     else:
         raise ValueError("Invalid model type")
     return model
 
-def combine_dataset(feedback_type, outputs_1, outputs_2):
-    """
-        Combine the dataset for training the model
-    """
-    if feedback_type == "scoring":
-        features_1 = outputs_1["features"]
-        labels_proba_1 = outputs_1["labels_proba"]
-        labels_binary_1 = outputs_1["labels_binary"]
-        features_2 = outputs_2["features"]
-        labels_proba_2 = outputs_2["labels_proba"]
-        labels_binary_2 = outputs_2["labels_binary"]
-        features = np.concatenate((features_1, features_2), axis=0)
-        labels_proba = np.concatenate((labels_proba_1, labels_proba_2), axis=0)
-        labels_binary = np.concatenate((labels_binary_1, labels_binary_2), axis=0)
-        outputs = {
-            "features": features,
-            "labels_proba": labels_proba,
-            "labels_binary": labels_binary
-        }
-        return outputs
-    elif feedback_type == "comparing":
-        features_1_1 = outputs_1["features_1"]
-        features_2_1 = outputs_1["features_2"]
-        labels_proba_1 = outputs_1["labels_proba"]
-        labels_binary_1 = outputs_1["labels_binary"]
-        features_1_2 = outputs_2["features_1"]
-        features_2_2 = outputs_2["features_2"]
-        labels_proba_2 = outputs_2["labels_proba"]
-        labels_binary_2 = outputs_2["labels_binary"]
-        features_1 = np.concatenate((features_1_1, features_1_2), axis=0)
-        features_2 = np.concatenate((features_2_1, features_2_2), axis=0)
-        labels_proba = np.concatenate((labels_proba_1, labels_proba_2), axis=0)
-        labels_binary = np.concatenate((labels_binary_1, labels_binary_2), axis=0)
-        outputs = {
-            "features_1": features_1,
-            "features_2": features_2,
-            "labels_proba": labels_proba,
-            "labels_binary": labels_binary
-        }
-        return outputs
-    elif feedback_type == "ranking":
-        features_1_1 = outputs_1["features_1"]
-        features_2_1 = outputs_1["features_2"]
-        features_3_1 = outputs_1["features_3"]
-    return combined_outputs
