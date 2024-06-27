@@ -14,11 +14,17 @@ class RankListNetModel(nn.Module):
     
     def forward(self, features_A, features_B, features_C):
         # Compute strength scores
-        theta_A = self.fc(features_A) # Features A is Morgan Fingerprints of smiles 1
+        theta_A = self.fc(features_A) # Features A is Morgan Fingerprints of smiles 1 
         # theta_A is the predicted strength of smiles 1
         theta_B = self.fc(features_B) # Features B is Morgan Fingerprints of smiles 2
         # theta_B is the predicted strength of smiles 2
         theta_C = self.fc(features_C) # Features C is Morgan Fingerprints of smiles 3
         # theta_C is the predicted strength of smiles 3
-        ranking_scores = torch.softmax(torch.stack([theta_A, theta_B, theta_C]), dim=0)
+
+        # Concatenate the scores into a tensor
+        scores = torch.cat([theta_A, theta_B, theta_C], dim=1) # shape (batch_size, 3)
+        
+        # Apply softmax to get ranking probabilities
+        ranking_scores = torch.softmax(scores, dim=1) # shape (batch_size, 3)
+
         return ranking_scores

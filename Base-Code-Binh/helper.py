@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import torch
 from torch import nn, optim
+from torch.utils.data import TensorDataset, DataLoader
 import os
 from tdc import Oracle
 from rdkit import Chem
@@ -16,6 +17,7 @@ from scripts.write_config_bradley_terry import write_REINVENT_config_bradley_ter
 from scripts.write_config_rank_listnet import write_REINVENT_config_rank_listnet
 
 from itertools import combinations
+from itertools import product
 
 
 def write_REINVENT_config(feedback_type, reinvent_dir, jobid, jobname, 
@@ -64,17 +66,17 @@ def load_feedback_model(feedback_type, feedback_model_path):
         feedback_model = ScoreRegressionModel()
         # Load the state dict
         feedback_model.load_state_dict(torch.load(feedback_model_path))
-        print("Loading Score Regression model successfully")
+        print(f"Loading Score Regression model from {feedback_model_path}")
     elif feedback_type == "comparing":
         feedback_model = BradleyTerryModel()
         # Load the state dict
         feedback_model.load_state_dict(torch.load(feedback_model_path))
-        print("Loading Bradley Terry model successfully")
+        print(f"Loading Bradley Terry model successfully from {feedback_model_path}")
     elif feedback_type == "ranking":
         feedback_model = RankListNetModel()
         # Load the state dict
         feedback_model.load_state_dict(torch.load(feedback_model_path))
-        print("Loading Rank ListNet model successfully")
+        print(f"Loading Rank ListNet model successfully from {feedback_model_path}")
     else:
         raise ValueError("Invalid model type")
     
@@ -108,8 +110,8 @@ def load_drd2_dataset(feedback_type, data_path):
         dataframe = pd.read_csv(data_path)
         smiles_1_list = dataframe["smiles_1"].values
         smiles_2_list = dataframe["smiles_2"].values
-        features_1 = np.array([compute_fingerprints(smiles) for smiles in smiles_list])
-        features_2 = np.array([compute_fingerprints(smiles) for smiles in smiles_list])
+        features_1 = np.array([compute_fingerprints(smiles) for smiles in smiles_1_list])
+        features_2 = np.array([compute_fingerprints(smiles) for smiles in smiles_2_list])
         label_proba = dataframe["label_proba"].values
         label_binary = dataframe["label_binary"].values
         outputs = {
@@ -237,11 +239,9 @@ def create_drd2_dataset(feedback_type, new_queried_smiles,
     elif feedback_type == "comparing":
         
         num_new_queried_smiles, fps_dim = new_queried_fps.shape
-        # Generate all combinations of 2 out of len(new_queried_smiles)
-        comb = list(combinations(num_new_queried_smiles, 2))
-        C = len(comb)  # This is the number of combinations, which is binom(num_new_queried_smiles, 3)
-
-        # Initialize two tensors of shape (num_new_queried_smiles, fps_dim)
+        # Generate all repeated combinations of 2 out of len(new_queried_smiles)
+        comb = list(product(range(num_new_queried_smiles), repeat=2))
+        C = len(comb) 
 
         smiles_1 = []
         smiles_2 = []
@@ -257,7 +257,7 @@ def create_drd2_dataset(feedback_type, new_queried_smiles,
             smiles_2.append(new_queried_smiles[idx2])
             features_1[i, :] = new_queried_fps[idx1, :]
             features_2[i, :] = new_queried_fps[idx2, :]
-            proba_better = torch.tensor(new_queried_smiles_human_score[i] - new_queried_smiles_human_score[j], dtype=torch.float32)
+            proba_better = torch.tensor(new_queried_smiles_human_score[idx1] - new_queried_smiles_human_score[idx2], dtype=torch.float32)
             proba_smiles1_better_than_smiles2 = torch.sigmoid(proba_better)
             label_proba[i] = proba_smiles1_better_than_smiles2
             label_binary[i] = 1 if label_proba[i] > 0.5 else 0
@@ -273,11 +273,9 @@ def create_drd2_dataset(feedback_type, new_queried_smiles,
         return outputs
     elif feedback_type == "ranking":
         num_new_queried_smiles, fps_dim = new_queried_fps.shape
-        # Generate all combinations of 2 out of len(new_queried_smiles)
-        comb = list(combinations(num_new_queried_smiles, 3))
+        # Generate all unrepeated combinations of 3 out of len(new_queried_smiles)
+        comb = list(combinations(range(num_new_queried_smiles), 3))
         C = len(comb)  # This is the number of combinations, which is binom(num_new_queried_smiles, 3)
-
-        # Initialize two tensors of shape (num_new_queried_smiles, fps_dim)
 
         smiles_1 = []
         smiles_2 = []
@@ -303,7 +301,6 @@ def create_drd2_dataset(feedback_type, new_queried_smiles,
             features_2[i, :] = new_queried_fps[idx2, :]
             features_3[i, :] = new_queried_fps[idx3, :]
 
-            # convert to float
             proba_list = [new_queried_smiles_human_score[idx1], 
                           new_queried_smiles_human_score[idx2], 
                           new_queried_smiles_human_score[idx3]]
@@ -422,19 +419,122 @@ def retrain_feedback_model(feedback_type, feedback_model, training_outputs, epoc
         label_proba = training_outputs["label_proba"]
         optimizer = optim.Adam(feedback_model.parameters(), lr=0.001)  
         criterion = nn.BCELoss()
+
+        features_tensor = torch.tensor(features).float()  # Ensure dtype is float32 for features
+        label_proba_tensor = torch.tensor(label_proba).float()  # Ensure dtype is float32 if regression, or long if classification
+
+        train_dataset = TensorDataset(features_tensor, label_proba_tensor)
+
+        batch_size = 16  # You can adjust the batch size as needed
+        train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
+
+        feedback_model.train()
         for epoch in range(epochs):
-            optimizer.zero_grad()
-            output = feedback_model(features)
-            loss = criterion(output, label_proba)
-            loss.backward()
-            optimizer.step()
+            total_loss = 0
+            for features, labels_proba in train_loader:
+                optimizer.zero_grad()
+                output = feedback_model(features)
+                loss = criterion(output, labels_proba.unsqueeze(-1))
+                loss.backward()
+                optimizer.step()
+                total_loss += loss.item()
+            print(f'Epoch {epoch+1}, Loss: {total_loss / len(features)}')
         feedback_model.eval()
         return feedback_model
+    
     elif feedback_type == "comparing":
-        feedback_model.train(data_outputs["x_train"], data_outputs["y_train"], data_outputs["sample_weight"])
+
+        # When using Binary Cross-Entropy Loss (BCELoss) in neural networks, the input expected by the 
+        # loss function is a list of probabilities, not binary values (0 or 1)
+
+        criterion = nn.BCELoss()
+        optimizer = optim.Adam(feedback_model.parameters(), lr=0.001)
+        
+        features_1 = training_outputs["features_1"]
+        features_2 = training_outputs["features_2"]
+        label_proba = training_outputs["label_proba"]
+
+        features_1_tensor = torch.tensor(features_1).float()  
+        features_2_tensor = torch.tensor(features_2).float()
+        label_proba_tensor = torch.tensor(label_proba).float()
+
+        train_dataset = TensorDataset(features_1_tensor, features_2_tensor, label_proba_tensor)
+       
+        batch_size = 64  # You can adjust the batch size as needed
+        train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
+
+        feedback_model.train()
+        for epoch in range(epochs):
+            total_loss = 0
+            for features_1, features_2, labels_proba in train_loader:
+                optimizer.zero_grad()
+                output = feedback_model(features_1, features_2)
+                loss = criterion(output, labels_proba.unsqueeze(-1))
+                loss.backward()
+                optimizer.step()
+                total_loss += loss.item()
+            print(f'Epoch {epoch+1}, Loss: {total_loss / len(features_1)}')
+
+        feedback_model.eval()
+
+        return feedback_model
     elif feedback_type == "ranking":
-        feedback_model.train(data_outputs["x_train"], data_outputs["y_train"], data_outputs["sample_weight"])
+
+        # Correct Usage of KLDivLoss
+        # Model Outputs: Should be log-probabilities.
+        # True Labels: Should be probabilities.
+
+        criterion = nn.KLDivLoss(reduction='batchmean')
+
+        optimizer = optim.Adam(feedback_model.parameters(), lr=0.001)
+
+        features_1 = training_outputs["features_1"]
+        features_2 = training_outputs["features_2"]
+        features_3 = training_outputs["features_3"]
+        label_1_proba = training_outputs["label_1_proba"]
+        label_2_proba = training_outputs["label_2_proba"]
+        label_3_proba = training_outputs["label_3_proba"]
+
+        features_1_tensor = torch.tensor(features_1).float()  
+        features_2_tensor = torch.tensor(features_2).float()
+        features_3_tensor = torch.tensor(features_3).float()
+        label_1_proba_tensor = torch.tensor(label_1_proba).float()
+        label_2_proba_tensor = torch.tensor(label_2_proba).float()
+        label_3_proba_tensor = torch.tensor(label_3_proba).float()
+
+        train_dataset = TensorDataset(features_1_tensor, features_2_tensor, 
+                                    features_3_tensor, label_1_proba_tensor,
+                                    label_2_proba_tensor, label_3_proba_tensor)
+
+        batch_size = 64  
+        train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
+
+        feedback_model.train()
+        for epoch in range(epochs):
+            total_loss = 0
+            for features_1, features_2, features_3, labels_proba_1, labels_proba_2, labels_proba_3 in train_loader:
+                optimizer.zero_grad()
+                ranking_scores = feedback_model(features_1, features_2, features_3) # softmax scores
+                true_label = torch.stack([labels_proba_1, labels_proba_2, labels_proba_3], dim=1)
+                softmax_label = torch.softmax(true_label, dim=1) # true labels should also be softmax
+
+                # Add a small epsilon to avoid log(0)
+                epsilon = 1e-9
+                ranking_scores = ranking_scores + epsilon
+
+                # Taking the logs of the ranking scores
+                log_ranking_scores = torch.log(ranking_scores)  
+                
+                # As we see softmax_label is not log
+                loss = criterion(log_ranking_scores, softmax_label)
+                loss.backward()
+                optimizer.step()
+                total_loss += loss.item()
+            print(f'Epoch {epoch+1}, Loss: {total_loss / len(features_1)}')
+
+        feedback_model.eval()
+
+        return feedback_model
     else:
         raise ValueError("Invalid model type")
-    return model
 

@@ -16,4 +16,4 @@ class ScoreRegressionModel(nn.Module):
         # Compute strength scores
         theta = self.fc(features) # Features is Morgan Fingerprints of smiles
         # theta is the predicted strength of smiles
-        return torch.sigmoid(theta)
+        return torch.sigmoid(theta) # Sigmoid to ensure the output is between 0 and 1

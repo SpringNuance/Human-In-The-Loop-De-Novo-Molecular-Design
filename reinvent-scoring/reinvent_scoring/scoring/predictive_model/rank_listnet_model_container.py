@@ -61,12 +61,7 @@ class RankListNetContainer(BaseModelContainer):
             fps3[i, :] = fps[idx3, :]
 
         # Forward pass to get the softmax scores (C3)
-        outputs_scores = self.predict_from_fingerprints(fps1, fps2, fps3) # shape (3, C, 1)
-
-        outputs_scores = outputs_scores.squeeze() # shape (3, C)
-
-        # Transposing 
-        outputs_scores = outputs_scores.T # shape (C, 3)
+        outputs_scores = self.predict_from_fingerprints(fps1, fps2, fps3) # shape (C, 3)
 
         # Returning the ordinal ranks, 1, 2, 3
         # 1 is worst and 3 is best

@@ -1,0 +1,11 @@
+smiles,label_proba,label_binary
+Cc1ccccc1OCC(=O)OCC(=O)Nc1c(Cl)cc(F)cc1Cl,0.14769226081429374,0
+CC(=O)N=c1ccc(-c2cnc3cc(-c4ccc(S(C)(=O)=O)cc4)ccn23)c[nH]1,0.0,0
+CC(C)(C)C(=O)NCC(=O)O,0.007879641169373074,0
+CC(C)C#CC(OCCCc1ccccc1)(c1ccccc1)c1ccc(O)c(CN2CCOCC2)c1,0.0,0
+Cc1ccc(-c2cc(N)c(-c3ccccc3)o2)cc1C,0.0,0
+Cn1c2c3c(ccc2c2cnc4cc5c(cc4c21)OCO5)OCO3,0.021381877561628067,0
+CN(C)CCCCCN(C)C(=O)C(=O)OC1CCC2(C)C(CCC3C2C(O)CC2CC(=O)CCC23C)C1,0.0,0
+CCC(Br)C(C(=O)c1cc(O)cc(C=Cc2ccc(O)c(OC)c2)c1)c1cc(O)c(O)c(Br)c1,0.07772775408170601,0
+CC(C)S(=O)(=O)c1csc(C(=O)NCCc2ccccc2)c1N,0.0,0
+COc1ccccc1C=Cc1ccc(OC)c(OC)c1OC,0.0,0

@@ -1,0 +1,6 @@
+smiles,label_proba,label_binary
+Cn1cnc2cc(-c3cccc(N4CCOCC4=O)c3)[nH]c(=NC3CC3)c2c1=O,0.05497714314405773,0
+Cc1c(Cc2ccccc2)c(=O)oc2ccc(OCc3cccc(F)c3)cc12,0.0,0
+CCN=c1[nH]cnc2c1ccn2C,0.06893853630492437,0
+O=C1NC(=O)C2(CON=C2c2ccc(F)cc2)N1,0.15238662769021374,0
+N#CC1C(=N)N(c2ccc(S(N)(=O)=O)cc2)C2=CCCC(=O)C2C1c1cc2cc(Cl)ccc2nc1Cl,0.0,0

@@ -1,0 +1,63 @@
+{
+    "logging": {
+        "job_id": "output_score_regression_R2_T3_Q5_greedy_s0.1",
+        "job_name": "fine-tune predictive component HITL",
+        "logging_frequency": 0,
+        "logging_path": "output_score_regression_R2_T3_Q5_greedy_s0.1/REINVENT_round_1/progress.log",
+        "recipient": "local",
+        "result_folder": "output_score_regression_R2_T3_Q5_greedy_s0.1/REINVENT_round_1/results",
+        "sender": "http://127.0.0.1"
+    },
+    "model_type": "default",
+    "parameters": {
+        "diversity_filter": {
+            "bucket_size": 25,
+            "minscore": 0.2,
+            "minsimilarity": 0.4,
+            "name": "IdenticalMurckoScaffold"
+        },
+        "inception": {
+            "memory_size": 20,
+            "sample_size": 5,
+            "smiles": []
+        },
+        "reinforcement_learning": {
+            "agent": "/home/springnuance/reinvent-hitl/Reinvent/data/random.prior.new",
+            "batch_size": 32,
+            "learning_rate": 0.0001,
+            "margin_threshold": 50,
+            "n_steps": 1,
+            "prior": "/home/springnuance/reinvent-hitl/Reinvent/data/random.prior.new",
+            "reset": 0,
+            "reset_score_cutoff": 0.5,
+            "sigma": 32
+        },
+        "scoring_function": {
+            "name": "custom_sum",
+            "parallel": false,
+            "parameters": [
+                {
+                    "component_type": "predictive_property",
+                    "name": "Human-Component",
+                    "specific_parameters": {
+                        "container_type": "score_regression_container",
+                        "descriptor_type": "ecfp",
+                        "model_definition_path": "/home/springnuance/reinvent-hitl/Base-Code-Binh/training_Score_Regression_model/score_regression.py",
+                        "model_name": "score_regression",
+                        "model_pretrained_path": "/home/springnuance/reinvent-hitl/Base-Code-Binh/output_score_regression_R2_T3_Q5_greedy_s0.1/REINVENT_round_1/HITL_iteration_1/score_regression_model.pth",
+                        "score_regression": "classification",
+                        "size": 2048,
+                        "transformation": {
+                            "transformation_type": "no_transformation"
+                        },
+                        "use_counts": true,
+                        "use_features": true
+                    },
+                    "weight": 1
+                }
+            ]
+        }
+    },
+    "run_type": "reinforcement_learning",
+    "version": 3
+}

@@ -13,6 +13,7 @@ from typing import List, Dict
 from reinvent_chemistry.descriptors import Descriptors
 from reinvent_scoring.scoring.predictive_model.base_model_container import BaseModelContainer
 
+from itertools import product
 
 class BradleyTerryModelContainer(BaseModelContainer):
     def __init__(self, activity_model, specific_parameters):
@@ -37,11 +38,51 @@ class BradleyTerryModelContainer(BaseModelContainer):
         if len(molecules) == 0:
             return np.empty([])
         
-        fps1 = self._molecules_to_descriptors(molecules, parameters)
+        fps = self._molecules_to_descriptors(molecules, parameters)
         # fps1 is a list of np.array of shape (2048, )
         # Now we would convert them to 2D array
-        fps1 = np.array(fps1) # Shape (125, 2048)
+        fps = np.array(fps) # Shape (125, 2048)
         
+        batch_size, fps_dim = fps.shape
+        # Generate all repeated combinations of 2 out of len(smiles)
+        comb = list(product(range(batch_size), repeat=2))
+        C = len(comb) 
+
+        fps1 = np.zeros((C, fps_dim))
+        fps2 = np.zeros((C, fps_dim))
+
+        # Fill the tensors with the corresponding rows from original_tensor
+        for i, (idx1, idx2) in enumerate(comb):
+            fps1[i, :] = fps[idx1, :]
+            fps2[i, :] = fps[idx2, :]
+        
+        outputs_scores = self.predict_from_fingerprints(fps1, fps2) # shape (C, 1)
+
+        # If value > 0.5 then 1 else 0
+        outputs_preference = np.where(outputs_scores > 0.5, 1, 0)
+
+        # Initialize a list to store the scores
+        pred_activity_score = [0.0] * batch_size
+
+        # Aggregate the scores
+        for i, (idx1, idx2) in enumerate(comb):
+            pred_activity_score[idx1] += outputs_preference[i]
+
+        # Compute the average scores
+        pred_activity_mean = [score / batch_size for score in pred_activity_score]
+
+        return pred_activity_mean
+
+
+
+
+
+
+
+
+
+
+
         pred_activity_mean = []
 
         for i, current_fps in enumerate(fps1):
