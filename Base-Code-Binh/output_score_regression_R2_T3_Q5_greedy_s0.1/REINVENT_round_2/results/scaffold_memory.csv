@@ -1,2 +1,0 @@
-Step,Scaffold,SMILES,Human-Component,raw_Human-Component,total_score,ID
-0.0,O=C(c1cccc2[nH]c(=O)c(=O)[nH]c12)N1CCNCC1,O=C(c1cc(Cl)cc2[nH]c(=O)c(=O)[nH]c12)N1CCN(CCO)CC1,0.27844175696372986,0.27844175696372986,0.27844175696372986,fine-tune predictive component HITL_0

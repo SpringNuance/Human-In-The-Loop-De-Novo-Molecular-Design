@@ -9,7 +9,8 @@ class RankListNetModel(nn.Module):
             nn.ReLU(),
             nn.Linear(512, 256),  
             nn.ReLU(),
-            nn.Linear(256, 1)   # Output a single strength score per entity (lambda)
+            nn.Linear(256, 1), # logit
+            nn.Sigmoid() # probability of drd2
         )
     
     def forward(self, features_A, features_B, features_C):

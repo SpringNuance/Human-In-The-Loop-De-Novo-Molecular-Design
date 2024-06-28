@@ -46,6 +46,9 @@ class BradleyTerryModelContainer(BaseModelContainer):
         batch_size, fps_dim = fps.shape
         # Generate all repeated combinations of 2 out of len(smiles)
         comb = list(product(range(batch_size), repeat=2))
+
+        # Remove all combinations where the same molecule is compared to itself
+        comb = [c for c in comb if c[0] != c[1]]
         C = len(comb) 
 
         fps1 = np.zeros((C, fps_dim))
@@ -62,14 +65,14 @@ class BradleyTerryModelContainer(BaseModelContainer):
         outputs_preference = np.where(outputs_scores > 0.5, 1, 0)
 
         # Initialize a list to store the scores
-        pred_activity_score = [0.0] * batch_size
+        pred_activity_score = np.zeros(batch_size)
 
-        # Aggregate the scores
+        # Aggregate the scores, exluding comparing smiles with itself
         for i, (idx1, idx2) in enumerate(comb):
             pred_activity_score[idx1] += outputs_preference[i]
 
         # Compute the average scores
-        pred_activity_mean = [score / batch_size for score in pred_activity_score]
+        pred_activity_mean = pred_activity_score / (batch_size - 1)
 
         return pred_activity_mean
 

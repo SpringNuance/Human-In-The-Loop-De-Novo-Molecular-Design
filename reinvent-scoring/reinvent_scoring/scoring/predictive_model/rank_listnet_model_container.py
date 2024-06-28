@@ -71,7 +71,7 @@ class RankListNetContainer(BaseModelContainer):
         outputs_ranks_normalized = outputs_ranks / num_ranking
 
         # Initialize a list to store the scores
-        pred_activity_score = [0.0] * batch_size
+        pred_activity_score = np.zeros(batch_size)
 
         count = len(list(combinations(range(batch_size - 1), num_ranking - 1)))  # Number of times each index appears in the combinations, equal to binom(batch_size - 1, num_ranking-1)
 

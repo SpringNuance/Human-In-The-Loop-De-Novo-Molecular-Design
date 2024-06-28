@@ -1,6 +1,0 @@
-smiles,label_proba,label_binary
-Cc1ccc(NCCCN2c3ccccc3Sc3cccnc32)cc1,0.051472172659490195,0
-O=S(=O)(c1ccc(F)cc1)N1CCC2C(CON2CC(F)F)C1,0.15824077786508114,0
-COc1cc(-c2c(F)c(F)c3c(=NC4CCC(CNS(C)(=O)=O)CC4)c(C(C)=O)c[nH]c3c2F)c[nH]c1=O,0.12946329065914614,0
-O=S(=O)(Cc1cn(Cc2ccc(F)cc2)c2cc3c(cc12)C1CCC(C3)N1)Nc1cccnc1,0.0,0
-CC1(O)C=Cc2c(c(O)c3c(O)cccc3c2C(=O)c2ccccc2)O1,0.05817250976337357,0
