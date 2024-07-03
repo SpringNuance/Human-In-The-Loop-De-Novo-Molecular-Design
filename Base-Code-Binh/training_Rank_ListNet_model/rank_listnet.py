@@ -5,7 +5,9 @@ class RankListNetModel(nn.Module):
     def __init__(self, feature_dim=2048):
         super(RankListNetModel, self).__init__()
         self.fc = nn.Sequential(
-            nn.Linear(feature_dim, 512),  
+            nn.Linear(feature_dim, 1024),
+            nn.ReLU(),
+            nn.Linear(1024, 512),  
             nn.ReLU(),
             nn.Linear(512, 256),  
             nn.ReLU(),

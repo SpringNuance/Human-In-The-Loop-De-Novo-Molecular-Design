@@ -492,7 +492,7 @@ def save_drd2_dataset(feedback_type, base_training_dataset_outputs, saving_path)
         raise ValueError("Invalid model type")
 
 
-def retrain_feedback_model(feedback_type, feedback_model, training_outputs, epochs=1):
+def retrain_feedback_model(feedback_type, feedback_model, training_outputs, epochs=1, learning_rate=0.0001):
     """
         Retrain the model with the new data
     """
@@ -500,7 +500,7 @@ def retrain_feedback_model(feedback_type, feedback_model, training_outputs, epoc
         feedback_model.train()
         features = training_outputs["features"]
         label_proba = training_outputs["label_proba"]
-        optimizer = optim.Adam(feedback_model.parameters(), lr=0.0001)  
+        optimizer = optim.Adam(feedback_model.parameters(), lr=learning_rate)  
         criterion = nn.BCELoss()
 
         features_tensor = torch.tensor(features).float()  # Ensure dtype is float32 for features
@@ -508,7 +508,7 @@ def retrain_feedback_model(feedback_type, feedback_model, training_outputs, epoc
 
         train_dataset = TensorDataset(features_tensor, label_proba_tensor)
 
-        batch_size = 16  # You can adjust the batch size as needed
+        batch_size = 32 
         train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
         feedback_model.train()
@@ -521,7 +521,8 @@ def retrain_feedback_model(feedback_type, feedback_model, training_outputs, epoc
                 loss.backward()
                 optimizer.step()
                 total_loss += loss.item()
-            print(f'Epoch {epoch+1}, Loss: {total_loss / len(features)}')
+            if (epoch + 1) % 10 == 0:
+                print(f'Epoch {epoch+1}, Loss: {total_loss / len(features)}')
         feedback_model.eval()
         return feedback_model
     
@@ -531,28 +532,28 @@ def retrain_feedback_model(feedback_type, feedback_model, training_outputs, epoc
         # loss function is a list of probabilities, not binary values (0 or 1)
 
         criterion = nn.BCELoss()
-        optimizer = optim.Adam(feedback_model.parameters(), lr=0.0001)
+        optimizer = optim.Adam(feedback_model.parameters(), lr=learning_rate)
         
         features_1 = training_outputs["features_1"]
         features_2 = training_outputs["features_2"]
-        compare_binary = training_outputs["compare_binary"]
+        compare_proba = training_outputs["compare_proba"]
 
         features_1_tensor = torch.tensor(features_1).float()  
         features_2_tensor = torch.tensor(features_2).float()
-        compare_binary_tensor = torch.tensor(compare_binary).float()
+        compare_proba_tensor = torch.tensor(compare_proba).float()
 
-        train_dataset = TensorDataset(features_1_tensor, features_2_tensor, compare_binary_tensor)
+        train_dataset = TensorDataset(features_1_tensor, features_2_tensor, compare_proba_tensor)
        
-        batch_size = 64  # You can adjust the batch size as needed
+        batch_size = 32
         train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
         feedback_model.train()
         for epoch in range(epochs):
             total_loss = 0
-            for features_1, features_2, compare_binary in train_loader:
+            for features_1, features_2, compare_proba in train_loader:
                 optimizer.zero_grad()
                 output = feedback_model(features_1, features_2)
-                loss = criterion(output, compare_binary.unsqueeze(-1))
+                loss = criterion(output, compare_proba.unsqueeze(-1))
                 loss.backward()
                 optimizer.step()
                 total_loss += loss.item()
@@ -569,7 +570,7 @@ def retrain_feedback_model(feedback_type, feedback_model, training_outputs, epoc
 
         criterion = nn.KLDivLoss(reduction='batchmean')
 
-        optimizer = optim.Adam(feedback_model.parameters(), lr=0.0001)
+        optimizer = optim.Adam(feedback_model.parameters(), lr=learning_rate)
 
         features_1 = training_outputs["features_1"]
         features_2 = training_outputs["features_2"]
@@ -591,7 +592,7 @@ def retrain_feedback_model(feedback_type, feedback_model, training_outputs, epoc
                                     features_3_tensor, label_1_softmax_tensor,
                                     label_2_softmax_tensor, label_3_softmax_tensor)
 
-        batch_size = 64  
+        batch_size = 32 
         train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
         feedback_model.train()

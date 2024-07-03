@@ -1,62 +1,24 @@
 import numpy as np
 from rdkit import Chem
-from utils import fingerprints_from_mol
+from rdkit.Chem import AllChem
 import torch
 
-def random_sampling(U, X_train, n, model, acquisition, X_updated, y_updated, L=None,t=None):
-    ret = np.random.choice(U, n, replace=False)
-    return ret
-
-def uncertainty_sampling(U, X_train, n, model, acquisition, X_updated, y_updated, L, t=None):
-    X_pool = X_train[U,:]
-    preds_p, var = model.predict_f(X_pool)
-    idx = np.argsort(np.squeeze(var))[-n:]
-    return U[idx]
-
-# exploitation
-def greedy_algorithm(U, X_train, n, model, acquisition, X_updated, y_updated, L=None, t=None):
-    X_pool = X_train[U,:]
-    preds_p,_ = model.predict_f(X_pool)
-    preds_p=np.squeeze(preds_p)
-    idx = np.argsort(preds_p)[::-1]
-    assert len(idx)>0
-    selected = idx[:n]
-    return U[selected]
-
-
-def thompson_sampling(U, X_U, n, model, acquisition, X_updated, y_updated, L=None, t=None):
-    X_pool =X_U[U,:]
-    # a sample from posterior
-    preds_p = model.predict_f_samples(X_pool) 
-    preds_p = np.squeeze(preds_p)
-    # greedily maximize with respect to the randomly sampled belief
-    idx = np.argsort(preds_p)[::-1] 
-    assert len(idx)>0
-    selected = idx[:n]
-    return U[selected]
-
-
-def local_idx_to_full_scaffold_df_idx(num_queries, already_selected_indices, idx):
-    all_idx = np.arange(num_queries)
-    mask = np.ones(num_queries, dtype=bool)
-    mask[already_selected_indices] = False
-    pred_idx = all_idx[mask]
-    try:
-        pred_idx[idx]
-        return pred_idx[idx]
-    except:
-        valid_idx = [i if 0 <= i < len(pred_idx) else len(pred_idx) - 1 for i in idx]
-        return pred_idx[valid_idx]
-
-def predict_proba_from_model(feedback_type, feedback_model, smiles):
-    mols = [Chem.MolFromSmiles(s) for s in smiles]
-    fps = fingerprints_from_mol(mols)
+def compute_fingerprints(smiles):
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is not None:
+        return AllChem.GetMorganFingerprintAsBitVect(mol, 2, nBits=2048)
+    else:
+        return np.zeros((2048,), dtype=int)
     
+def predict_proba_from_model(feedback_type, feedback_model, smiles):
+
+    fps = np.array([compute_fingerprints(smiles) for smiles in smiles])
+
     if feedback_type == "scoring":
         features = torch.tensor(fps, dtype=torch.float32)
-        pred_activity_score = feedback_model.forward(features).cpu().detach().numpy()
-        pred_activity_score = pred_activity_score.flatten()
-        return pred_activity_score
+        pred_label_proba = feedback_model.forward(features).cpu().detach().numpy()
+        pred_label_proba = pred_label_proba.flatten()
+        return pred_label_proba
     
     elif feedback_type == "comparing":
         from itertools import product
@@ -68,7 +30,7 @@ def predict_proba_from_model(feedback_type, feedback_model, smiles):
 
         features_1 = np.zeros((C, fps_dim))
         features_2 = np.zeros((C, fps_dim))
-        pred_activity_score = np.zeros(smiles_len)
+        pred_label_proba = np.zeros(smiles_len)
 
         for i, (idx1, idx2) in enumerate(comb):
             features_1[i, :] = fps[idx1, :]
@@ -79,9 +41,9 @@ def predict_proba_from_model(feedback_type, feedback_model, smiles):
         score_pred = feedback_model.forward(features_1, features_2).cpu().detach().numpy()
 
         for i, (idx1, idx2) in enumerate(comb):
-            pred_activity_score[idx1] += (1 if score_pred[i] > 0.5 else 0)
+            pred_label_proba[idx1] += (1 if score_pred[i] > 0.5 else 0)
         
-        pred_activity_mean = pred_activity_score/smiles_len
+        pred_activity_mean = pred_label_proba/smiles_len
         return pred_activity_mean
 
     elif feedback_type == "ranking":
@@ -116,22 +78,23 @@ def predict_proba_from_model(feedback_type, feedback_model, smiles):
         outputs_ranks_normalized = outputs_ranks / 3
 
         # Initialize a list to store the scores
-        pred_activity_score = np.zeros(smiles_len)
+        pred_label_proba = np.zeros(smiles_len)
 
         count = len(list(combinations(range(smiles_len - 1), 2)))  # Number of times each index appears in the combinations, equal to binom(batch_size - 1, num_ranking-1)
 
         # Aggregate the scores
         for i, (idx1, idx2, idx3) in enumerate(comb):
-            pred_activity_score[idx1] += outputs_ranks_normalized[i, 0]
-            pred_activity_score[idx2] += outputs_ranks_normalized[i, 1]
-            pred_activity_score[idx3] += outputs_ranks_normalized[i, 2]
+            pred_label_proba[idx1] += outputs_ranks_normalized[i, 0]
+            pred_label_proba[idx2] += outputs_ranks_normalized[i, 1]
+            pred_label_proba[idx3] += outputs_ranks_normalized[i, 2]
 
         # Compute the average scores
-        pred_activity_mean = pred_activity_score / count
+        pred_activity_mean = pred_label_proba / count
     return pred_activity_mean
 
 def random_sampling(feedback_type, feedback_model, scaffold_df, num_queries, 
                      smiles, already_selected_indices, rng):
+    
     df_len = len(scaffold_df)
 
     # Get all possible indices
@@ -204,47 +167,6 @@ def uncertainty_sampling(feedback_type, feedback_model, scaffold_df, num_queries
     
         return selected_indices
 
-def thompson_sampling(feedback_type, feedback_model, scaffold_df, num_queries,
-                            smiles, already_selected_indices, rng):
-        
-        predicted_scores = predict_proba_from_model(feedback_type, feedback_model, smiles)
-
-        df_len = len(scaffold_df)
-    
-        # Get all possible indices
-        all_indices = np.arange(df_len)
-    
-        # Remove already selected indices from the pool
-        not_selected_indices = np.setdiff1d(all_indices, already_selected_indices)
-    
-        if feedback_type == "scoring":
-            # Assuming we can get multiple samples from the model
-            # For simplicity, using a normal distribution around predicted scores
-            # In practice, this should be samples from the posterior distribution of the model
-
-            samples = np.array([rng.normal(loc=predicted_scores[not_selected_indices], scale=0.1) for _ in range(num_samples)])
-            
-        elif feedback_type == "comparing":
-            # Use a similar approach but ensure the distribution reflects pairwise comparison
-      
-            samples = np.array([rng.normal(loc=predicted_scores[not_selected_indices], scale=0.1) for _ in range(num_samples)])
-            
-        elif feedback_type == "ranking":
-            # Similar approach, but for ranking, ensure the samples reflect rank uncertainties
-      
-            samples = np.array([rng.normal(loc=predicted_scores[not_selected_indices], scale=0.1) for _ in range(num_samples)])
-        
-        # Take the mean of predictions for Thompson Sampling
-        preds_p = samples.mean(axis=0)
-        
-        # Sort the indices by the sampled values
-        sorted_indices = np.argsort(preds_p)[::-1]
-        
-        # Select the top `num_queries` indices
-        selected_indices = not_selected_indices[sorted_indices[:num_queries]]
-    
-        return selected_indices
-
 def select_query_feedback(feedback_type, feedback_model, scaffold_df, num_queries, smiles, already_selected_indices, acquisition = 'random', rng=None):
     '''
     Parameters
@@ -274,8 +196,6 @@ def select_query_feedback(feedback_type, feedback_model, scaffold_df, num_querie
     # select acquisition: (TODO: EIG, other strategies)
     if acquisition == 'uncertainty':
         acquisition_func = uncertainty_sampling
-    elif acquisition == 'thompson':
-        acquisition_func = thompson_sampling
     elif acquisition == 'greedy':
         acquisition_func = greedy_sampling
     elif acquisition == 'random':

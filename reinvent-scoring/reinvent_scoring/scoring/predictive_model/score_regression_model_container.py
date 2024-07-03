@@ -37,24 +37,23 @@ class ScoreRegressionModelContainer(BaseModelContainer):
         if len(molecules) == 0:
             return np.empty([])
         
-        fps = self._molecules_to_descriptors(molecules, parameters)
-        # fps1 is a list of np.array of shape (2048, )
+        features = self._molecules_to_descriptors(molecules, parameters)
+        # features1 is a list of np.array of shape (2048, )
         # Now we would convert them to 2D array
-        fps = np.array(fps) # Shape (125, 2048)
-
-        # Calculate preference scores for current_fps against each fps in fps2
-        preference_scores = self.predict_from_fingerprints(fps)
-
-        return preference_scores
-
-    def predict_from_fingerprints(self, fps): # return only one prediction value that is the probability of the first molecule being more active than the second
-
-        fps_torch_tensor = torch.tensor(fps, dtype=torch.float32)
-        preds = self._activity_model.forward(fps_torch_tensor)
+        features = np.array(features) # Shape (125, 2048)
         
-        final_preds = preds.cpu().detach().numpy()
+        pred_label_proba = self.predict_from_fingerprints(features)
 
-        return final_preds
+        return pred_label_proba
+
+    def predict_from_fingerprints(self, features): # return only one prediction value that is the probability of the first molecule being more active than the second
+
+        features_tensor = torch.tensor(features, dtype=torch.float32)
+        pred_label_proba = self._activity_model.forward(features_tensor)
+        
+        pred_label_proba = pred_label_proba.cpu().detach().numpy()
+
+        return pred_label_proba
 
     def _load_descriptor(self, parameters: {}):
         descriptors = Descriptors()
