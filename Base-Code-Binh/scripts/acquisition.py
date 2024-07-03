@@ -10,87 +10,115 @@ def compute_fingerprints(smiles):
     else:
         return np.zeros((2048,), dtype=int)
     
-def predict_proba_from_model(feedback_type, feedback_model, smiles):
+def predict_proba_from_model(feedback_type, feedback_model, smiles, batch_pred=10000):
+    
+    # This is not computationally extensive yet
+    # choose float 32
+    features = np.array([compute_fingerprints(smiles) for smiles in smiles], dtype=np.float32)
 
-    fps = np.array([compute_fingerprints(smiles) for smiles in smiles])
-
+    count_batch = 1
     if feedback_type == "scoring":
-        features = torch.tensor(fps, dtype=torch.float32)
-        pred_label_proba = feedback_model.forward(features).cpu().detach().numpy()
-        pred_label_proba = pred_label_proba.flatten()
+        pred_label_proba = []
+        for batch_idx in range(0, len(features), batch_pred):
+            features_batch = torch.tensor(features[batch_idx:batch_idx+batch_pred], dtype=torch.float32)
+            pred_label_proba_batch = feedback_model.forward(features_batch).cpu().detach().numpy()
+            pred_label_proba_batch.flatten()
+            pred_label_proba.extend(pred_label_proba_batch)
+            print(f"Batch {count_batch} processed")
+            count_batch += 1
         return pred_label_proba
     
     elif feedback_type == "comparing":
         from itertools import product
         # Generate all repeated combinations of 2 out of len(smiles)
 
-        smiles_len, fps_dim = fps.shape
+        smiles_len, features_dim = features.shape
+        # comb is an iterator
         comb = list(product(range(smiles_len), repeat=2))
-        C = len(comb) 
 
-        features_1 = np.zeros((C, fps_dim))
-        features_2 = np.zeros((C, fps_dim))
+        # Remove indices that compare to itself
+        comb = [(i, j) for (i, j) in comb if i != j]
+        num_comb = len(comb) 
+        
         pred_label_proba = np.zeros(smiles_len)
-
-        for i, (idx1, idx2) in enumerate(comb):
-            features_1[i, :] = fps[idx1, :]
-            features_2[i, :] = fps[idx2, :]
         
-        features_1 = torch.tensor(features_1, dtype=torch.float32)
-        features_2 = torch.tensor(features_2, dtype=torch.float32)
-        score_pred = feedback_model.forward(features_1, features_2).cpu().detach().numpy()
+        batch_count = 1
 
-        for i, (idx1, idx2) in enumerate(comb):
-            pred_label_proba[idx1] += (1 if score_pred[i] > 0.5 else 0)
-        
-        pred_activity_mean = pred_label_proba/smiles_len
-        return pred_activity_mean
+        for batch_idx in range(0, num_comb, batch_pred):
+            features_1 = np.zeros((batch_pred, features_dim), dtype=np.float32) 
+            features_2 = np.zeros((batch_pred, features_dim), dtype=np.float32)
+            comb_batch = comb[batch_idx:batch_idx+batch_pred]
+
+            for i, (idx1, idx2) in enumerate(comb_batch):
+                features_1[i, :] = features[idx1, :]
+                features_2[i, :] = features[idx2, :]
+
+            features_1 = torch.tensor(features_1, dtype=torch.float32)
+            features_2 = torch.tensor(features_2, dtype=torch.float32)
+            pred_label_proba_batch = feedback_model.forward(features_1, features_2).cpu().detach().numpy()
+
+            for i, (idx1, idx2) in enumerate(comb_batch):
+                pred_label_proba[idx1] += pred_label_proba_batch[i]
+
+            print(f"B{batch_count} processed", end=" | ")
+            batch_count += 1
+
+        # Computing the average
+        pred_label_proba = pred_label_proba/(smiles_len - 1)
+        return pred_label_proba
 
     elif feedback_type == "ranking":
+
+        # This is a potentially very computationally extensive task
+        # nCr could easily be in the order of 10^9
+        # Example of nCr(1000, 3) = 166,167,000 combinations
+
         from itertools import combinations
-        # Generate all unrepeated combinations of 3 out of len(new_queried_smiles)
-        smiles_len, fps_dim = fps.shape
-        comb = list(combinations(range(smiles_len), 3))
-        C = len(comb)  # This is the number of combinations, which is binom(num_new_queried_smiles, 3)
+        smiles_len, features_dim = features.shape
+        comb = combinations(range(smiles_len), 3)
+        
+        nCr = lambda n, r: np.math.factorial(n) // (np.math.factorial(r) * np.math.factorial(n - r))
+        num_comb = int(nCr(smiles_len, 3))
 
-        features_1 = np.zeros((C, fps_dim))
-        features_2 = np.zeros((C, fps_dim))
-        features_3 = np.zeros((C, fps_dim))
-
-        label_proba = np.zeros(C)
-
-        for i, (idx1, idx2, idx3) in enumerate(comb):
-            features_1[i, :] = fps[idx1, :]
-            features_2[i, :] = fps[idx2, :]
-            features_3[i, :] = fps[idx3, :]
-
-        features_1 = torch.tensor(features_1, dtype=torch.float32)
-        features_2 = torch.tensor(features_2, dtype=torch.float32)
-        features_3 = torch.tensor(features_3, dtype=torch.float32)
-
-        score_pred = feedback_model.forward(features_1, features_2, features_3).cpu().detach().numpy()
-
-        # Returning the ordinal ranks, 1, 2, 3
-        # 1 is worst and 3 is best
-        outputs_ranks = np.argsort(score_pred, axis=1) + 1 # shape (C, 3)
-
-        # We need to normalize the ranks to 0-1, or 0.33, 0.66, 1.0
-        outputs_ranks_normalized = outputs_ranks / 3
-
-        # Initialize a list to store the scores
         pred_label_proba = np.zeros(smiles_len)
+        
+        batch_count = 1
 
-        count = len(list(combinations(range(smiles_len - 1), 2)))  # Number of times each index appears in the combinations, equal to binom(batch_size - 1, num_ranking-1)
+        for batch_idx in range(0, num_comb, batch_pred):
+            if batch_idx + batch_pred > num_comb:
+                true_batch_pred = num_comb - batch_idx
+            else:
+                true_batch_pred = batch_pred
+            features_1 = np.zeros((true_batch_pred, features_dim), dtype=np.float32) 
+            features_2 = np.zeros((true_batch_pred, features_dim), dtype=np.float32)
+            features_3 = np.zeros((true_batch_pred, features_dim), dtype=np.float32)
+            comb_batch = []
+            for i in range(true_batch_pred):
+                comb_batch.append(next(comb))
 
-        # Aggregate the scores
-        for i, (idx1, idx2, idx3) in enumerate(comb):
-            pred_label_proba[idx1] += outputs_ranks_normalized[i, 0]
-            pred_label_proba[idx2] += outputs_ranks_normalized[i, 1]
-            pred_label_proba[idx3] += outputs_ranks_normalized[i, 2]
+            for i, (idx1, idx2, idx3) in enumerate(comb_batch):
+                features_1[i, :] = features[idx1, :]
+                features_2[i, :] = features[idx2, :]
+                features_3[i, :] = features[idx3, :]
 
-        # Compute the average scores
-        pred_activity_mean = pred_label_proba / count
-    return pred_activity_mean
+            features_1 = torch.tensor(features_1, dtype=torch.float32)
+            features_2 = torch.tensor(features_2, dtype=torch.float32)
+            features_3 = torch.tensor(features_3, dtype=torch.float32)
+            pred_label_proba_batch = feedback_model.forward(features_1, features_2, features_3).cpu().detach().numpy()
+
+            for i, (idx1, idx2, idx3) in enumerate(comb_batch):
+                pred_label_proba[idx1] += pred_label_proba_batch[i, 0]
+                pred_label_proba[idx2] += pred_label_proba_batch[i, 1]
+                pred_label_proba[idx3] += pred_label_proba_batch[i, 2]
+
+            print(f"B{batch_count} processed", end=" | ")
+            batch_count += 1
+
+        # Computing the average
+        count_each_index = nCr(smiles_len - 1, 2)
+        pred_label_proba = pred_label_proba/count_each_index
+
+    return pred_label_proba
 
 def random_sampling(feedback_type, feedback_model, scaffold_df, num_queries, 
                      smiles, already_selected_indices, rng):

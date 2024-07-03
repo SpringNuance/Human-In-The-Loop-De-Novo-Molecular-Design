@@ -39,29 +39,29 @@ class RankListNetContainer(BaseModelContainer):
         
         num_ranking = 3
 
-        fps = self._molecules_to_descriptors(molecules, parameters)
-        # fps1 is a list of np.array of shape (2048, )
+        features = self._molecules_to_descriptors(molecules, parameters)
+        # features_1 is a list of np.array of shape (2048, )
         # Now we would convert them to 2D array
-        fps = np.array(fps) # Shape (batch_size, 2048)
-        batch_size, fps_dim = fps.shape
+        features = np.array(features) # Shape (batch_size, 2048)
+        batch_size, features_dim = features.shape
         
         # Generate all combinations of 3 out of 64
         comb = list(combinations(range(batch_size), num_ranking))
-        C = len(comb)  # This is the number of combinations, which is binom(batch_size, 3)
+        num_comb = len(comb)  # This is the number of combinations, which is binom(batch_size, 3)
 
         # Initialize three tensors of shape (C, 2048)
-        fps1 = np.zeros((C, fps_dim))
-        fps2 = np.zeros((C, fps_dim))
-        fps3 = np.zeros((C, fps_dim))
+        features_1 = np.zeros((num_comb, features_dim))
+        features_2 = np.zeros((num_comb, features_dim))
+        features_3 = np.zeros((num_comb, features_dim))
 
         # Fill the tensors with the corresponding rows from original_tensor
         for i, (idx1, idx2, idx3) in enumerate(comb):
-            fps1[i, :] = fps[idx1, :]
-            fps2[i, :] = fps[idx2, :]
-            fps3[i, :] = fps[idx3, :]
+            features_1[i, :] = features[idx1, :]
+            features_2[i, :] = features[idx2, :]
+            features_3[i, :] = features[idx3, :]
 
         # Forward pass to get the softmax scores (C3)
-        outputs_scores = self.predict_from_fingerprints(fps1, fps2, fps3) # shape (C, 3)
+        outputs_scores = self.predict_from_fingerprints(features_1, features_2, features_3) # shape (C, 3)
 
         # Returning the ordinal ranks, 1, 2, 3
         # 1 is worst and 3 is best
@@ -71,28 +71,28 @@ class RankListNetContainer(BaseModelContainer):
         outputs_ranks_normalized = outputs_ranks / num_ranking
 
         # Initialize a list to store the scores
-        pred_activity_score = np.zeros(batch_size)
+        pred_label_proba = np.zeros(batch_size)
 
         count = len(list(combinations(range(batch_size - 1), num_ranking - 1)))  # Number of times each index appears in the combinations, equal to binom(batch_size - 1, num_ranking-1)
 
         # Aggregate the scores
         for i, (idx1, idx2, idx3) in enumerate(comb):
-            pred_activity_score[idx1] += outputs_ranks_normalized[i, 0]
-            pred_activity_score[idx2] += outputs_ranks_normalized[i, 1]
-            pred_activity_score[idx3] += outputs_ranks_normalized[i, 2]
+            pred_label_proba[idx1] += outputs_ranks_normalized[i, 0]
+            pred_label_proba[idx2] += outputs_ranks_normalized[i, 1]
+            pred_label_proba[idx3] += outputs_ranks_normalized[i, 2]
 
         # Compute the average scores
-        pred_activity_mean = [score / count for score in pred_activity_score]
+        pred_label_proba = [score / count for score in pred_label_proba]
 
-        return pred_activity_mean
+        return pred_label_proba
 
-    def predict_from_fingerprints(self, fps1, fps2, fps3): 
+    def predict_from_fingerprints(self, features_1, features_2, features_3): 
 
-        fps1_torch_tensor = torch.tensor(fps1, dtype=torch.float32)
-        fps2_torch_tensor = torch.tensor(fps2, dtype=torch.float32)
-        fps3_torch_tensor = torch.tensor(fps3, dtype=torch.float32)
+        features_1_torch_tensor = torch.tensor(features_1, dtype=torch.float32)
+        features_2_torch_tensor = torch.tensor(features_2, dtype=torch.float32)
+        features_3_torch_tensor = torch.tensor(features_3, dtype=torch.float32)
 
-        preds = self._activity_model.forward(fps1_torch_tensor, fps2_torch_tensor, fps3_torch_tensor)
+        preds = self._activity_model.forward(features_1_torch_tensor, features_2_torch_tensor, features_3_torch_tensor)
         
         final_preds = preds.cpu().detach().numpy()
 

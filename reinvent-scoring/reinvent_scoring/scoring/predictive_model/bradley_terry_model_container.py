@@ -38,43 +38,43 @@ class BradleyTerryModelContainer(BaseModelContainer):
         if len(molecules) == 0:
             return np.empty([])
         
-        fps = self._molecules_to_descriptors(molecules, parameters)
-        # fps1 is a list of np.array of shape (2048, )
+        features = self._molecules_to_descriptors(molecules, parameters)
+        # features_1 is a list of np.array of shape (2048, )
         # Now we would convert them to 2D array
-        fps = np.array(fps) # Shape (125, 2048)
+        features = np.array(features) # Shape (125, 2048)
         
-        batch_size, fps_dim = fps.shape
+        batch_size, features_dim = features.shape
         # Generate all repeated combinations of 2 out of len(smiles)
         comb = list(product(range(batch_size), repeat=2))
 
         # Remove all combinations where the same molecule is compared to itself
-        comb = [c for c in comb if c[0] != c[1]]
-        C = len(comb) 
+        comb = [(i, j) for (i, j) in comb if i != j]
+        num_comb = len(comb) 
 
-        fps1 = np.zeros((C, fps_dim))
-        fps2 = np.zeros((C, fps_dim))
+        features_1 = np.zeros((num_comb, features_dim))
+        features_2 = np.zeros((num_comb, features_dim))
 
         # Fill the tensors with the corresponding rows from original_tensor
         for i, (idx1, idx2) in enumerate(comb):
-            fps1[i, :] = fps[idx1, :]
-            fps2[i, :] = fps[idx2, :]
+            features_1[i, :] = features[idx1, :]
+            features_2[i, :] = features[idx2, :]
         
-        outputs_scores = self.predict_from_fingerprints(fps1, fps2) # shape (C, 1)
+        compare_proba = self.predict_from_fingerprints(features_1, features_2) # shape (C, 1)
 
         # If value > 0.5 then 1 else 0
-        outputs_preference = np.where(outputs_scores > 0.5, 1, 0)
+        compare_binary = np.where(compare_proba > 0.5, 1, 0)
 
         # Initialize a list to store the scores
-        pred_activity_score = np.zeros(batch_size)
+        pred_label_proba = np.zeros(batch_size)
 
         # Aggregate the scores, exluding comparing smiles with itself
         for i, (idx1, idx2) in enumerate(comb):
-            pred_activity_score[idx1] += outputs_preference[i]
+            pred_label_proba[idx1] += compare_binary[i]
 
         # Compute the average scores
-        pred_activity_mean = pred_activity_score / (batch_size - 1)
+        pred_label_proba = pred_label_proba / (batch_size - 1)
 
-        return pred_activity_mean
+        return pred_label_proba
 
 
 
@@ -88,32 +88,32 @@ class BradleyTerryModelContainer(BaseModelContainer):
 
         pred_activity_mean = []
 
-        for i, current_fps in enumerate(fps1):
-            # excluse current_fps from fps1
-            fps2 = np.delete(fps1, i, axis=0)  # Shape (124, 2048)
+        for i, current_fps in enumerate(features_1):
+            # excluse current_fps from features_1
+            features_2 = np.delete(features_1, i, axis=0)  # Shape (124, 2048)
             
-            # Repeat current_fps n-1 times to match the shape of fps2
-            current_fps_repeated = np.tile(current_fps, (fps2.shape[0], 1))  # Shape (124, 2048)
+            # Repeat current_fps n-1 times to match the shape of features_2
+            current_fps_repeated = np.tile(current_fps, (features_2.shape[0], 1))  # Shape (124, 2048)
             
-            # Calculate preference scores for current_fps against each fps in fps2
-            preference_scores = self.predict_from_fingerprints(current_fps_repeated, fps2)
+            # Calculate preference scores for current_fps against each fps in features_2
+            preference_scores = self.predict_from_fingerprints(current_fps_repeated, features_2)
 
             # Apply thresholding to preference scores
             rounded_scores = np.where(preference_scores > 0.5, 1, 0)
             
             # Calculate the mean activity
-            activity = np.sum(rounded_scores) / len(fps2)
+            activity = np.sum(rounded_scores) / len(features_2)
             pred_activity_mean.append(activity)
         
         # Convert the predicted_activity_mean to numpy
         pred_activity_mean = np.array(pred_activity_mean)
         return pred_activity_mean
 
-    def predict_from_fingerprints(self, fps1, fps2): # return only one prediction value that is the probability of the first molecule being more active than the second
+    def predict_from_fingerprints(self, features_1, features_2): # return only one prediction value that is the probability of the first molecule being more active than the second
 
-        fps1_torch_tensor = torch.tensor(fps1, dtype=torch.float32)
-        fps2_torch_tensor = torch.tensor(fps2, dtype=torch.float32)
-        preds = self._activity_model.forward(fps1_torch_tensor, fps2_torch_tensor)
+        features_1_torch_tensor = torch.tensor(features_1, dtype=torch.float32)
+        features_2_torch_tensor = torch.tensor(features_2, dtype=torch.float32)
+        preds = self._activity_model.forward(features_1_torch_tensor, features_2_torch_tensor)
         
         final_preds = preds.cpu().detach().numpy()
 
