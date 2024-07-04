@@ -63,12 +63,12 @@ class RankListNetContainer(BaseModelContainer):
         # Forward pass to get the softmax scores (C3)
         outputs_scores = self.predict_from_fingerprints(features_1, features_2, features_3) # shape (C, 3)
 
-        # Returning the ordinal ranks, 1, 2, 3
-        # 1 is worst and 3 is best
-        outputs_ranks = np.argsort(outputs_scores, axis=1) + 1 # shape (C, 3)
+        # Returning the ordinal ranks, 0, 1, 2
+        # 0 is worst and 2 is best
+        outputs_ranks = np.argsort(outputs_scores, axis=1) # shape (C, 3)
 
-        # We need to normalize the ranks to 0-1, or 0.33, 0.66, 1.0
-        outputs_ranks_normalized = outputs_ranks / num_ranking
+        # We need to normalize the ranks to 0-1, or 0.0, 0.5, 1.0
+        outputs_ranks_normalized = outputs_ranks / (num_ranking - 1)
 
         # Initialize a list to store the scores
         pred_label_proba = np.zeros(batch_size)

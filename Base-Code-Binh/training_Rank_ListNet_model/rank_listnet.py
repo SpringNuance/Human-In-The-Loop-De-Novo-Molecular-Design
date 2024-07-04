@@ -31,3 +31,8 @@ class RankListNetModel(nn.Module):
         ranking_scores = torch.softmax(scores, dim=1) # shape (batch_size, 3)
 
         return ranking_scores
+
+    def predict_proba(self, features_A):
+        # Compute strength scores
+        theta_A = self.fc(features_A)
+        return theta_A
