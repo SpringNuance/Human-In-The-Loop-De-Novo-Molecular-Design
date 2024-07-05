@@ -1,0 +1,1478 @@
+Obtaining file:///home/springnuance/reinvent-hitl/reinvent-scoring
+  Preparing metadata (setup.py) ... Installing collected packages: reinvent-scoring
+  Attempting uninstall: reinvent-scoring
+    Found existing installation: reinvent-scoring 0.0.73
+    Uninstalling reinvent-scoring-0.0.73:
+      Successfully uninstalled reinvent-scoring-0.0.73
+  Running setup.py develop for reinvent-scoring
+Successfully installed reinvent-scoring-0.0.73
+
+*******************************************************************
+Running HITL with random acquisition and noise 0.0
+
+Running DRD2 (one objective) with rounds 3, iters 5, queries 20, seed 42
+Results will be saved at output_score_regression/R3_T5_Q20_acq_random_noise_0.0
+Loading initial training datasets successfully
+=====================================
+REINVENT round = 1
+Creating config file: output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/config.json.
+Run REINVENT
+Found local copy...
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1576
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from /home/springnuance/reinvent-hitl/Base-Code-Binh/training_Score_Regression_model/score_regression_model.pth
+Human score at HITL iteration 1: [0.007642296344783485, 0.004512366355489617, 0.017918655785240968, 0.021687376330935055, 0.025083859775844642, 0.01243548181195187, 0.0015755843542665017, 0.00876809454806327, 0.00926299188626512, 0.004166542741696283, 0.00027566201537778106, 0.685930572269379, 0.8679010146089416, 0.0009638685424265925, 0.00394344881255443, 0.0015300789920956958, 0.00035544003076197527, 0.0023722785036246674, 0.006532193163113652, 0.007721900484467279]
+New queried dataset size: 20
+Combined dataset size: 220
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.17228299379348755
+Epoch 10, Loss: 0.17213543823787145
+Epoch 15, Loss: 0.17198067477771214
+Epoch 20, Loss: 0.17183907542909896
+Found local copy...
+Epoch 25, Loss: 0.17170000289167678
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_1/score_regression_model.pth
+Human score at HITL iteration 2: [0.03504258825382439, 0.005732282626226658, 0.000938934967700773, 0.006526813256397308, 0.0025635931905768927, 0.02602106633572767, 0.05100473331729618, 0.005372227435980397, 0.003259025951281082, 0.0032406871603942503, 0.0027324041493065653, 0.0014674699848146355, 0.0017038917799708012, 0.014492677416665064, 0.0017744055915390753, 0.01771335553386971, 0.0022664263634596077, 0.30454082103252567, 0.0021050057231646073, 0.004880409104464874]
+New queried dataset size: 20
+Combined dataset size: 240
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.34246351942420006
+Epoch 10, Loss: 0.34236783906817436
+Epoch 15, Loss: 0.3418966718018055
+Epoch 20, Loss: 0.34154996648430824
+Found local copy...
+Epoch 25, Loss: 0.3410278260707855
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_2/score_regression_model.pth
+Human score at HITL iteration 3: [0.0007971192056901226, 0.02491094154127567, 0.009890893970011033, 0.5353115131218524, 0.0034171416018054833, 0.008894463510045523, 0.001263673176498397, 0.007727415981365384, 0.0088380318202768, 0.003612341839082769, 0.007302273482587952, 2.5149461457776155e-05, 0.0006731752583690243, 0.0002437204384847879, 0.003411312331427852, 0.0008875363023786481, 0.5450344102028453, 0.018409809760292023, 0.010465665076677136, 0.009056432946409237]
+New queried dataset size: 20
+Combined dataset size: 260
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 1.5294519066810608
+Epoch 10, Loss: 1.5285134762525558
+Epoch 15, Loss: 1.5255677998065948
+Epoch 20, Loss: 1.5186334550380707
+Found local copy...
+Epoch 25, Loss: 1.5215240269899368
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_3/score_regression_model.pth
+Human score at HITL iteration 4: [0.06117076126620635, 0.9421672922648735, 0.010426920448027618, 0.002462974492750569, 0.0048725016974401, 0.0024656648447232573, 0.08826647816780404, 0.017629338921296034, 0.00371599127467561, 0.005449525361740737, 0.019064294655926083, 0.00037407202559886925, 0.013029281683349103, 0.008095572492288825, 0.0028922365565653366, 0.005704236955039908, 0.11678605579689681, 4.396388169551682e-05, 0.0005085922689639254, 0.0045090713161974215]
+New queried dataset size: 20
+Combined dataset size: 280
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.2527605543533961
+Epoch 10, Loss: 0.2522767409682274
+Epoch 15, Loss: 0.25190435349941254
+Epoch 20, Loss: 0.2512351373831431
+Found local copy...
+Epoch 25, Loss: 0.2509133666753769
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_4/score_regression_model.pth
+Human score at HITL iteration 5: [0.0029740432211010715, 0.001668100824864043, 0.051710199235819446, 0.009367960911535512, 0.008275694836429648, 0.0016306941887233703, 0.6844392021357639, 0.017828465105447805, 0.000592531336427146, 0.005847095391272587, 0.000204280839888354, 0.00020178527556127644, 0.6465472304855585, 0.0018623905139382676, 0.04659840078995225, 0.061495443441729455, 0.0037192407588968277, 0.011983279798133543, 0.04396728023037592, 0.00042246387341846286]
+New queried dataset size: 20
+Combined dataset size: 300
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.5544796238342921
+Epoch 10, Loss: 0.5535453706979752
+Epoch 15, Loss: 0.5519502411286036
+Epoch 20, Loss: 0.549811472495397
+Epoch 25, Loss: 0.5490258683760961
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_5/score_regression_model.pth
+=====================================
+REINVENT round = 2
+Creating config file: output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/config.json.
+Run REINVENT
+Found local copy...
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1574
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_5/score_regression_model.pth
+Human score at HITL iteration 1: [0.020999364269237594, 0.01447019268339539, 0.004103454001819383, 0.004191549420470982, 0.0018200087711810378, 0.028522822447510403, 0.0071629958045556505, 0.02832859289823008, 0.0034648516299179625, 0.0013144275809175649, 0.0027557673136444994, 0.025042384680383566, 0.009315637071460338, 0.0004080283652955931, 0.0006440552849770687, 0.002035350894196702, 0.7581666991605939, 0.00034689825730380164, 0.00170030713851561, 0.0016494472738862033]
+New queried dataset size: 20
+Combined dataset size: 320
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.20519821159541607
+Epoch 10, Loss: 0.20459715835750103
+Epoch 15, Loss: 0.20396517030894756
+Epoch 20, Loss: 0.20330184139311314
+Found local copy...
+Epoch 25, Loss: 0.20259311236441135
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_1/score_regression_model.pth
+Human score at HITL iteration 2: [0.018666099006642803, 0.0014553718724294674, 0.09072966145402873, 0.005829279550027818, 0.015834979272922458, 0.000803523240728363, 0.048019456536658275, 0.042633940223747, 0.8576186408632238, 0.14702851973818618, 0.0005310678202484635, 0.025219354951249287, 0.007724182241423696, 0.07510265659960869, 0.013728607809137636, 0.007605116620403228, 0.04179641775393486, 0.005673992368692183, 0.0036156761745992083, 0.015383219840928159]
+New queried dataset size: 20
+Combined dataset size: 340
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.35495111644268035
+Epoch 10, Loss: 0.35345270335674284
+Epoch 15, Loss: 0.351577228307724
+Epoch 20, Loss: 0.35020042955875397
+Found local copy...
+Epoch 25, Loss: 0.3488458961248398
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_2/score_regression_model.pth
+Human score at HITL iteration 3: [0.0010906127520123275, 0.0074872569511524505, 0.027653984437467662, 0.01694301331427953, 0.0020681283477638978, 0.002644039091872032, 4.376834158485427e-05, 0.002144306583971096, 0.0019070588717500993, 0.004638093916032153, 0.002568637071614435, 0.39120421910016284, 0.003775312803033844, 0.011694217820306945, 0.00018097984937364667, 0.004158015240537849, 0.0062199195148855795, 0.09656080487651883, 0.00014579527478717738, 0.0029486979451071784]
+New queried dataset size: 20
+Combined dataset size: 360
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.9446833431720734
+Epoch 10, Loss: 0.9412766024470329
+Epoch 15, Loss: 0.9341169968247414
+Epoch 20, Loss: 0.9296931773424149
+Found local copy...
+Epoch 25, Loss: 0.9181976243853569
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_3/score_regression_model.pth
+Human score at HITL iteration 4: [0.0940443038416012, 0.002780344639924843, 0.0021266396463760426, 8.394233645103723e-05, 0.011366126570847757, 0.0018393789772468512, 0.005362662289491326, 0.001640977543005848, 0.022452130970999042, 0.0004652243199745083, 0.20506364734674715, 0.0013202567965352682, 0.11495414871843095, 0.005721905065371684, 0.0017718306927346575, 0.002586578904141487, 0.00012085424364698063, 0.007008429800532653, 0.12514250832259402, 0.005730834335888983]
+New queried dataset size: 20
+Combined dataset size: 380
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.26175087690353394
+Epoch 10, Loss: 0.2601458153554371
+Epoch 15, Loss: 0.25821677276066374
+Epoch 20, Loss: 0.2565275366817202
+Found local copy...
+Epoch 25, Loss: 0.2545799208538873
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_4/score_regression_model.pth
+Human score at HITL iteration 5: [0.8498428291162172, 0.00983956422746535, 0.00206907885940167, 0.00034404118960980025, 0.0037184367294752375, 0.014777909095294627, 0.00738310125314389, 0.002595859993325855, 0.011427753880634687, 0.12986153960087757, 0.002367012511527292, 0.0005377459824323454, 9.151413478688545e-05, 0.001152153459989332, 0.18491874604724412, 0.028858376586957498, 0.003689310448161313, 0.02118176306956501, 0.18363743638455818, 0.0336643710446695]
+New queried dataset size: 20
+Combined dataset size: 400
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.4783795215189457
+Epoch 10, Loss: 0.4746967703104019
+Epoch 15, Loss: 0.4699760638177395
+Epoch 20, Loss: 0.4661191999912262
+Epoch 25, Loss: 0.4635145366191864
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_5/score_regression_model.pth
+=====================================
+REINVENT round = 3
+Creating config file: output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/config.json.
+Run REINVENT
+Found local copy...
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1569
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_5/score_regression_model.pth
+Human score at HITL iteration 1: [0.0013289699159857147, 0.0008876404767707002, 0.0008735906120603741, 0.9855471416573676, 0.003056745893872501, 0.02605601662459016, 0.010994864689104948, 0.005658866624965565, 0.002526986997328271, 0.08626326706970157, 0.8285422240946055, 0.00390684531263122, 0.0007244634961997297, 0.0025164552789948137, 0.026093365776595885, 0.00026901128510835646, 0.00033856115168232986, 0.03307553450064306, 0.0017728211939340645, 0.0020570050467390915]
+New queried dataset size: 20
+Combined dataset size: 420
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 1.954160138964653
+Epoch 10, Loss: 1.9688591659069061
+Epoch 15, Loss: 1.9556711465120316
+Epoch 20, Loss: 1.9025324806571007
+Found local copy...
+Epoch 25, Loss: 1.8811103850603104
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_1/score_regression_model.pth
+Human score at HITL iteration 2: [0.00119705140115691, 0.000776052894783584, 0.009870537155319116, 0.0019546880899756736, 0.0007531703913655804, 0.013128525210983353, 0.0003130415058231405, 0.0010411003014885996, 0.15151223075447273, 0.6639364913925777, 0.0008278418183451585, 0.005379598676381922, 0.08056214576842509, 0.013926979871252956, 0.0013811601557314772, 0.30696268082434736, 0.0013327944648508035, 0.003020369290237206, 0.06682138340573188, 0.007430656671748469]
+New queried dataset size: 20
+Combined dataset size: 440
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.3101658647259076
+Epoch 10, Loss: 0.30688706537087757
+Epoch 15, Loss: 0.3032030798494816
+Epoch 20, Loss: 0.2982557726403077
+Found local copy...
+Epoch 25, Loss: 0.2953625333805879
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_2/score_regression_model.pth
+Human score at HITL iteration 3: [0.0015933458639721897, 0.007033689535596319, 0.12080328003680849, 0.1275752793141945, 0.0007551550569649159, 0.0013405895308957682, 0.3390128624248542, 0.9999810341258871, 0.0009738667409927917, 0.5843439407655502, 0.001725088904820027, 0.00047076733130206914, 0.00894043871096741, 0.00401800022706105, 0.006898755374915521, 0.979141358505805, 0.004005512004326984, 0.00039469455183753944, 0.007156566902475703, 0.0031291484174789334]
+New queried dataset size: 20
+Combined dataset size: 460
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.6271178051829338
+Epoch 10, Loss: 0.6123964289824168
+Epoch 15, Loss: 0.6040694837768873
+Epoch 20, Loss: 0.5935340573390325
+Found local copy...
+Epoch 25, Loss: 0.5898679941892624
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_3/score_regression_model.pth
+Human score at HITL iteration 4: [0.020705166614845918, 0.0002949936426869349, 0.005896086881435478, 7.158812115169597e-05, 0.018334915690912723, 0.07379834815054935, 0.003887331615488828, 0.0018140905168447402, 0.006193271228921464, 0.02846876244932463, 0.034540781709437106, 0.001803153502523887, 0.0011415077132657682, 0.01285869052212636, 0.790940473837965, 0.12815995254067444, 0.019394531838277832, 0.002839804416838935, 0.0028521950831503304, 0.0006433742893271502]
+New queried dataset size: 20
+Combined dataset size: 480
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.21809301804751158
+Epoch 10, Loss: 0.2149506900459528
+Epoch 15, Loss: 0.21181139070540667
+Epoch 20, Loss: 0.20869361609220505
+Found local copy...
+Epoch 25, Loss: 0.20561379101127386
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_4/score_regression_model.pth
+Human score at HITL iteration 5: [0.001438416263575092, 0.00026286139192924706, 0.1080762209921229, 0.0030133809729565126, 0.9478174501561583, 0.0009502884850079558, 0.5935475177334553, 0.001668820255538569, 0.05697972506337167, 0.028840836313648435, 0.005398766385520187, 0.010865205724733401, 0.001776541202880584, 0.016009629949627555, 0.0015849663599953614, 0.0038456645289827855, 0.011853039426208307, 0.005016464730859686, 0.003029590348362357, 0.008159999324219055]
+New queried dataset size: 20
+Combined dataset size: 500
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.34287087619304657
+Epoch 10, Loss: 0.3397600367665291
+Epoch 15, Loss: 0.3333462610840797
+Epoch 20, Loss: 0.32836752384901047
+Epoch 25, Loss: 0.32122537344694135
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_5/score_regression_model.pth
+
+*******************************************************************
+Running HITL with random acquisition and noise 0.1
+
+Running DRD2 (one objective) with rounds 3, iters 5, queries 20, seed 42
+Results will be saved at output_score_regression/R3_T5_Q20_acq_random_noise_0.1
+Loading initial training datasets successfully
+=====================================
+REINVENT round = 1
+Creating config file: output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/config.json.
+Run REINVENT
+Found local copy...
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1567
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from /home/springnuance/reinvent-hitl/Base-Code-Binh/training_Score_Regression_model/score_regression_model.pth
+Human score at HITL iteration 1: [0.05042550599853545, 0.16716347156672945, 0.06563149538901965, 0.8304906592515731, 0.0, 0.0, 0.17119937576228758, 0.5886890642887534, 0.0, 0.05429180731807712, 0.0, 0.0, 0.024879805387725478, 0.0, 0.0, 0.0, 0.0, 0.03160494705030713, 0.0, 0.0]
+New queried dataset size: 20
+Combined dataset size: 220
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.17227500889982497
+Epoch 10, Loss: 0.17219084927013942
+Epoch 15, Loss: 0.17200309463909694
+Epoch 20, Loss: 0.17188658033098494
+Found local copy...
+Epoch 25, Loss: 0.1716901000056948
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_1/score_regression_model.pth
+Human score at HITL iteration 2: [0.4923198953657489, 0.0, 0.10592754606123694, 0.0, 0.0, 0.018052092996616954, 0.0, 0.03786202488246274, 0.0, 0.0, 0.0, 0.19804432646899212, 0.0, 0.0, 0.1138290257054548, 0.19565412220263956, 0.025400457347937964, 0.0, 0.0, 0.021648876996017932]
+New queried dataset size: 20
+Combined dataset size: 240
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.34273138269782066
+Epoch 10, Loss: 0.3421928361058235
+Epoch 15, Loss: 0.34176070243120193
+Epoch 20, Loss: 0.3414786644279957
+Found local copy...
+Epoch 25, Loss: 0.3408883847296238
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_2/score_regression_model.pth
+Human score at HITL iteration 3: [0.0884704583020259, 0.021332081430205475, 0.0, 0.0, 0.0, 0.0, 0.0, 0.10917011998036663, 0.03709558850793553, 0.0, 0.032642226300306526, 0.0, 0.0, 0.06423908455583503, 0.11832175811779326, 0.09517816587883957, 0.0, 0.0, 0.03371825839828968, 0.10371058886750255]
+New queried dataset size: 20
+Combined dataset size: 260
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 1.5309741497039795
+Epoch 10, Loss: 1.527566745877266
+Epoch 15, Loss: 1.5226576179265976
+Epoch 20, Loss: 1.5300255119800568
+Found local copy...
+Epoch 25, Loss: 1.5249215364456177
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_3/score_regression_model.pth
+Human score at HITL iteration 4: [0.16786146189929668, 0.0, 0.0, 0.0, 0.15493752054757526, 0.14371356276326308, 0.0, 0.10326944064821696, 0.07539872399313274, 0.0, 0.09438907643984343, 0.22184636869094126, 0.0, 0.15672282423817763, 0.0, 0.08500204096679918, 0.01400680600389486, 0.0, 0.010690878016191483, 0.0]
+New queried dataset size: 20
+Combined dataset size: 280
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.25298069914182025
+Epoch 10, Loss: 0.25241965303818387
+Epoch 15, Loss: 0.2521051988005638
+Epoch 20, Loss: 0.2516260892152786
+Found local copy...
+Epoch 25, Loss: 0.2509976103901863
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_4/score_regression_model.pth
+Human score at HITL iteration 5: [0.0, 0.040307828605824686, 0.14971660007775195, 0.0, 0.0, 0.011498025013175116, 0.09790839692833779, 0.04279700595224691, 0.0, 0.06656085649168723, 0.03739786682916975, 0.10364519399114755, 0.0, 0.0, 0.0, 0.0, 0.030502567335052588, 0.026568061514241834, 0.01994834813010533, 0.0]
+New queried dataset size: 20
+Combined dataset size: 300
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.5562653094530106
+Epoch 10, Loss: 0.5548000335693359
+Epoch 15, Loss: 0.5535342295964559
+Epoch 20, Loss: 0.5511412968238195
+Epoch 25, Loss: 0.5498075683911642
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_5/score_regression_model.pth
+=====================================
+REINVENT round = 2
+Creating config file: output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/config.json.
+Run REINVENT
+Found local copy...
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1567
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_5/score_regression_model.pth
+Human score at HITL iteration 1: [0.0, 0.0, 0.2556937885113004, 0.0, 0.020795478797925003, 0.04929442421706051, 0.86652716337006, 0.475714877550735, 0.040541666973451046, 0.0, 0.0, 0.11604403111631936, 0.007414592866982655, 0.27999112585656605, 0.0, 0.1427790211200619, 0.005462980579509472, 0.0, 0.12086374819935408, 0.07966782916983377]
+New queried dataset size: 20
+Combined dataset size: 320
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.20571697689592838
+Epoch 10, Loss: 0.2051420882344246
+Epoch 15, Loss: 0.2045319899916649
+Epoch 20, Loss: 0.20389472879469395
+Found local copy...
+Epoch 25, Loss: 0.2032282091677189
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_1/score_regression_model.pth
+Human score at HITL iteration 2: [0.08947396558749579, 0.0, 0.6756468838184991, 0.0, 0.0628496888151946, 0.2223503210590705, 0.0, 0.0, 0.028676395488530883, 0.6597735137588685, 0.0, 0.014836608386232825, 0.5236613167531342, 0.0657213637600872, 0.0, 1.0, 0.0, 0.0, 0.0832439444274655, 0.0]
+New queried dataset size: 20
+Combined dataset size: 340
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.35650058686733244
+Epoch 10, Loss: 0.3550834864377975
+Epoch 15, Loss: 0.35390744507312777
+Epoch 20, Loss: 0.35250728726387026
+Found local copy...
+Epoch 25, Loss: 0.35047687292099
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_2/score_regression_model.pth
+Human score at HITL iteration 3: [0.8221610704674229, 0.13094577026039123, 0.0, 0.02898286465552606, 0.03556842255755359, 0.09930022122588777, 0.0, 0.0, 0.05517536961817196, 0.03218077361119895, 0.028015662373823334, 0.044336589219056095, 0.0, 0.025338101811526174, 0.03047767762106146, 0.036637109211397234, 0.5711710713744974, 0.0671847979174051, 0.0, 0.07230292181885231]
+New queried dataset size: 20
+Combined dataset size: 360
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.9544720500707626
+Epoch 10, Loss: 0.9457171186804771
+Epoch 15, Loss: 0.9439524188637733
+Epoch 20, Loss: 0.9311422854661942
+Found local copy...
+Epoch 25, Loss: 0.9331687316298485
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_3/score_regression_model.pth
+Human score at HITL iteration 4: [0.0, 0.08594981747369217, 0.27389121743530137, 0.0, 0.09871395435578226, 0.04173398746243865, 0.10327387746681814, 1.0, 0.0, 0.0, 0.0, 0.8259775598958969, 0.06509827649172384, 0.03841890655974309, 0.031014458643312738, 0.08427711122735605, 0.009973727275702346, 0.1495927693912448, 0.0, 0.27638120721532167]
+New queried dataset size: 20
+Combined dataset size: 380
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.26496079776968273
+Epoch 10, Loss: 0.2632376104593277
+Epoch 15, Loss: 0.26175530893462046
+Epoch 20, Loss: 0.2602034402745111
+Found local copy...
+Epoch 25, Loss: 0.2582815225635256
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_4/score_regression_model.pth
+Human score at HITL iteration 5: [0.30114431954033327, 0.0, 0.0, 0.05488076288430702, 0.0, 0.08481984568456091, 0.07467685891139687, 0.0, 0.3605837725620692, 0.0, 0.0, 0.13259261898261712, 0.024884075145466387, 0.0, 0.1141439302142243, 0.04012703537741406, 0.0, 0.09985468969818624, 0.01218516970635911, 0.0]
+New queried dataset size: 20
+Combined dataset size: 400
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.4850751496851444
+Epoch 10, Loss: 0.4829431511461735
+Epoch 15, Loss: 0.4795048348605633
+Epoch 20, Loss: 0.47370877116918564
+Epoch 25, Loss: 0.4682865999639034
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_5/score_regression_model.pth
+=====================================
+REINVENT round = 3
+Creating config file: output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/config.json.
+Run REINVENT
+Found local copy...
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1578
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_5/score_regression_model.pth
+Human score at HITL iteration 1: [0.04859409043314573, 0.05724180464759386, 1.0, 0.12154756732936117, 0.23235253999898675, 0.0, 0.05912778069154405, 0.056261665703877965, 0.06874119640242778, 0.3890382950094178, 0.07642178919122514, 0.1238497121810803, 0.15599701499791685, 0.9111935268041588, 0.0, 0.07768080175670324, 0.0, 0.0, 0.0, 0.3722754258248029]
+New queried dataset size: 20
+Combined dataset size: 420
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 2.033023774623871
+Epoch 10, Loss: 2.013400360941887
+Epoch 15, Loss: 1.976744070649147
+Epoch 20, Loss: 1.9540888294577599
+Found local copy...
+Epoch 25, Loss: 1.925870269536972
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_1/score_regression_model.pth
+Human score at HITL iteration 2: [0.23185933947462564, 0.0, 0.07129183603930678, 0.0, 0.0, 0.11261866769246359, 0.20861887933608986, 0.0, 0.0, 0.4248538077020422, 0.0, 0.118244367126228, 0.0738222947266896, 0.0, 0.2150913504251206, 0.0657341360106347, 0.0, 0.02123059273642167, 0.0, 0.13492943888333955]
+New queried dataset size: 20
+Combined dataset size: 440
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.31943584854404133
+Epoch 10, Loss: 0.31633056700229645
+Epoch 15, Loss: 0.3128639869391918
+Epoch 20, Loss: 0.30956429863969487
+Found local copy...
+Epoch 25, Loss: 0.3053114141027133
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_2/score_regression_model.pth
+Human score at HITL iteration 3: [0.0, 0.0, 0.05094398164586804, 0.0874539559552727, 0.0, 0.0, 0.04008836137191014, 0.9346550003869418, 0.17665923435009676, 0.04858553195208997, 0.0, 0.09733334365344579, 0.21402798882320612, 0.3550032247107349, 0.0, 0.0, 0.12837435637559313, 0.0, 0.21399724329838452, 0.2674099920277338]
+New queried dataset size: 20
+Combined dataset size: 460
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.6507197370131811
+Epoch 10, Loss: 0.6362929319341978
+Epoch 15, Loss: 0.6331933066248894
+Epoch 20, Loss: 0.6236083830396334
+Found local copy...
+Epoch 25, Loss: 0.6128032927711805
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_3/score_regression_model.pth
+Human score at HITL iteration 4: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.18239574496938554, 0.0, 0.2541473122284623, 0.01355190998400224, 0.14961289870794695, 0.0, 0.12155959123814361, 0.007012013317862624, 0.0, 0.05092099822423655, 1.0, 0.0, 0.05067001452759777, 0.021301829746446573]
+New queried dataset size: 20
+Combined dataset size: 480
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.22783465683460236
+Epoch 10, Loss: 0.22495156526565552
+Epoch 15, Loss: 0.22208658512681723
+Epoch 20, Loss: 0.2192383734509349
+Found local copy...
+Epoch 25, Loss: 0.21639364585280418
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_4/score_regression_model.pth
+Human score at HITL iteration 5: [0.01405423698024262, 0.06993785572368877, 0.16277537226184086, 0.0, 0.48183294280819555, 0.0, 0.0, 0.070341901365164, 0.030667645091586072, 0.0, 0.00012136281753301684, 0.0, 0.0, 0.08758089094539902, 0.03685532448838845, 0.4224863267565401, 0.09585547200199356, 0.038763265022867824, 0.08181363697760811, 0.08031622017019828]
+New queried dataset size: 20
+Combined dataset size: 500
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.36360938400030135
+Epoch 10, Loss: 0.35851868242025375
+Epoch 15, Loss: 0.35430379807949064
+Epoch 20, Loss: 0.3475251138210297
+Epoch 25, Loss: 0.34529875218868256
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_5/score_regression_model.pth
+
+*******************************************************************
+Running HITL with uncertainty acquisition and noise 0.0
+
+Running DRD2 (one objective) with rounds 3, iters 5, queries 20, seed 42
+Results will be saved at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0
+Loading initial training datasets successfully
+=====================================
+REINVENT round = 1
+Creating config file: output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1570
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from /home/springnuance/reinvent-hitl/Base-Code-Binh/training_Score_Regression_model/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 1: [0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203, 0.02753307496154203]
+New queried dataset size: 20
+Combined dataset size: 220
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.17222557961940765
+Epoch 10, Loss: 0.1720518491097859
+Epoch 15, Loss: 0.17186233827045985
+Epoch 20, Loss: 0.17169177106448583
+Epoch 25, Loss: 0.17152355398450578
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_1/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 2: [0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485, 0.028651791256754485]
+New queried dataset size: 20
+Combined dataset size: 240
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.3422524407505989
+Epoch 10, Loss: 0.341569721698761
+Epoch 15, Loss: 0.34125489369034767
+Epoch 20, Loss: 0.34050895646214485
+Epoch 25, Loss: 0.3401847444474697
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_2/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 3: [0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672, 0.03543826038399672]
+New queried dataset size: 20
+Combined dataset size: 260
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 1.530363917350769
+Epoch 10, Loss: 1.527902901172638
+Epoch 15, Loss: 1.5155649334192276
+Epoch 20, Loss: 1.51620514690876
+Epoch 25, Loss: 1.5126500576734543
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_3/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 4: [0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399, 0.010193133771230399]
+New queried dataset size: 20
+Combined dataset size: 280
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.2512635290622711
+Epoch 10, Loss: 0.25080131987730664
+Epoch 15, Loss: 0.24997354795535406
+Epoch 20, Loss: 0.24965116629997888
+Epoch 25, Loss: 0.24874555816253027
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_4/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 5: [0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581, 0.01453070057746581]
+New queried dataset size: 20
+Combined dataset size: 300
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.5500578880310059
+Epoch 10, Loss: 0.5491997500260671
+Epoch 15, Loss: 0.5462508052587509
+Epoch 20, Loss: 0.5452593515316645
+Epoch 25, Loss: 0.5431489100058874
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_5/score_regression_model.pth
+=====================================
+REINVENT round = 2
+Creating config file: output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1570
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_5/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 1: [0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024, 0.017103999885654024]
+New queried dataset size: 20
+Combined dataset size: 320
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.20291358791291714
+Epoch 10, Loss: 0.20215293020009995
+Epoch 15, Loss: 0.20134530030190945
+Epoch 20, Loss: 0.20048395730555058
+Epoch 25, Loss: 0.19957628846168518
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_1/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 2: [0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383, 0.021066457583206383]
+New queried dataset size: 20
+Combined dataset size: 340
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.3505202502012253
+Epoch 10, Loss: 0.3489683985710144
+Epoch 15, Loss: 0.34593712687492373
+Epoch 20, Loss: 0.3444852113723755
+Epoch 25, Loss: 0.3428019642829895
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_2/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 3: [0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422, 0.0029767392659995422]
+New queried dataset size: 20
+Combined dataset size: 360
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.9292028099298477
+Epoch 10, Loss: 0.9244610816240311
+Epoch 15, Loss: 0.9236598238348961
+Epoch 20, Loss: 0.9068509489297867
+Epoch 25, Loss: 0.8972989469766617
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_3/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 4: [0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635, 0.018458521769392635]
+New queried dataset size: 20
+Combined dataset size: 380
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.256870020713125
+Epoch 10, Loss: 0.2549345919064113
+Epoch 15, Loss: 0.2528616487979889
+Epoch 20, Loss: 0.25074574777058195
+Epoch 25, Loss: 0.24836221124444688
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_4/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 5: [0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408, 0.010410380455496408]
+New queried dataset size: 20
+Combined dataset size: 400
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.4681086651980877
+Epoch 10, Loss: 0.46240974217653275
+Epoch 15, Loss: 0.45880232006311417
+Epoch 20, Loss: 0.4543922431766987
+Epoch 25, Loss: 0.44841272570192814
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_5/score_regression_model.pth
+=====================================
+REINVENT round = 3
+Creating config file: output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1569
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_5/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 1: [0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044, 0.004122658433993044]
+New queried dataset size: 20
+Combined dataset size: 420
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 1.906825415790081
+Epoch 10, Loss: 1.9327428191900253
+Epoch 15, Loss: 1.8906396180391312
+Epoch 20, Loss: 1.8538586646318436
+Epoch 25, Loss: 1.8002664744853973
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_1/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 2: [0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523, 0.0234333076217523]
+New queried dataset size: 20
+Combined dataset size: 440
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.30155429740746814
+Epoch 10, Loss: 0.2982010170817375
+Epoch 15, Loss: 0.29485681901375455
+Epoch 20, Loss: 0.2903662783404191
+Epoch 25, Loss: 0.28558074682950974
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_2/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 3: [0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617, 0.028228994421590617]
+New queried dataset size: 20
+Combined dataset size: 460
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.61091531564792
+Epoch 10, Loss: 0.599258857468764
+Epoch 15, Loss: 0.5893395468592644
+Epoch 20, Loss: 0.5752460087339083
+Epoch 25, Loss: 0.5711515446503957
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_3/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 4: [0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827, 0.0014485904681365827]
+New queried dataset size: 20
+Combined dataset size: 480
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.211227772757411
+Epoch 10, Loss: 0.20782830752432346
+Epoch 15, Loss: 0.20445020496845245
+Epoch 20, Loss: 0.2010986413806677
+Epoch 25, Loss: 0.19776286743581295
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_4/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 5: [0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147, 0.03735257900774147]
+New queried dataset size: 20
+Combined dataset size: 500
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.33478680104017255
+Epoch 10, Loss: 0.32678987085819244
+Epoch 15, Loss: 0.322043751180172
+Epoch 20, Loss: 0.31756524443626405
+Epoch 25, Loss: 0.31151882857084273
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_5/score_regression_model.pth
+
+*******************************************************************
+Running HITL with uncertainty acquisition and noise 0.1
+
+Running DRD2 (one objective) with rounds 3, iters 5, queries 20, seed 42
+Results will be saved at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1
+Loading initial training datasets successfully
+=====================================
+REINVENT round = 1
+Creating config file: output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1579
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from /home/springnuance/reinvent-hitl/Base-Code-Binh/training_Score_Regression_model/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 1: [0.06358834464577265, 9.049922753090814e-05, 0.07868578315471862, 0.16621991498545194, 0.0, 0.0, 0.17183821089538853, 0.09066040225994025, 0.0, 0.06817293370324584, 0.0, 0.0, 0.038113156501252785, 0.0, 0.0, 0.0, 0.0, 0.04534166260417676, 0.0, 0.0]
+New queried dataset size: 20
+Combined dataset size: 220
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.17235484293528966
+Epoch 10, Loss: 0.17216252642018454
+Epoch 15, Loss: 0.1720083079167775
+Epoch 20, Loss: 0.1718269842011588
+Epoch 25, Loss: 0.17166596012456076
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_1/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 2: [0.2640130594644976, 0.09487055252368864, 0.1242010030411346, 0.0, 0.06300991011982394, 0.12854044154332883, 0.002348824830111923, 0.15501798440690942, 0.05738431358046171, 0.08827880759301454, 0.05727752134940252, 0.302676001023236, 0.11609846009854882, 0.01167708967675217, 0.19970267378266113, 0.0, 0.13833454207281776, 0.0, 0.0, 0.13713430615925457]
+New queried dataset size: 20
+Combined dataset size: 240
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.34272466227412224
+Epoch 10, Loss: 0.34187403693795204
+Epoch 15, Loss: 0.3414892815053463
+Epoch 20, Loss: 0.34100861847400665
+Epoch 25, Loss: 0.34095123782753944
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_2/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 3: [0.9511264912825076, 0.8944166614019636, 0.8657150050441424, 0.8471694637240377, 0.7294276342462238, 0.8052954124434957, 0.8312159561869878, 0.9829920559048582, 0.9116416622398127, 0.7009758177466932, 0.909688230222446, 0.8387716052413349, 0.8095876332523707, 0.9384474621670533, 0.9803797855325617, 0.9704078451945864, 0.7933580809607027, 0.8463585956978451, 0.9104061764233229, 0.9748343459952025]
+New queried dataset size: 20
+Combined dataset size: 260
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 1.5434653460979462
+Epoch 10, Loss: 1.5360076278448105
+Epoch 15, Loss: 1.5335170179605484
+Epoch 20, Loss: 1.5290277302265167
+Epoch 25, Loss: 1.5263469368219376
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_3/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 4: [0.0, 0.0, 0.0, 0.0, 0.08656722585685166, 0.14093864647451415, 0.0, 0.10566793340663427, 0.041478246122195264, 0.0, 0.041454204168273244, 0.1591183002640288, 0.001732039706436698, 0.1617790091988325, 0.0, 0.08750489405495424, 0.014019350441248975, 0.0, 0.014490721270982082, 0.0]
+New queried dataset size: 20
+Combined dataset size: 280
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.254076619942983
+Epoch 10, Loss: 0.25369926045338315
+Epoch 15, Loss: 0.2532755757371585
+Epoch 20, Loss: 0.2526921232541402
+Epoch 25, Loss: 0.2522558992107709
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_4/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 5: [0.0, 0.04815332192549923, 0.1602314692484762, 0.0, 0.0, 0.0, 0.10398227654453202, 0.045317175740293036, 0.0, 0.0637688080856602, 0.02214981970912863, 0.10930656382761351, 0.0, 0.0, 0.0, 0.0, 0.04205409248078219, 0.03854759199231353, 0.012953410438570678, 0.0]
+New queried dataset size: 20
+Combined dataset size: 300
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.5589900861183802
+Epoch 10, Loss: 0.5574232737223307
+Epoch 15, Loss: 0.5558158705631892
+Epoch 20, Loss: 0.5554054876168569
+Epoch 25, Loss: 0.5542596379915873
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_5/score_regression_model.pth
+=====================================
+REINVENT round = 2
+Creating config file: output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1561
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_5/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 1: [0.0, 0.0, 0.0, 0.0, 0.006092426610022534, 0.0626260834580773, 0.21083958789767648, 0.039678779059807344, 0.04797603684889989, 0.014776406200006727, 0.0, 0.01956961023170176, 0.028244018770726093, 0.26854520902515205, 0.0029849012985111965, 0.0523757320099847, 0.01874982080609912, 0.0, 0.1365032792281255, 0.09741430104530087]
+New queried dataset size: 20
+Combined dataset size: 320
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.2069878000766039
+Epoch 10, Loss: 0.206428375095129
+Epoch 15, Loss: 0.20585605315864086
+Epoch 20, Loss: 0.20525543950498104
+Epoch 25, Loss: 0.20461551658809185
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_1/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 2: [0.08269169079669332, 0.0, 0.14386792718599856, 0.0, 0.062274205472415654, 0.22263405867338648, 0.0, 0.0, 0.013553632601152743, 0.0, 0.0, 0.010444793572991353, 0.0, 0.05094773915590678, 0.0, 0.15858193659414258, 0.0, 0.0, 0.0849402178293556, 0.0]
+New queried dataset size: 20
+Combined dataset size: 340
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.35910627245903015
+Epoch 10, Loss: 0.35771332681179047
+Epoch 15, Loss: 0.3564608246088028
+Epoch 20, Loss: 0.35499068796634675
+Epoch 25, Loss: 0.3529221087694168
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_2/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 3: [0.02522087088868906, 0.13318915285651894, 0.0, 0.02093826328150654, 0.02846315685311847, 0.08065716460600715, 0.0, 0.0, 0.054669033989965886, 0.032173344751594724, 0.027524162462863773, 0.03711969837797369, 0.0, 0.02570024714437647, 0.031782124758144244, 0.0, 0.18905232854275178, 0.04985816951945487, 0.0, 0.06813023829165908]
+New queried dataset size: 20
+Combined dataset size: 360
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.9601316079497337
+Epoch 10, Loss: 0.9566055908799171
+Epoch 15, Loss: 0.9507539048790932
+Epoch 20, Loss: 0.9460159689188004
+Epoch 25, Loss: 0.9371959865093231
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_3/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 4: [0.0, 0.09841754691036432, 0.1355686444368595, 0.0, 0.1160466994605513, 0.06098717922976894, 0.10191510253556811, 0.20938838480151387, 0.0, 0.0, 0.0, 0.0, 0.011998915594708687, 0.0538242840177835, 0.04737816646912102, 0.10242741143972149, 0.02100927572390981, 0.1650624942518508, 0.0, 0.291726003195081]
+New queried dataset size: 20
+Combined dataset size: 380
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.26721254204000744
+Epoch 10, Loss: 0.2655877641269139
+Epoch 15, Loss: 0.2641265796763556
+Epoch 20, Loss: 0.26223420458180563
+Epoch 25, Loss: 0.2603991521256311
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_4/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 5: [0.08271869066057554, 0.0, 0.0, 0.06839919740839344, 0.0, 0.09155200529328411, 0.06747571834142939, 0.012869064618387629, 0.0, 0.0, 0.0, 0.10579183531642215, 0.0415613302970953, 0.0, 0.03747004846919311, 0.05868369385695858, 0.0, 0.0355244664786277, 0.025972827728674895, 0.0]
+New queried dataset size: 20
+Combined dataset size: 400
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.49175073951482773
+Epoch 10, Loss: 0.48678133264184
+Epoch 15, Loss: 0.4853001870214939
+Epoch 20, Loss: 0.4778748229146004
+Epoch 25, Loss: 0.4755230247974396
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_5/score_regression_model.pth
+=====================================
+REINVENT round = 3
+Creating config file: output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1577
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_5/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 1: [0.7394751178765656, 0.7597748344785608, 0.812001506159265, 0.8090765870452277, 0.5659294450460282, 0.6099138778502251, 0.7551999085626033, 0.7550749769329582, 0.7552011504723422, 1.0, 0.760785432911054, 0.8172529458597972, 0.7990965581910576, 0.7688355069723172, 0.6721694573777027, 0.7795933038910641, 0.6264138603879801, 0.6800145211677364, 0.6551600270588269, 0.7118837957803695]
+New queried dataset size: 20
+Combined dataset size: 420
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 2.026681400835514
+Epoch 10, Loss: 2.07251313328743
+Epoch 15, Loss: 2.0227550268173218
+Epoch 20, Loss: 1.9910780191421509
+Epoch 25, Loss: 1.961372248828411
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_1/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 2: [1.0, 0.7699782583182441, 1.0, 0.7954331904584537, 0.9095115909984756, 1.0, 0.9631327794869652, 0.8489302997844883, 0.8851744066514221, 1.0, 0.8836681144057053, 0.9783506365356164, 0.9612619615678003, 0.8915447428168372, 1.0, 1.0, 0.7541905189116582, 0.9753502090543616, 0.8905261311005801, 1.0]
+New queried dataset size: 20
+Combined dataset size: 440
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.33120540777842206
+Epoch 10, Loss: 0.32781852533419925
+Epoch 15, Loss: 0.32443466782569885
+Epoch 20, Loss: 0.32055889815092087
+Epoch 25, Loss: 0.31673938035964966
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_2/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 3: [0.27697447621609206, 0.3447529059126722, 0.4067252779574078, 0.44280206947637424, 0.23619690935378446, 0.3227764264752673, 0.30873201894326646, 0.29089362680199093, 0.5327719740874718, 0.39672472115545765, 0.23013815462585757, 0.4480127447648397, 0.5684421697606254, 0.4594730761144768, 0.20428955346396074, 0.30780314277273696, 0.48291766497802435, 0.285459603497484, 0.4006084928739849, 0.43368995540229577]
+New queried dataset size: 20
+Combined dataset size: 460
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.6736028318603834
+Epoch 10, Loss: 0.6661541561285654
+Epoch 15, Loss: 0.6608958939711252
+Epoch 20, Loss: 0.6537928357720375
+Epoch 25, Loss: 0.6406635244687399
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_3/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 4: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.16783880398256337, 0.0, 0.0, 0.017671731318008973, 0.1487250024960114, 0.0, 0.1209140488048958, 0.005620979691358542, 0.0, 0.050808021015726915, 0.024503643146746842, 0.0, 0.011577882088401728, 0.0]
+New queried dataset size: 20
+Combined dataset size: 480
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.23871885146945715
+Epoch 10, Loss: 0.23536019306629896
+Epoch 15, Loss: 0.231952715665102
+Epoch 20, Loss: 0.22851311415433884
+Epoch 25, Loss: 0.22505267336964607
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_4/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 5: [0.012002387636260823, 0.06686372056324069, 0.15925233472567124, 0.0, 0.2139539905767627, 0.0, 0.0, 0.05948237375959367, 0.028749839884639285, 0.0, 0.0, 0.0, 0.0, 0.08561086281323849, 0.03635220170764075, 0.0, 0.09061064065446109, 0.03138060519879696, 0.08193686499503203, 0.06361353730349724]
+New queried dataset size: 20
+Combined dataset size: 500
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.3803656458854675
+Epoch 10, Loss: 0.37245185673236847
+Epoch 15, Loss: 0.36717378795146943
+Epoch 20, Loss: 0.3614961788058281
+Epoch 25, Loss: 0.3559686288237572
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_5/score_regression_model.pth
+
+*******************************************************************
+Running HITL with greedy acquisition and noise 0.0
+
+Running DRD2 (one objective) with rounds 3, iters 5, queries 20, seed 42
+Results will be saved at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0
+Loading initial training datasets successfully
+=====================================
+REINVENT round = 1
+Creating config file: output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1582
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from /home/springnuance/reinvent-hitl/Base-Code-Binh/training_Score_Regression_model/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 1: [0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918, 0.028374414861481918]
+New queried dataset size: 20
+Combined dataset size: 220
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.17229510418006352
+Epoch 10, Loss: 0.1721138528415135
+Epoch 15, Loss: 0.17188405564853124
+Epoch 20, Loss: 0.17171028043542588
+Epoch 25, Loss: 0.1715305745601654
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_1/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 2: [0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509, 0.009770184280616509]
+New queried dataset size: 20
+Combined dataset size: 240
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.342296477407217
+Epoch 10, Loss: 0.34165406972169876
+Epoch 15, Loss: 0.3411685340106487
+Epoch 20, Loss: 0.3409176990389824
+Epoch 25, Loss: 0.3402942158281803
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_2/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 3: [0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414, 0.012164062339753414]
+New queried dataset size: 20
+Combined dataset size: 260
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 1.5240725576877594
+Epoch 10, Loss: 1.5208145678043365
+Epoch 15, Loss: 1.52759450674057
+Epoch 20, Loss: 1.5191972255706787
+Epoch 25, Loss: 1.5167562514543533
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_3/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 4: [0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758, 0.021752775106127758]
+New queried dataset size: 20
+Combined dataset size: 280
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.25178831319014233
+Epoch 10, Loss: 0.25126761943101883
+Epoch 15, Loss: 0.25065738956133526
+Epoch 20, Loss: 0.25024615973234177
+Epoch 25, Loss: 0.24943801015615463
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_4/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 5: [0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699, 0.009038614363893699]
+New queried dataset size: 20
+Combined dataset size: 300
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.5515930950641632
+Epoch 10, Loss: 0.5505987803141276
+Epoch 15, Loss: 0.5496308753887812
+Epoch 20, Loss: 0.5459803193807602
+Epoch 25, Loss: 0.5450093696514765
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_5/score_regression_model.pth
+=====================================
+REINVENT round = 2
+Creating config file: output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1571
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_5/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 1: [0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462, 0.9328790743108462]
+New queried dataset size: 20
+Combined dataset size: 320
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.20521887578070164
+Epoch 10, Loss: 0.20453516580164433
+Epoch 15, Loss: 0.20381511747837067
+Epoch 20, Loss: 0.2030631098896265
+Epoch 25, Loss: 0.2022569663822651
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_1/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 2: [0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915, 0.0068870027497733915]
+New queried dataset size: 20
+Combined dataset size: 340
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.3547631949186325
+Epoch 10, Loss: 0.3528565108776093
+Epoch 15, Loss: 0.35131425559520724
+Epoch 20, Loss: 0.3498681128025055
+Epoch 25, Loss: 0.3475167602300644
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_2/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 3: [0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585, 0.0160806914478585]
+New queried dataset size: 20
+Combined dataset size: 360
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.9453311637043953
+Epoch 10, Loss: 0.9380344524979591
+Epoch 15, Loss: 0.9315333440899849
+Epoch 20, Loss: 0.9263257309794426
+Epoch 25, Loss: 0.9201731458306313
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_3/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 4: [0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428, 0.004104973607266428]
+New queried dataset size: 20
+Combined dataset size: 380
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.2614540606737137
+Epoch 10, Loss: 0.25974383311612265
+Epoch 15, Loss: 0.25774321385792326
+Epoch 20, Loss: 0.25583245285919737
+Epoch 25, Loss: 0.2537219205072948
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_4/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 5: [0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443, 0.007596551814979443]
+New queried dataset size: 20
+Combined dataset size: 400
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.47756171971559525
+Epoch 10, Loss: 0.47328298911452293
+Epoch 15, Loss: 0.46831707283854485
+Epoch 20, Loss: 0.46551935747265816
+Epoch 25, Loss: 0.4584302753210068
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_5/score_regression_model.pth
+=====================================
+REINVENT round = 3
+Creating config file: output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1575
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_5/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 1: [0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121, 0.820264173567121]
+New queried dataset size: 20
+Combined dataset size: 420
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 1.9815088510513306
+Epoch 10, Loss: 1.9391019195318222
+Epoch 15, Loss: 1.931439831852913
+Epoch 20, Loss: 1.9132886677980423
+Epoch 25, Loss: 1.9074852913618088
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_1/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 2: [0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147, 0.9799441055492147]
+New queried dataset size: 20
+Combined dataset size: 440
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.31672172745068866
+Epoch 10, Loss: 0.3120847630004088
+Epoch 15, Loss: 0.3084430856009324
+Epoch 20, Loss: 0.3043406407038371
+Epoch 25, Loss: 0.29957034811377525
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_2/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 3: [0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164, 0.7305787083189164]
+New queried dataset size: 20
+Combined dataset size: 460
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.6411873549222946
+Epoch 10, Loss: 0.6370467866460482
+Epoch 15, Loss: 0.6242496992150942
+Epoch 20, Loss: 0.6141784663001696
+Epoch 25, Loss: 0.6058701202273369
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_3/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 4: [0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712, 0.004230972123044712]
+New queried dataset size: 20
+Combined dataset size: 480
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.2240182477980852
+Epoch 10, Loss: 0.22014841809868813
+Epoch 15, Loss: 0.21624175552278757
+Epoch 20, Loss: 0.21232964284718037
+Epoch 25, Loss: 0.20839373115450144
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_4/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 5: [0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657, 0.006689350573179657]
+New queried dataset size: 20
+Combined dataset size: 500
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.35184579640626906
+Epoch 10, Loss: 0.3450563460588455
+Epoch 15, Loss: 0.33839517682790754
+Epoch 20, Loss: 0.3302943170070648
+Epoch 25, Loss: 0.32434670329093934
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_5/score_regression_model.pth
+
+*******************************************************************
+Running HITL with greedy acquisition and noise 0.1
+
+Running DRD2 (one objective) with rounds 3, iters 5, queries 20, seed 42
+Results will be saved at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1
+Loading initial training datasets successfully
+=====================================
+REINVENT round = 1
+Creating config file: output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1575
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from /home/springnuance/reinvent-hitl/Base-Code-Binh/training_Score_Regression_model/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 1: [0.06319573536931207, 0.0, 0.07829317387825806, 0.16582730570899135, 0.0, 0.0, 0.17144560161892794, 0.09026779298347969, 0.0, 0.06778032442678528, 0.0, 0.0, 0.03772054722479222, 0.0, 0.0, 0.0, 0.0, 0.0449490533277162, 0.0, 0.0]
+New queried dataset size: 20
+Combined dataset size: 220
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.17230463666575296
+Epoch 10, Loss: 0.17211474478244781
+Epoch 15, Loss: 0.17196560970374516
+Epoch 20, Loss: 0.17177734417574747
+Epoch 25, Loss: 0.17161096845354354
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_1/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 2: [0.41406699750337544, 0.24492449056256646, 0.2742549410800124, 0.12502730198987436, 0.21306384815870177, 0.2785943795822066, 0.15240276286898974, 0.30507192244578724, 0.20743825161933954, 0.23833274563189236, 0.20733145938828035, 0.4527299390621138, 0.26615239813742664, 0.16173102771562997, 0.34975661182153894, 0.1454177556141178, 0.2883884801116956, 0.07153510822324247, 0.13468351572137696, 0.2871882441981324]
+New queried dataset size: 20
+Combined dataset size: 240
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.34301888942718506
+Epoch 10, Loss: 0.34260254353284836
+Epoch 15, Loss: 0.34212513640522957
+Epoch 20, Loss: 0.34181157872080803
+Epoch 25, Loss: 0.34085728973150253
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_2/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 3: [0.07510614732977393, 0.018396317449229933, 0.0, 0.0, 0.0, 0.0, 0.0, 0.10697171195212446, 0.035621318287079026, 0.0, 0.033667886269712385, 0.0, 0.0, 0.06242711821431968, 0.10435944157982799, 0.09438750124185274, 0.0, 0.0, 0.03438583247058928, 0.0988140020424688]
+New queried dataset size: 20
+Combined dataset size: 260
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 1.5291335582733154
+Epoch 10, Loss: 1.5329523831605911
+Epoch 15, Loss: 1.52555750310421
+Epoch 20, Loss: 1.5180086344480515
+Epoch 25, Loss: 1.519911140203476
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_3/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 4: [0.0, 0.0, 0.0, 0.0, 0.08201095542374222, 0.1363823760414047, 0.0, 0.10111166297352484, 0.03692197568908583, 0.0, 0.03689793373516381, 0.15456202983091935, 0.0, 0.15722273876572307, 0.0, 0.0829486236218448, 0.00946308000813954, 0.0, 0.009934450837872647, 0.0]
+New queried dataset size: 20
+Combined dataset size: 280
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.25252173095941544
+Epoch 10, Loss: 0.25210172683000565
+Epoch 15, Loss: 0.25155044843753177
+Epoch 20, Loss: 0.25086650749047595
+Epoch 25, Loss: 0.25064540406068164
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_4/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 5: [0.17760389194886594, 0.2352823378837918, 0.34736048520676877, 0.1477440589052524, 0.11872172044329837, 0.1493953763741635, 0.2911112925028246, 0.2324461916985856, 0.14659506035591327, 0.2508978240439528, 0.20927883566742117, 0.29643557978590607, 0.12936577134488192, 0.1668048660728403, 0.16036026541940138, 0.05321958591940529, 0.22918310843907475, 0.22567660795060607, 0.20008242639686324, 0.17611236739510244]
+New queried dataset size: 20
+Combined dataset size: 300
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.5553597211837769
+Epoch 10, Loss: 0.5538602421681086
+Epoch 15, Loss: 0.5526354710261027
+Epoch 20, Loss: 0.5517457276582718
+Epoch 25, Loss: 0.5498969107866287
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_5/score_regression_model.pth
+=====================================
+REINVENT round = 2
+Creating config file: output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1575
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_5/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 1: [0.0, 0.03699227258146309, 0.04478535320532205, 0.0, 0.06292823369139808, 0.11946189053945284, 0.267675394979052, 0.0965145861411829, 0.10481184393027544, 0.07161221328138227, 0.0, 0.07640541731307732, 0.08507982585210164, 0.32538101610652764, 0.05982070837988675, 0.10921153909136025, 0.07558562788747467, 0.0, 0.19333908630950106, 0.15425010812667642]
+New queried dataset size: 20
+Combined dataset size: 320
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.20546905137598515
+Epoch 10, Loss: 0.20485164411365986
+Epoch 15, Loss: 0.20421812497079372
+Epoch 20, Loss: 0.203545443713665
+Epoch 25, Loss: 0.20282054133713245
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_1/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 2: [0.08060779868897795, 0.0, 0.1417840350782832, 0.0, 0.06019031336470028, 0.2205501665656711, 0.0, 0.0, 0.011469740493437372, 0.0, 0.0, 0.008360901465275981, 0.0, 0.048863847048191404, 0.0, 0.1564980444864272, 0.0, 0.0, 0.08285632572164023, 0.0]
+New queried dataset size: 20
+Combined dataset size: 340
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.35549638867378236
+Epoch 10, Loss: 0.35438609719276426
+Epoch 15, Loss: 0.35281784236431124
+Epoch 20, Loss: 0.35124136209487916
+Epoch 25, Loss: 0.34938858449459076
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_2/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 3: [0.028645701777581137, 0.136613983745411, 0.0, 0.024363094170398617, 0.03188798774201055, 0.08408199549489924, 0.0, 0.0, 0.05809386487885797, 0.0355981756404868, 0.03094899335175585, 0.04054452926686576, 0.0, 0.02912507803326855, 0.035206955647036325, 0.0, 0.19247715943164384, 0.05328300040834695, 0.0, 0.07155506918055117]
+New queried dataset size: 20
+Combined dataset size: 360
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.9483236595988274
+Epoch 10, Loss: 0.9452441856265068
+Epoch 15, Loss: 0.9439412578940392
+Epoch 20, Loss: 0.9337131008505821
+Epoch 25, Loss: 0.9297194853425026
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_3/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 4: [0.0, 0.16683805016006126, 0.20398914768655646, 0.0060613579506450105, 0.18446720271024825, 0.12940768247946588, 0.17033560578526508, 0.27780888805121084, 0.06359077818552901, 0.01275597335006709, 0.0, 0.006548561289272226, 0.08041941884440564, 0.12224478726748045, 0.11579866971881797, 0.17084791468941846, 0.08942977897360677, 0.23348299750154775, 0.061663906462020454, 0.36014650644477797]
+New queried dataset size: 20
+Combined dataset size: 380
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.264214568904468
+Epoch 10, Loss: 0.26251735218933653
+Epoch 15, Loss: 0.26097309376512257
+Epoch 20, Loss: 0.25909530903611866
+Epoch 25, Loss: 0.25731782615184784
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_4/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 5: [0.8532599707999371, 0.7049774803818082, 0.6836039862173252, 0.8389404775477549, 0.7683469574908514, 0.8620932854326456, 0.8380169984807909, 0.7834103447577492, 0.706013864216596, 0.63920851355485, 0.7460417408167344, 0.8763331154557836, 0.8121026104364568, 0.6661193581522377, 0.8080113286085546, 0.8292249739963201, 0.7023074924033231, 0.8060657466179892, 0.7965141078680364, 0.6763962062403741]
+New queried dataset size: 20
+Combined dataset size: 400
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.49118291214108467
+Epoch 10, Loss: 0.48626435548067093
+Epoch 15, Loss: 0.4828028492629528
+Epoch 20, Loss: 0.48095229268074036
+Epoch 25, Loss: 0.4751276634633541
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_5/score_regression_model.pth
+=====================================
+REINVENT round = 3
+Creating config file: output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1572
+----------------------------------
+HITL iteration = 1
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_5/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 1: [0.039567743964302085, 0.059867460566297194, 0.11209413224700145, 0.10916921313296404, 0.0, 0.0, 0.05529253465033973, 0.055167603020694636, 0.05529377656007855, 0.3890621569949459, 0.06087805899879045, 0.11734557194753364, 0.09918918427879399, 0.06892813306005355, 0.0, 0.07968592997880049, 0.0, 0.0, 0.0, 0.011976421868106005]
+New queried dataset size: 20
+Combined dataset size: 420
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 2.031314641237259
+Epoch 10, Loss: 2.0497488379478455
+Epoch 15, Loss: 2.000294655561447
+Epoch 20, Loss: 1.9738077968358994
+Epoch 25, Loss: 1.9527701139450073
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_1/score_regression_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_1/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 2: [0.2383257950034671, 0.0, 0.07548595737356759, 0.0, 0.0, 0.11575499803285286, 0.013287940245662516, 0.0, 0.0, 0.07481971322958383, 0.0, 0.028505797294313726, 0.011417122326497619, 0.0, 0.22125434726864882, 0.07025184056791736, 0.0, 0.025505369813059002, 0.0, 0.09210327181573864]
+New queried dataset size: 20
+Combined dataset size: 440
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.32517532259225845
+Epoch 10, Loss: 0.32225925972064334
+Epoch 15, Loss: 0.3184437043964863
+Epoch 20, Loss: 0.3150068049629529
+Epoch 25, Loss: 0.31199659158786136
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_2/score_regression_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_2/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 3: [0.9207384894291951, 0.9885169191257752, 1.0, 1.0, 0.8799609225668875, 0.9665404396883703, 0.9524960321563696, 0.934657640015094, 1.0, 1.0, 0.8739021678389607, 1.0, 1.0, 1.0, 0.8480535666770638, 0.9515671559858401, 1.0, 0.9292236167105871, 1.0, 1.0]
+New queried dataset size: 20
+Combined dataset size: 460
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.6712313840786616
+Epoch 10, Loss: 0.6634256765246391
+Epoch 15, Loss: 0.6532874455054601
+Epoch 20, Loss: 0.6491369505723318
+Epoch 25, Loss: 0.6426681528488795
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_3/score_regression_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_3/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 4: [0.0, 0.0013363044924799977, 0.0, 0.0, 0.0, 0.0, 0.17052997049182356, 0.0, 0.0, 0.02036289782726914, 0.15141616900527158, 0.0, 0.12360521531415597, 0.00831214620061871, 0.0, 0.053499187524987085, 0.02719480965600701, 0.0, 0.014269048597661899, 0.0]
+New queried dataset size: 20
+Combined dataset size: 480
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.2369971191510558
+Epoch 10, Loss: 0.23384243063628674
+Epoch 15, Loss: 0.2306869262829423
+Epoch 20, Loss: 0.2275196546688676
+Epoch 25, Loss: 0.22435858380049467
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_4/score_regression_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Score Regression model from output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_4/score_regression_model.pth
+Found local copy...
+Batch 1 processed
+Human score at HITL iteration 5: [0.01561048719830694, 0.07047182012528681, 0.16286043428771735, 0.0, 0.2175620901388088, 0.0, 0.0, 0.06309047332163979, 0.0323579394466854, 0.0, 0.0, 0.0, 0.0, 0.08921896237528461, 0.03996030126968687, 0.0, 0.09421874021650721, 0.03498870476084307, 0.08554496455707815, 0.06722163686554336]
+New queried dataset size: 20
+Combined dataset size: 500
+Saved augmented training data at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.3785732418298721
+Epoch 10, Loss: 0.37395851612091063
+Epoch 15, Loss: 0.3691209971904755
+Epoch 20, Loss: 0.36059125065803527
+Epoch 25, Loss: 0.3559286013245583
+Saved retrained feedback model at output_score_regression/R3_T5_Q20_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_5/score_regression_model.pth
