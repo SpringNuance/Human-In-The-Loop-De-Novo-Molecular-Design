@@ -1,0 +1,1478 @@
+Obtaining file:///home/springnuance/reinvent-hitl/reinvent-scoring
+  Preparing metadata (setup.py) ... Installing collected packages: reinvent-scoring
+  Attempting uninstall: reinvent-scoring
+    Found existing installation: reinvent-scoring 0.0.73
+    Uninstalling reinvent-scoring-0.0.73:
+      Successfully uninstalled reinvent-scoring-0.0.73
+  Running setup.py develop for reinvent-scoring
+Successfully installed reinvent-scoring-0.0.73
+
+*******************************************************************
+Running HITL with random acquisition and noise 0.0
+
+Running DRD2 (one objective) with rounds 3, iters 5, queries 6, seed 42
+Results will be saved at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0
+Loading initial training datasets successfully
+=====================================
+REINVENT round = 1
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/config.json.
+Run REINVENT
+Found local copy...
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1548
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from /home/springnuance/reinvent-hitl/Base-Code-Binh/training_Rank_ListNet_model/rank_listnet_model.pth
+Human score at HITL iteration 1: [0.025138069536585445, 0.0009532793259458691, 0.02910876935000828, 0.0008550979428717433, 0.03212475137523378, 0.06966833156925399]
+New queried dataset size: 20
+Combined dataset size: 220
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.015566835845155376
+Epoch 10, Loss: 0.015530820137688093
+Epoch 15, Loss: 0.01547356482063021
+Epoch 20, Loss: 0.015570586281163352
+Found local copy...
+Epoch 25, Loss: 0.01551214951489653
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_1/rank_listnet_model.pth
+Human score at HITL iteration 2: [9.052864366048358e-05, 0.0005122113231618143, 0.0028882959906895867, 0.010666215921781694, 0.005460000168042288, 0.01870438486020475]
+New queried dataset size: 20
+Combined dataset size: 240
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.028173860162496567
+Epoch 10, Loss: 0.028241705149412155
+Epoch 15, Loss: 0.02842798177152872
+Epoch 20, Loss: 0.028659068746492267
+Found local copy...
+Epoch 25, Loss: 0.028180937049910426
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_2/rank_listnet_model.pth
+Human score at HITL iteration 3: [0.0006960504668771339, 0.0006557662790723119, 0.05169314975067406, 0.005481347567971684, 0.00599512936391478, 0.0038791097969772185]
+New queried dataset size: 20
+Combined dataset size: 260
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.1161410678178072
+Epoch 10, Loss: 0.12629700172692537
+Epoch 15, Loss: 0.11873964685946703
+Epoch 20, Loss: 0.11332703288644552
+Found local copy...
+Epoch 25, Loss: 0.1193286394700408
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_3/rank_listnet_model.pth
+Human score at HITL iteration 4: [0.0025749374883748148, 0.005984175182747387, 0.00040305593088447533, 0.0347354277150503, 0.018022197289945717, 0.08599749590784529]
+New queried dataset size: 20
+Combined dataset size: 280
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.017822343079994123
+Epoch 10, Loss: 0.017728385515511036
+Epoch 15, Loss: 0.017771080912401278
+Epoch 20, Loss: 0.017773320743193228
+Found local copy...
+Epoch 25, Loss: 0.017732962345083553
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_4/rank_listnet_model.pth
+Human score at HITL iteration 5: [0.001693246529975706, 0.0006689084831859248, 0.01163965378251031, 0.0009566712792202144, 0.005914443101405713, 0.017042575350307867]
+New queried dataset size: 20
+Combined dataset size: 300
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.03696229262277484
+Epoch 10, Loss: 0.036165603126088776
+Epoch 15, Loss: 0.03721346488843361
+Epoch 20, Loss: 0.035045745006452
+Epoch 25, Loss: 0.03632100702573856
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_5/rank_listnet_model.pth
+=====================================
+REINVENT round = 2
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1543
+----------------------------------
+HITL iteration = 1
+Found local copy...
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_1/HITL_iteration_5/rank_listnet_model.pth
+Human score at HITL iteration 1: [0.0038964987563389264, 0.007926178890161137, 0.07589643542020956, 0.0040947813057907265, 0.060822847240058, 7.130863981461335e-05]
+New queried dataset size: 20
+Combined dataset size: 320
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.012629943841602653
+Epoch 10, Loss: 0.012574111926369369
+Epoch 15, Loss: 0.012514294940046966
+Epoch 20, Loss: 0.01245022815419361
+Found local copy...
+Epoch 25, Loss: 0.01238198095234111
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_1/rank_listnet_model.pth
+Human score at HITL iteration 2: [0.014888506531222328, 0.00605027591713107, 0.0071666346910564055, 0.0023969154141586365, 0.3189353987686056, 0.08003873375138547]
+New queried dataset size: 20
+Combined dataset size: 340
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.020699567720294
+Epoch 10, Loss: 0.020218046568334102
+Epoch 15, Loss: 0.02036868901923299
+Epoch 20, Loss: 0.02015228709205985
+Found local copy...
+Epoch 25, Loss: 0.01995251988992095
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_2/rank_listnet_model.pth
+Human score at HITL iteration 3: [0.0012089332685559135, 0.021390604023055267, 0.0010257622188907314, 0.0959721603465433, 0.0819446211695977, 0.024985636349084385]
+New queried dataset size: 20
+Combined dataset size: 360
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.05195311387069523
+Epoch 10, Loss: 0.05213329941034317
+Epoch 15, Loss: 0.051217380445450544
+Epoch 20, Loss: 0.04988561454229057
+Found local copy...
+Epoch 25, Loss: 0.0480052474886179
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_3/rank_listnet_model.pth
+Human score at HITL iteration 4: [0.002657019094384948, 0.0020228007967325943, 0.053433318724130346, 0.9616951992504614, 0.030293535106165476, 0.00042531402135632376]
+New queried dataset size: 20
+Combined dataset size: 380
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.014378521857517106
+Epoch 10, Loss: 0.014255626991923367
+Epoch 15, Loss: 0.014043453681681837
+Epoch 20, Loss: 0.013898309054119247
+Found local copy...
+Epoch 25, Loss: 0.013696503559393542
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_4/rank_listnet_model.pth
+Human score at HITL iteration 5: [0.0030103225336134236, 0.3833933783188183, 0.4040003348523199, 0.19951836501825954, 0.041885746089502754, 0.12182253227361808]
+New queried dataset size: 20
+Combined dataset size: 400
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.024736481835134327
+Epoch 10, Loss: 0.024699989589862525
+Epoch 15, Loss: 0.024260104983113706
+Epoch 20, Loss: 0.023884733323939145
+Epoch 25, Loss: 0.023126709391362965
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_5/rank_listnet_model.pth
+=====================================
+REINVENT round = 3
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/config.json.
+Run REINVENT
+Found local copy...
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1534
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_2/HITL_iteration_5/rank_listnet_model.pth
+Human score at HITL iteration 1: [0.019561356588512324, 0.30651338049031995, 0.01336406362844975, 0.1336444897405228, 0.01573489051920419, 0.011925757584271179]
+New queried dataset size: 20
+Combined dataset size: 420
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.09947159374132752
+Epoch 10, Loss: 0.0892385826446116
+Epoch 15, Loss: 0.09808955062180758
+Epoch 20, Loss: 0.08240940747782588
+Found local copy...
+Epoch 25, Loss: 0.088057697750628
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_1/rank_listnet_model.pth
+Human score at HITL iteration 2: [0.03877230164940231, 0.0017959015543564819, 0.10632569864371011, 0.8776124028232688, 0.5293852670437142, 0.02564160165955035]
+New queried dataset size: 20
+Combined dataset size: 440
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.014425969294582805
+Epoch 10, Loss: 0.0139821272653838
+Epoch 15, Loss: 0.01368986559100449
+Epoch 20, Loss: 0.013329341153924664
+Found local copy...
+Epoch 25, Loss: 0.01302923976133267
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_2/rank_listnet_model.pth
+Human score at HITL iteration 3: [0.004278470086561708, 0.011885593986599068, 0.8490238961999835, 0.3991877435835684, 0.2982711103552664, 0.056616882520097785]
+New queried dataset size: 20
+Combined dataset size: 460
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.02697400376200676
+Epoch 10, Loss: 0.025479971353585523
+Epoch 15, Loss: 0.024776134251927335
+Epoch 20, Loss: 0.023661860032007098
+Found local copy...
+Epoch 25, Loss: 0.02370280826774736
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_3/rank_listnet_model.pth
+Human score at HITL iteration 4: [0.9286906669045326, 0.0028186979236469165, 0.019190207067470356, 0.0005865367899574412, 0.08684910693398651, 0.05766853685386992]
+New queried dataset size: 20
+Combined dataset size: 480
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.008857856009854004
+Epoch 10, Loss: 0.008495086978655308
+Epoch 15, Loss: 0.008128756919177249
+Epoch 20, Loss: 0.007765609654597938
+Found local copy...
+Epoch 25, Loss: 0.0074044178472831845
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_4/rank_listnet_model.pth
+Human score at HITL iteration 5: [0.9894347175331966, 0.0020027942926092467, 0.0040360692340767525, 0.020873855455764652, 0.46656076920979467, 0.02853593942261227]
+New queried dataset size: 20
+Combined dataset size: 500
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.013101635873317719
+Epoch 10, Loss: 0.012429504236206413
+Epoch 15, Loss: 0.011899830726906657
+Epoch 20, Loss: 0.011176543589681388
+Epoch 25, Loss: 0.010507034650072456
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.0/REINVENT_round_3/HITL_iteration_5/rank_listnet_model.pth
+
+*******************************************************************
+Running HITL with random acquisition and noise 0.1
+
+Running DRD2 (one objective) with rounds 3, iters 5, queries 6, seed 42
+Results will be saved at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1
+Loading initial training datasets successfully
+=====================================
+REINVENT round = 1
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/config.json.
+Run REINVENT
+Found local copy...
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1537
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from /home/springnuance/reinvent-hitl/Base-Code-Binh/training_Rank_ListNet_model/rank_listnet_model.pth
+Human score at HITL iteration 1: [0.05495162154713726, 0.0022470763772651833, 0.06492482503407172, 0.17704990833809298, 0.24644029944338752, 0.0]
+New queried dataset size: 20
+Combined dataset size: 220
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.015639475812869414
+Epoch 10, Loss: 0.015578106311815125
+Epoch 15, Loss: 0.015515570927943503
+Epoch 20, Loss: 0.0155599070712924
+Found local copy...
+Epoch 25, Loss: 0.015575289593211241
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_1/rank_listnet_model.pth
+Human score at HITL iteration 2: [0.1586848424956854, 0.08663327764307235, 0.0, 0.07462865379797659, 0.013974765551634627, 0.0]
+New queried dataset size: 20
+Combined dataset size: 240
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.02878078678622842
+Epoch 10, Loss: 0.028576145647093654
+Epoch 15, Loss: 0.028009540867060423
+Epoch 20, Loss: 0.02843328076414764
+Found local copy...
+Epoch 25, Loss: 0.028711301740258932
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_2/rank_listnet_model.pth
+Human score at HITL iteration 3: [0.04853550331741551, 0.0, 0.0, 0.27789904061674287, 0.0, 0.03273368466959874]
+New queried dataset size: 20
+Combined dataset size: 260
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.10687693115323782
+Epoch 10, Loss: 0.12040886748582125
+Epoch 15, Loss: 0.11907456535845995
+Epoch 20, Loss: 0.1249521654099226
+Found local copy...
+Epoch 25, Loss: 0.12137401383370161
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_3/rank_listnet_model.pth
+Human score at HITL iteration 4: [0.0, 0.0, 0.1498070325239986, 0.0, 0.019500456089347418, 0.0]
+New queried dataset size: 20
+Combined dataset size: 280
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.01803904368231694
+Epoch 10, Loss: 0.01810559118166566
+Epoch 15, Loss: 0.018151239880050223
+Epoch 20, Loss: 0.017978276126086712
+Found local copy...
+Epoch 25, Loss: 0.01787318754941225
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_4/rank_listnet_model.pth
+Human score at HITL iteration 5: [0.0, 0.09785405322334005, 0.0, 0.04250973900746167, 0.0, 0.0]
+New queried dataset size: 20
+Combined dataset size: 300
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.0365873317544659
+Epoch 10, Loss: 0.03750084526836872
+Epoch 15, Loss: 0.03521620552055538
+Epoch 20, Loss: 0.03729632729664445
+Epoch 25, Loss: 0.03670965787023306
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_5/rank_listnet_model.pth
+=====================================
+REINVENT round = 2
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/config.json.
+Run REINVENT
+Found local copy...
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1533
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_1/HITL_iteration_5/rank_listnet_model.pth
+Human score at HITL iteration 1: [0.0, 0.6912927680731362, 0.00927485074991436, 0.0, 0.11691458046283974, 0.0]
+New queried dataset size: 20
+Combined dataset size: 320
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.013324541039764881
+Epoch 10, Loss: 0.013264028239063919
+Epoch 15, Loss: 0.013199117558542639
+Epoch 20, Loss: 0.013130284729413688
+Found local copy...
+Epoch 25, Loss: 0.013057141448371112
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_1/rank_listnet_model.pth
+Human score at HITL iteration 2: [0.040900823698636235, 0.0, 0.8671770171266285, 0.11860371429536806, 0.09494213294465254, 0.01931434938472259]
+New queried dataset size: 20
+Combined dataset size: 340
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.02267945297062397
+Epoch 10, Loss: 0.022646208107471467
+Epoch 15, Loss: 0.022531439177691938
+Epoch 20, Loss: 0.022219776920974255
+Found local copy...
+Epoch 25, Loss: 0.022008397430181504
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_2/rank_listnet_model.pth
+Human score at HITL iteration 3: [0.1253550429056457, 0.6161581314453737, 0.14125651188720084, 0.0, 0.0, 0.12516768006756046]
+New queried dataset size: 20
+Combined dataset size: 360
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.05646239803172648
+Epoch 10, Loss: 0.05808806465938687
+Epoch 15, Loss: 0.056651200633496046
+Epoch 20, Loss: 0.055957474280148745
+Found local copy...
+Epoch 25, Loss: 0.05570602556690574
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_3/rank_listnet_model.pth
+Human score at HITL iteration 4: [0.6813401985712447, 0.47187800274098, 1.0, 0.0, 0.0, 0.06945930312792165]
+New queried dataset size: 20
+Combined dataset size: 380
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.016142566023128375
+Epoch 10, Loss: 0.015966378884123906
+Epoch 15, Loss: 0.015780338684895208
+Epoch 20, Loss: 0.015525257281426872
+Found local copy...
+Epoch 25, Loss: 0.015291794602360045
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_4/rank_listnet_model.pth
+Human score at HITL iteration 5: [0.10690261494561697, 0.10934537104718638, 0.0, 0.20031484167037208, 0.038697401912805185, 0.3662219629072243]
+New queried dataset size: 20
+Combined dataset size: 400
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.027474102447740734
+Epoch 10, Loss: 0.02676814910955727
+Epoch 15, Loss: 0.02670241449959576
+Epoch 20, Loss: 0.025939073646441102
+Epoch 25, Loss: 0.025469122803770006
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_5/rank_listnet_model.pth
+=====================================
+REINVENT round = 3
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/config.json.
+Run REINVENT
+Found local copy...
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1523
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_2/HITL_iteration_5/rank_listnet_model.pth
+Human score at HITL iteration 1: [0.0, 0.9099317416258944, 0.0, 0.0, 0.20541104408154992, 0.32132899324861786]
+New queried dataset size: 20
+Combined dataset size: 420
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.10395372472703457
+Epoch 10, Loss: 0.10649772454053164
+Epoch 15, Loss: 0.10123462555930018
+Epoch 20, Loss: 0.10119832027703524
+Found local copy...
+Epoch 25, Loss: 0.09814890194684267
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_1/rank_listnet_model.pth
+Human score at HITL iteration 2: [0.0031814114270979858, 0.19130011047208173, 0.04098667669290905, 0.024248019035940177, 0.046123234302030754, 0.15988822898441946]
+New queried dataset size: 20
+Combined dataset size: 440
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.015391830587759614
+Epoch 10, Loss: 0.014921915135346353
+Epoch 15, Loss: 0.014693389336268107
+Epoch 20, Loss: 0.014216999639756978
+Found local copy...
+Epoch 25, Loss: 0.01364255389974763
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_2/rank_listnet_model.pth
+Human score at HITL iteration 3: [0.018964582804832444, 0.16581390359424633, 0.0, 0.08476395686636679, 0.14805388228354288, 0.0]
+New queried dataset size: 20
+Combined dataset size: 460
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.026977705769240856
+Epoch 10, Loss: 0.025941860241194565
+Epoch 15, Loss: 0.02501275227405131
+Epoch 20, Loss: 0.024105518590658903
+Found local copy...
+Epoch 25, Loss: 0.022800377880533535
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_3/rank_listnet_model.pth
+Human score at HITL iteration 4: [0.9994483729933548, 0.0, 0.0, 0.8093913425988896, 0.17040559230356922, 0.0]
+New queried dataset size: 20
+Combined dataset size: 480
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.008970774593763053
+Epoch 10, Loss: 0.00857063996954821
+Epoch 15, Loss: 0.008169639681000262
+Epoch 20, Loss: 0.007778413797495887
+Found local copy...
+Epoch 25, Loss: 0.007388693542452529
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_4/rank_listnet_model.pth
+Human score at HITL iteration 5: [0.27612865195281366, 0.0, 0.09238062875012826, 0.22183679834646136, 0.0, 0.12305624675358928]
+New queried dataset size: 20
+Combined dataset size: 500
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.011469744890928269
+Epoch 10, Loss: 0.010803068452514709
+Epoch 15, Loss: 0.01008179688360542
+Epoch 20, Loss: 0.009529317682608961
+Epoch 25, Loss: 0.008976996527053416
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_random_noise_0.1/REINVENT_round_3/HITL_iteration_5/rank_listnet_model.pth
+
+*******************************************************************
+Running HITL with uncertainty acquisition and noise 0.0
+
+Running DRD2 (one objective) with rounds 3, iters 5, queries 6, seed 42
+Results will be saved at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0
+Loading initial training datasets successfully
+=====================================
+REINVENT round = 1
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/config.json.
+...
+Number of SMILES in scaffold_memory.csv:  1532
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from /home/springnuance/reinvent-hitl/Base-Code-Binh/training_Rank_ListNet_model/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+Found local copy...
+B4 processed | Human score at HITL iteration 1: [0.004649167991089746, 0.015797472713687474, 0.011958141602928721, 0.0018118574670088724, 0.008128778428654814, 0.0004878034436475756]
+New queried dataset size: 20
+Combined dataset size: 220
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.01552134579313653
+Epoch 10, Loss: 0.015532328215028559
+Epoch 15, Loss: 0.015494163946381636
+Epoch 20, Loss: 0.015456149620669228
+Epoch 25, Loss: 0.01545504347554275
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_1/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 2: [0.0009125387813318011, 0.00687125216045197, 0.020623495457648394, 0.00020825133867569449, 0.0021941024300098128, 0.013187363020885393]
+New queried dataset size: 20
+Combined dataset size: 240
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.028057277435436845
+Epoch 10, Loss: 0.02847503195516765
+Epoch 15, Loss: 0.028240133775398135
+Epoch 20, Loss: 0.02818330004811287
+Epoch 25, Loss: 0.02813958888873458
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_2/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 3: [0.0029749218141966157, 0.008716578059816993, 0.002810374618781898, 0.0002792196244561196, 0.008469063900381756, 0.022036694438332196]
+New queried dataset size: 20
+Combined dataset size: 260
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.12022729031741619
+Epoch 10, Loss: 0.11556682642549276
+Epoch 15, Loss: 0.12543651182204485
+Epoch 20, Loss: 0.11448438744992018
+Epoch 25, Loss: 0.11292743124067783
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_3/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 4: [0.2188355453198127, 0.0011357412368498358, 4.142021645408411e-05, 0.002884787586652766, 0.0197839569788027, 0.002258417963043604]
+New queried dataset size: 20
+Combined dataset size: 280
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.017895080149173737
+Epoch 10, Loss: 0.017953829218943913
+Epoch 15, Loss: 0.017784679618974526
+Epoch 20, Loss: 0.017929700203239918
+Epoch 25, Loss: 0.017664301364372175
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_4/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 5: [0.0013695651262524348, 0.002351615215934596, 0.007587584087989917, 0.0027544017902530068, 0.01632331206619152, 0.0007275727673149052]
+New queried dataset size: 20
+Combined dataset size: 300
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.0374489746366938
+Epoch 10, Loss: 0.036671608996888004
+Epoch 15, Loss: 0.03544176043942571
+Epoch 20, Loss: 0.03656450938433409
+Epoch 25, Loss: 0.03627166710793972
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_5/rank_listnet_model.pth
+=====================================
+REINVENT round = 2
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1532
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_1/HITL_iteration_5/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 1: [0.9410269086267479, 0.0028824507115644982, 0.05212488530367254, 0.019763331005115743, 0.032782554759651895, 0.0007151038521012244]
+New queried dataset size: 20
+Combined dataset size: 320
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.013682261691428721
+Epoch 10, Loss: 0.013623381382785738
+Epoch 15, Loss: 0.013560568215325475
+Epoch 20, Loss: 0.013494043843820691
+Epoch 25, Loss: 0.013423168915323913
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_1/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 2: [0.9232211036023864, 0.2724712353668645, 0.08483604235741657, 0.009087865969817217, 0.0006002835121345853, 0.9939107199865213]
+New queried dataset size: 20
+Combined dataset size: 340
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.02453296072781086
+Epoch 10, Loss: 0.024316498544067144
+Epoch 15, Loss: 0.024188425578176975
+Epoch 20, Loss: 0.024008088000118732
+Epoch 25, Loss: 0.023979093693196774
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_2/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 3: [0.03011303049019698, 0.0032958959279754782, 0.01718643885620205, 0.5143901973341377, 0.02154086312955205, 0.1568170502265211]
+New queried dataset size: 20
+Combined dataset size: 360
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.06512823607772589
+Epoch 10, Loss: 0.06207615905441344
+Epoch 15, Loss: 0.05831158999353647
+Epoch 20, Loss: 0.05933435610495508
+Epoch 25, Loss: 0.061225827084854245
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_3/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 4: [0.004294530507553244, 0.006954245361500076, 0.016507074727270976, 0.9949279942138988, 0.6600647430586789, 0.29794399451180775]
+New queried dataset size: 20
+Combined dataset size: 380
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.017288431924368654
+Epoch 10, Loss: 0.01720743746097599
+Epoch 15, Loss: 0.0169294218399695
+Epoch 20, Loss: 0.016757807561329434
+Epoch 25, Loss: 0.01654650843037026
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_4/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 5: [0.01968549081313008, 0.3836070835288905, 0.6483356279930966, 0.048136909977981146, 0.09814364766628798, 0.2627397393746464]
+New queried dataset size: 20
+Combined dataset size: 400
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.030017696786671877
+Epoch 10, Loss: 0.030102885561063886
+Epoch 15, Loss: 0.02978231688030064
+Epoch 20, Loss: 0.028672676417045295
+Epoch 25, Loss: 0.028094202862121165
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_5/rank_listnet_model.pth
+=====================================
+REINVENT round = 3
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1528
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_2/HITL_iteration_5/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 1: [0.002881881082235503, 0.020788843408296478, 0.013277678144657246, 0.0648401233987154, 0.007838530105212077, 0.023875308230127904]
+New queried dataset size: 20
+Combined dataset size: 420
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.11108430288732052
+Epoch 10, Loss: 0.10768758365884423
+Epoch 15, Loss: 0.1070050741545856
+Epoch 20, Loss: 0.11257371120154858
+Epoch 25, Loss: 0.10658711288124323
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_1/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 2: [0.10534800396636027, 0.01262627203812607, 0.010925228319850778, 0.6719342411542788, 0.006630210162669664, 0.006395870836639005]
+New queried dataset size: 20
+Combined dataset size: 440
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.01686527005707224
+Epoch 10, Loss: 0.016438639877984922
+Epoch 15, Loss: 0.016039885037268203
+Epoch 20, Loss: 0.015457824959109226
+Epoch 25, Loss: 0.015102776077886423
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_2/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 3: [0.047205790801360926, 0.006329800196430696, 0.04155528311080903, 0.09286060639416156, 0.004797457995659616, 0.00229166256617522]
+New queried dataset size: 20
+Combined dataset size: 460
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.030243970298518736
+Epoch 10, Loss: 0.029799115067968767
+Epoch 15, Loss: 0.02781418338418007
+Epoch 20, Loss: 0.026110229004795354
+Epoch 25, Loss: 0.02580576459877193
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_3/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 4: [0.006466974601863741, 0.07982554646925115, 0.023600390177718783, 0.9830130545577533, 0.01827002581406713, 0.046064761381565754]
+New queried dataset size: 20
+Combined dataset size: 480
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.009734165185363963
+Epoch 10, Loss: 0.00932900921907276
+Epoch 15, Loss: 0.00892266517621465
+Epoch 20, Loss: 0.00851719465572387
+Epoch 25, Loss: 0.008112704148516059
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_4/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 5: [0.011928552916295337, 0.0029831932214100464, 0.9999913343520614, 0.0032837554560812897, 0.019773745161620605, 0.004636419482682123]
+New queried dataset size: 20
+Combined dataset size: 500
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.013695855718106031
+Epoch 10, Loss: 0.012892559915781022
+Epoch 15, Loss: 0.012413562647998333
+Epoch 20, Loss: 0.011518458230420947
+Epoch 25, Loss: 0.010893235867843031
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.0/REINVENT_round_3/HITL_iteration_5/rank_listnet_model.pth
+
+*******************************************************************
+Running HITL with uncertainty acquisition and noise 0.1
+
+Running DRD2 (one objective) with rounds 3, iters 5, queries 6, seed 42
+Results will be saved at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1
+Loading initial training datasets successfully
+=====================================
+REINVENT round = 1
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1540
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from /home/springnuance/reinvent-hitl/Base-Code-Binh/training_Rank_ListNet_model/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 1: [0.06351764487562767, 0.0, 0.08308782829753418, 0.1590727067786121, 0.0268945540941355, 0.0]
+New queried dataset size: 20
+Combined dataset size: 220
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.015548910945653915
+Epoch 10, Loss: 0.015590234393520015
+Epoch 15, Loss: 0.015578763027276312
+Epoch 20, Loss: 0.015531302030597414
+Epoch 25, Loss: 0.01551646419933864
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_1/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 2: [0.16088986416463233, 0.07836885313567438, 0.0, 0.056804357121050926, 0.0, 0.0]
+New queried dataset size: 20
+Combined dataset size: 240
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.028677443275228143
+Epoch 10, Loss: 0.028682522010058165
+Epoch 15, Loss: 0.027851744322106242
+Epoch 20, Loss: 0.027898848988115788
+Epoch 25, Loss: 0.028271549614146352
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_2/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 3: [0.03181812676560844, 0.0, 0.0, 0.6064203100126271, 0.0, 0.03684893986945696]
+New queried dataset size: 20
+Combined dataset size: 260
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.12362532131373882
+Epoch 10, Loss: 0.11772802751511335
+Epoch 15, Loss: 0.11548412032425404
+Epoch 20, Loss: 0.12092450819909573
+Epoch 25, Loss: 0.11889880802482367
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_3/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 4: [0.0, 0.0, 0.15115472807485758, 0.0, 0.01824132438176034, 0.0]
+New queried dataset size: 20
+Combined dataset size: 280
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.018518359400331974
+Epoch 10, Loss: 0.018382014396289986
+Epoch 15, Loss: 0.018367729615420103
+Epoch 20, Loss: 0.018457160020867985
+Epoch 25, Loss: 0.018090008292347193
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_4/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 5: [0.0, 0.015821101891457252, 0.0, 0.04093028790563134, 0.0, 0.0]
+New queried dataset size: 20
+Combined dataset size: 300
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.03695707255974412
+Epoch 10, Loss: 0.03774227652077874
+Epoch 15, Loss: 0.03689555171877146
+Epoch 20, Loss: 0.037414091949661575
+Epoch 25, Loss: 0.037556988497575126
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_5/rank_listnet_model.pth
+=====================================
+REINVENT round = 2
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1535
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_1/HITL_iteration_5/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 1: [0.0, 0.2188425804302662, 0.012075974759184054, 0.8096389680931354, 0.7458657633009643, 0.0]
+New queried dataset size: 20
+Combined dataset size: 320
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.01403920107986778
+Epoch 10, Loss: 0.01397805183660239
+Epoch 15, Loss: 0.013912506168708205
+Epoch 20, Loss: 0.01384239352773875
+Epoch 25, Loss: 0.01376728666946292
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_1/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 2: [0.4514589814071063, 0.18158913259346418, 0.0, 0.025228002850246557, 0.08982933611335199, 0.019635459497800618]
+New queried dataset size: 20
+Combined dataset size: 340
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.02311785314232111
+Epoch 10, Loss: 0.02281600423157215
+Epoch 15, Loss: 0.022896548453718423
+Epoch 20, Loss: 0.02239869236946106
+Epoch 25, Loss: 0.02250596908852458
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_2/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 3: [0.8797945431034128, 0.17076812675569614, 0.44623626076709455, 0.0, 0.014624127347124219, 0.16841838490030026]
+New queried dataset size: 20
+Combined dataset size: 360
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.06024717865511775
+Epoch 10, Loss: 0.06092872517183423
+Epoch 15, Loss: 0.05989559227600694
+Epoch 20, Loss: 0.05886717094108462
+Epoch 25, Loss: 0.05871613370254636
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_3/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 4: [0.08348749006344838, 0.0, 0.1585286647447908, 0.0, 0.0, 0.0618641282930465]
+New queried dataset size: 20
+Combined dataset size: 380
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.015612275472709112
+Epoch 10, Loss: 0.015386985149234533
+Epoch 15, Loss: 0.015273653569498233
+Epoch 20, Loss: 0.015053136207695519
+Epoch 25, Loss: 0.014907642134598323
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_4/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 5: [0.24482077223924797, 0.1012442039125549, 0.030835781660435865, 0.0, 0.8010121700887265, 0.9665968770891935]
+New queried dataset size: 20
+Combined dataset size: 400
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.028590210247784853
+Epoch 10, Loss: 0.028805146925151348
+Epoch 15, Loss: 0.02827305835671723
+Epoch 20, Loss: 0.027283999021165073
+Epoch 25, Loss: 0.027149467263370752
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_5/rank_listnet_model.pth
+=====================================
+REINVENT round = 3
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1526
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_2/HITL_iteration_5/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 1: [0.0, 0.0007310972724243608, 0.0, 0.0, 0.1303948277773196, 0.14708913076471664]
+New queried dataset size: 20
+Combined dataset size: 420
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.10312719317153096
+Epoch 10, Loss: 0.10071246745064855
+Epoch 15, Loss: 0.10330133512616158
+Epoch 20, Loss: 0.09911267226561904
+Epoch 25, Loss: 0.10009689815342426
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_1/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 2: [0.0013763778410344919, 0.14712344996499688, 0.19800607969477096, 0.0, 0.19905411673448248, 0.1741232648071903]
+New queried dataset size: 20
+Combined dataset size: 440
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.015495682251639664
+Epoch 10, Loss: 0.015130823788543543
+Epoch 15, Loss: 0.014628784653420249
+Epoch 20, Loss: 0.014421243841449419
+Epoch 25, Loss: 0.0138104628228272
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_2/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 3: [0.09571199163101914, 0.4592546805108904, 0.0, 0.16469945794031915, 0.014017452443308567, 0.682136980990848]
+New queried dataset size: 20
+Combined dataset size: 460
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.028903195324043434
+Epoch 10, Loss: 0.027533759440605838
+Epoch 15, Loss: 0.026203436699385445
+Epoch 20, Loss: 0.02597832664226492
+Epoch 25, Loss: 0.02452306884030501
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_3/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 4: [0.28622465548566184, 0.0, 0.0, 0.03968074397636575, 0.2642915886441348, 0.727847951414407]
+New queried dataset size: 20
+Combined dataset size: 480
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.008923835324821994
+Epoch 10, Loss: 0.008533006679499522
+Epoch 15, Loss: 0.008143306302372366
+Epoch 20, Loss: 0.0077553633018396795
+Epoch 25, Loss: 0.007366860285401344
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_4/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 5: [0.0, 0.0, 0.0960214102615916, 0.052805551350036985, 0.6463543633424385, 0.1112531128592793]
+New queried dataset size: 20
+Combined dataset size: 500
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.012042091973125935
+Epoch 10, Loss: 0.011340711894445122
+Epoch 15, Loss: 0.01077868822030723
+Epoch 20, Loss: 0.010189379518851637
+Epoch 25, Loss: 0.009503423026762903
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_uncertainty_noise_0.1/REINVENT_round_3/HITL_iteration_5/rank_listnet_model.pth
+
+*******************************************************************
+Running HITL with greedy acquisition and noise 0.0
+
+Running DRD2 (one objective) with rounds 3, iters 5, queries 6, seed 42
+Results will be saved at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0
+Loading initial training datasets successfully
+=====================================
+REINVENT round = 1
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1530
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from /home/springnuance/reinvent-hitl/Base-Code-Binh/training_Rank_ListNet_model/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 1: [0.006037621919601476, 0.00016122751203565127, 0.0006409473075934405, 0.007276088669266278, 0.00681018485678923, 0.012255780611560064]
+New queried dataset size: 20
+Combined dataset size: 220
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.01553790271282196
+Epoch 10, Loss: 0.015529520676604338
+Epoch 15, Loss: 0.015488991380802222
+Epoch 20, Loss: 0.015421276646000999
+Epoch 25, Loss: 0.015497037076524325
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_1/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 2: [0.0027380893410445086, 0.0007848267865806452, 0.001362185319228042, 0.04324952712598332, 0.09038211281645497, 0.43718406157188655]
+New queried dataset size: 20
+Combined dataset size: 240
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.02869444456882775
+Epoch 10, Loss: 0.028724625473842025
+Epoch 15, Loss: 0.02849514503031969
+Epoch 20, Loss: 0.028370697516947985
+Epoch 25, Loss: 0.02837085979990661
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_2/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 3: [0.0008049407434649083, 0.0068400591020417525, 0.013377331601052292, 0.00011377249608229309, 0.003082260210038956, 0.0899509186125068]
+New queried dataset size: 20
+Combined dataset size: 260
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.11522463522851467
+Epoch 10, Loss: 0.11688853427767754
+Epoch 15, Loss: 0.12426896579563618
+Epoch 20, Loss: 0.11865734402090311
+Epoch 25, Loss: 0.1238957280293107
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_3/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 4: [0.8352650924857727, 0.01181687632001505, 0.01741494572513158, 0.10146675027627128, 0.0015088919929646717, 0.0006608904807104223]
+New queried dataset size: 20
+Combined dataset size: 280
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.01921566886206468
+Epoch 10, Loss: 0.01919618109241128
+Epoch 15, Loss: 0.019171055561552446
+Epoch 20, Loss: 0.019196929099659126
+Epoch 25, Loss: 0.018964899548639853
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_4/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 5: [0.00023628497902876373, 0.0010614581451017465, 0.024091099873475328, 0.008049848928177233, 0.015979072965403796, 0.0030577002859655234]
+New queried dataset size: 20
+Combined dataset size: 300
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.03785605154310664
+Epoch 10, Loss: 0.03782957047224045
+Epoch 15, Loss: 0.03800952977811297
+Epoch 20, Loss: 0.03895136434584856
+Epoch 25, Loss: 0.03928336904694637
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_5/rank_listnet_model.pth
+=====================================
+REINVENT round = 2
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1541
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_1/HITL_iteration_5/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 1: [0.9462727133320783, 0.09844713961737632, 0.42628707667592036, 0.6982727818898022, 0.0002077900710951795, 0.03388917446010055]
+New queried dataset size: 20
+Combined dataset size: 320
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.01456248591421172
+Epoch 10, Loss: 0.014499668206553906
+Epoch 15, Loss: 0.014432566589675844
+Epoch 20, Loss: 0.014361310517415404
+Epoch 25, Loss: 0.014285553130321205
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_1/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 2: [0.8807102787310698, 0.12397076695891848, 0.16968555505467586, 0.02710019664517587, 0.009338547985377196, 0.013756049156208127]
+New queried dataset size: 20
+Combined dataset size: 340
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.02473629415035248
+Epoch 10, Loss: 0.02465642783790827
+Epoch 15, Loss: 0.024569449387490748
+Epoch 20, Loss: 0.024405029974877833
+Epoch 25, Loss: 0.02408934384584427
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_2/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 3: [0.04774184850927861, 0.05610255130356361, 0.0550362871229852, 0.020369444471499673, 0.08432314553468209, 0.7070296044445105]
+New queried dataset size: 20
+Combined dataset size: 360
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.06012163916602731
+Epoch 10, Loss: 0.06345093809068203
+Epoch 15, Loss: 0.06223234022036195
+Epoch 20, Loss: 0.06272380379959941
+Epoch 25, Loss: 0.06246031168848276
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_3/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 4: [0.41037823788837907, 0.007787165079877457, 0.015975619998062157, 0.9658481873489849, 0.24991805428380512, 0.0311240800493846]
+New queried dataset size: 20
+Combined dataset size: 380
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.017714804903204952
+Epoch 10, Loss: 0.017471362836658955
+Epoch 15, Loss: 0.017257501105112687
+Epoch 20, Loss: 0.01708785823679396
+Epoch 25, Loss: 0.016904391215315888
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_4/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 5: [0.009934191865171839, 0.32209424867092357, 0.01877683049973335, 0.5136481750189884, 0.030091177727786553, 0.001628913527021718]
+New queried dataset size: 20
+Combined dataset size: 400
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.030604241183027625
+Epoch 10, Loss: 0.030203937087208033
+Epoch 15, Loss: 0.029990042676217854
+Epoch 20, Loss: 0.02923249453306198
+Epoch 25, Loss: 0.029217322473414242
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_5/rank_listnet_model.pth
+=====================================
+REINVENT round = 3
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1530
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_5/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 1: [0.8325327417735953, 0.9963549133045428, 0.7668318288432652, 0.9231484610777243, 0.16553429965427827, 0.13365520089446994]
+New queried dataset size: 20
+Combined dataset size: 420
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.12610613089054823
+Epoch 10, Loss: 0.12447873642668128
+Epoch 15, Loss: 0.11877069948241115
+Epoch 20, Loss: 0.11757200071588159
+Epoch 25, Loss: 0.1137382728047669
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_1/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 2: [0.9922774563403977, 0.7644695184007693, 0.9450639501270041, 0.5210613648805276, 0.9373523683596179, 0.8940408405092753]
+New queried dataset size: 20
+Combined dataset size: 440
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.017965312271068495
+Epoch 10, Loss: 0.017537618599211175
+Epoch 15, Loss: 0.017085987608879805
+Epoch 20, Loss: 0.016561054702227313
+Epoch 25, Loss: 0.0161572378128767
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_2/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 3: [0.029688100274388004, 0.0015342400904873388, 0.5415998624244275, 0.4176831957407034, 0.1175534950320678, 0.9423238012133346]
+New queried dataset size: 20
+Combined dataset size: 460
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.034479021870841585
+Epoch 10, Loss: 0.03394484193995595
+Epoch 15, Loss: 0.03251822820554177
+Epoch 20, Loss: 0.031768401308606066
+Epoch 25, Loss: 0.030657941475510597
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_3/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 4: [0.2384162564954699, 0.5, 0.23836097463848596, 0.13337891744176256, 0.0022154649711878544, 0.22743348710921504]
+New queried dataset size: 20
+Combined dataset size: 480
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.010694162512663752
+Epoch 10, Loss: 0.010283642768627033
+Epoch 15, Loss: 0.009870386682450771
+Epoch 20, Loss: 0.009455384773900732
+Epoch 25, Loss: 0.00903994994587265
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_4/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 5: [0.20630553956743683, 0.0016058944180978919, 0.03219469699384103, 0.06024533432087162, 0.0025230433188815553, 0.019620018407723535]
+New queried dataset size: 20
+Combined dataset size: 500
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.014254451403394342
+Epoch 10, Loss: 0.013302273582667112
+Epoch 15, Loss: 0.01273593665100634
+Epoch 20, Loss: 0.012069868249818682
+Epoch 25, Loss: 0.011474616453051567
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.0/REINVENT_round_3/HITL_iteration_5/rank_listnet_model.pth
+
+*******************************************************************
+Running HITL with greedy acquisition and noise 0.1
+
+Running DRD2 (one objective) with rounds 3, iters 5, queries 6, seed 42
+Results will be saved at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1
+Loading initial training datasets successfully
+=====================================
+REINVENT round = 1
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1527
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from /home/springnuance/reinvent-hitl/Base-Code-Binh/training_Rank_ListNet_model/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 1: [0.04994373701483474, 0.0, 0.1538110014140937, 0.1535000903034276, 0.0, 0.0]
+New queried dataset size: 20
+Combined dataset size: 220
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.015535678049283368
+Epoch 10, Loss: 0.015601387513535363
+Epoch 15, Loss: 0.015559145648564612
+Epoch 20, Loss: 0.015553294414920467
+Epoch 25, Loss: 0.015561128567372049
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_1/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 2: [0.16006034936189747, 0.07789064419553185, 0.0, 0.222501817471828, 0.7319637582174383, 0.0]
+New queried dataset size: 20
+Combined dataset size: 240
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.029192310525104403
+Epoch 10, Loss: 0.029729781206697226
+Epoch 15, Loss: 0.029487149557098746
+Epoch 20, Loss: 0.029419652419164777
+Epoch 25, Loss: 0.029476343654096127
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_2/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 3: [0.029241949379434518, 0.0, 0.0, 0.07705911583608202, 0.0, 0.033880160501525036]
+New queried dataset size: 20
+Combined dataset size: 260
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.12925540376454592
+Epoch 10, Loss: 0.12057388667017221
+Epoch 15, Loss: 0.11609425395727158
+Epoch 20, Loss: 0.1159044224768877
+Epoch 25, Loss: 0.11304294876754284
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_3/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 4: [0.0, 0.0, 0.15880235393506525, 0.0, 0.007057572211559932, 0.06601936085728455]
+New queried dataset size: 20
+Combined dataset size: 280
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.018758215786268313
+Epoch 10, Loss: 0.01863096033533414
+Epoch 15, Loss: 0.018605464758972328
+Epoch 20, Loss: 0.018613423065592844
+Epoch 25, Loss: 0.018429782707244158
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_4/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 5: [0.0, 0.02134670688804309, 0.0, 0.04510264344221475, 0.0, 0.0]
+New queried dataset size: 20
+Combined dataset size: 300
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.038233291978637375
+Epoch 10, Loss: 0.0370244481600821
+Epoch 15, Loss: 0.03737886964033047
+Epoch 20, Loss: 0.0373113751411438
+Epoch 25, Loss: 0.03842471571018299
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_5/rank_listnet_model.pth
+=====================================
+REINVENT round = 2
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1538
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_1/HITL_iteration_5/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 1: [0.2805029329629817, 0.4023651577573487, 0.5363296519520759, 0.7680588889476889, 0.1552056708942865, 0.7714703629847091]
+New queried dataset size: 20
+Combined dataset size: 320
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.013577245932538062
+Epoch 10, Loss: 0.013516336970496923
+Epoch 15, Loss: 0.013450583559460938
+Epoch 20, Loss: 0.01338132272940129
+Epoch 25, Loss: 0.013306581939104944
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_1/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 2: [0.22519323349188614, 0.8040145928968987, 0.0, 0.8733331755395127, 0.10099705239080625, 1.0]
+New queried dataset size: 20
+Combined dataset size: 340
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.02395620383322239
+Epoch 10, Loss: 0.023493484221398832
+Epoch 15, Loss: 0.023402148857712746
+Epoch 20, Loss: 0.02330920211970806
+Epoch 25, Loss: 0.02305607022717595
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_2/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 3: [0.5472430046365687, 0.03300641738169597, 0.0, 0.5470548355071321, 0.0, 0.14970356258474027]
+New queried dataset size: 20
+Combined dataset size: 360
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.06092624017037451
+Epoch 10, Loss: 0.06009335722774267
+Epoch 15, Loss: 0.06218934524804354
+Epoch 20, Loss: 0.058450278360396624
+Epoch 25, Loss: 0.056553808972239494
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_3/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 4: [0.9287288687313547, 0.0, 0.09196812198775672, 0.0, 0.0, 0.19825592101278494]
+New queried dataset size: 20
+Combined dataset size: 380
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.01683576950537307
+Epoch 10, Loss: 0.016635605533208166
+Epoch 15, Loss: 0.01649266734187092
+Epoch 20, Loss: 0.0162682805343398
+Epoch 25, Loss: 0.016079875574048077
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_4/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 5: [0.257291716590119, 0.9901880149015834, 0.0, 0.014619950464522167, 0.7707331841462122, 0.10354982096132366]
+New queried dataset size: 20
+Combined dataset size: 400
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.03136274637654424
+Epoch 10, Loss: 0.030800471315160394
+Epoch 15, Loss: 0.030012166360393167
+Epoch 20, Loss: 0.029496373143047094
+Epoch 25, Loss: 0.029348009848035872
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_5/rank_listnet_model.pth
+=====================================
+REINVENT round = 3
+Creating config file: output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/config.json.
+Run REINVENT
+Exit code: 0
+Number of SMILES in scaffold_memory.csv:  1536
+----------------------------------
+HITL iteration = 1
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_2/HITL_iteration_5/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 1: [0.8937738409447864, 0.6309986991628685, 0.47719118806093563, 0.0, 0.8620267563052574, 0.24849559638551277]
+New queried dataset size: 20
+Combined dataset size: 420
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_1/iteration_combined_data.csv
+Epoch 5, Loss: 0.12136733485385776
+Epoch 10, Loss: 0.12093429453670979
+Epoch 15, Loss: 0.12089752219617367
+Epoch 20, Loss: 0.11657387670129538
+Epoch 25, Loss: 0.11517315311357379
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_1/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 2
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_1/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 2: [0.8512766815693871, 0.15754014234776176, 0.04510968984267988, 0.0, 0.05908844615245242, 0.31193249486242514]
+New queried dataset size: 20
+Combined dataset size: 440
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_2/iteration_combined_data.csv
+Epoch 5, Loss: 0.01859911570015053
+Epoch 10, Loss: 0.018230410215134423
+Epoch 15, Loss: 0.01772679031516115
+Epoch 20, Loss: 0.017285263321051996
+Epoch 25, Loss: 0.016778346228723724
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_2/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 3
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_2/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 3: [0.9964173952446731, 1.0, 0.0, 0.3998509323781447, 0.018450158484461368, 0.4171750769089685]
+New queried dataset size: 20
+Combined dataset size: 460
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_3/iteration_combined_data.csv
+Epoch 5, Loss: 0.03640304133296013
+Epoch 10, Loss: 0.03479968709871173
+Epoch 15, Loss: 0.03420264879241586
+Epoch 20, Loss: 0.032992604188621044
+Epoch 25, Loss: 0.031823583568135895
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_3/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 4
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_3/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 4: [0.06908343124212377, 0.0, 0.2387849234698427, 0.7029578887728657, 0.9781997374791274, 0.0]
+New queried dataset size: 20
+Combined dataset size: 480
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_4/iteration_combined_data.csv
+Epoch 5, Loss: 0.0120528528932482
+Epoch 10, Loss: 0.011605669918935746
+Epoch 15, Loss: 0.011151563085149974
+Epoch 20, Loss: 0.010695484816096723
+Epoch 25, Loss: 0.01023679893114604
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_4/rank_listnet_model.pth
+----------------------------------
+HITL iteration = 5
+Loading Rank ListNet model successfully from output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_4/rank_listnet_model.pth
+B1 processed | B2 processed | B3 processed | 
+Found local copy...
+B4 processed | Human score at HITL iteration 5: [0.0, 0.0, 0.1114142347827399, 0.04996859057676708, 0.5805839653869176, 0.09821056209493448]
+New queried dataset size: 20
+Combined dataset size: 500
+Saved augmented training data at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_5/iteration_combined_data.csv
+Epoch 5, Loss: 0.016665593720972538
+Epoch 10, Loss: 0.015571633726358414
+Epoch 15, Loss: 0.01500166286714375
+Epoch 20, Loss: 0.014111711457371712
+Epoch 25, Loss: 0.013377554481849074
+Saved retrained feedback model at output_rank_listnet/R3_T5_Q6_acq_greedy_noise_0.1/REINVENT_round_3/HITL_iteration_5/rank_listnet_model.pth
