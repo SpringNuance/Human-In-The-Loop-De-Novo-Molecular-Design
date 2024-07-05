@@ -6,7 +6,10 @@ import torch
 import sys
 import os
 
-from predict import predict_feedback_from_model
+# add the path to the sys path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from .predict import predict_feedback_from_model
 
 def compute_fingerprints(smiles):
     mol = Chem.MolFromSmiles(smiles)
