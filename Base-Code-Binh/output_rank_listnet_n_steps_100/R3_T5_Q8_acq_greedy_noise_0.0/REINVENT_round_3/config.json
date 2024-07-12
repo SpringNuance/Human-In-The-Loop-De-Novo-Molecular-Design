@@ -1,0 +1,63 @@
+{
+    "logging": {
+        "job_id": "output_rank_listnet_n_steps_100/R3_T5_Q8_acq_greedy_noise_0.0",
+        "job_name": "fine-tune predictive component HITL",
+        "logging_frequency": 0,
+        "logging_path": "output_rank_listnet_n_steps_100/R3_T5_Q8_acq_greedy_noise_0.0/REINVENT_round_3/progress.log",
+        "recipient": "local",
+        "result_folder": "output_rank_listnet_n_steps_100/R3_T5_Q8_acq_greedy_noise_0.0/REINVENT_round_3/results",
+        "sender": "http://127.0.0.1"
+    },
+    "model_type": "default",
+    "parameters": {
+        "diversity_filter": {
+            "bucket_size": 25,
+            "minscore": 0.2,
+            "minsimilarity": 0.4,
+            "name": "IdenticalMurckoScaffold"
+        },
+        "inception": {
+            "memory_size": 20,
+            "sample_size": 5,
+            "smiles": []
+        },
+        "reinforcement_learning": {
+            "agent": "/home/springnuance/reinvent-hitl/Reinvent/data/random.prior.new",
+            "batch_size": 64,
+            "learning_rate": 0.0001,
+            "margin_threshold": 50,
+            "n_steps": 100,
+            "prior": "/home/springnuance/reinvent-hitl/Reinvent/data/random.prior.new",
+            "reset": 0,
+            "reset_score_cutoff": 0.5,
+            "sigma": 64
+        },
+        "scoring_function": {
+            "name": "custom_sum",
+            "parallel": false,
+            "parameters": [
+                {
+                    "component_type": "predictive_property",
+                    "name": "Human-Component",
+                    "specific_parameters": {
+                        "container_type": "rank_listnet_container",
+                        "descriptor_type": "ecfp",
+                        "model_definition_path": "/home/springnuance/reinvent-hitl/Base-Code-Binh/training_Rank_ListNet_model/rank_listnet.py",
+                        "model_name": "rank_listnet",
+                        "model_pretrained_path": "/home/springnuance/reinvent-hitl/Base-Code-Binh/output_rank_listnet_n_steps_100/R3_T5_Q8_acq_greedy_noise_0.0/REINVENT_round_2/HITL_iteration_5/rank_listnet_model.pth",
+                        "rank_listnet": "classification",
+                        "size": 2048,
+                        "transformation": {
+                            "transformation_type": "no_transformation"
+                        },
+                        "use_counts": true,
+                        "use_features": true
+                    },
+                    "weight": 1
+                }
+            ]
+        }
+    },
+    "run_type": "reinforcement_learning",
+    "version": 3
+}
