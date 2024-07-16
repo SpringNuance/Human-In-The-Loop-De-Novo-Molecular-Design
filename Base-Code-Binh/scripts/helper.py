@@ -521,7 +521,7 @@ def retrain_feedback_model(feedback_type, feedback_model, training_outputs, epoc
                 loss.backward()
                 optimizer.step()
                 total_loss += loss.item()
-            if (epoch + 1) % 5 == 0:
+            if (epoch + 1) % 20 == 0:
                 print(f'Epoch {epoch+1}, Loss: {total_loss / len(features)}')
         feedback_model.eval()
         return feedback_model
@@ -558,7 +558,7 @@ def retrain_feedback_model(feedback_type, feedback_model, training_outputs, epoc
                 optimizer.step()
                 total_loss += loss.item()
 
-            if (epoch + 1) % 5 == 0:
+            if (epoch + 1) % 20 == 0:
                 print(f'Epoch {epoch+1}, Loss: {total_loss / len(features_1)}')
 
         feedback_model.eval()
@@ -614,7 +614,7 @@ def retrain_feedback_model(feedback_type, feedback_model, training_outputs, epoc
                 loss.backward()
                 optimizer.step()
                 total_loss += loss.item()
-            if (epoch + 1) % 5 == 0:
+            if (epoch + 1) % 20 == 0:
                 print(f'Epoch {epoch+1}, Loss: {total_loss / len(features_1)}')
 
         feedback_model.eval()
